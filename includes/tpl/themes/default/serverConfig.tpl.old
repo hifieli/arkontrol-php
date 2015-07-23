@@ -1,0 +1,46 @@
+{include file="_head.tpl"}
+
+<ul>
+{foreach $gameuserini as $group => $groupinfo}
+	<li><a href="#group-{$group}">{$group}</a></li>
+{/foreach}
+</ul>
+
+<form method="POST">
+{foreach $gameuserini as $group => $groupinfo}
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">{$group}<a name="group-{$group}"></h3>
+				</div>
+				<div class="panel-body">
+				{foreach $groupinfo as $key => $info}
+					<br /><br /><br />
+					<table class="table">
+						<tbody>
+							<tr><td colspan="2"><b>{$info.name}</b></td></tr>
+							<tr><td colspan="2"><i>{$info.desc}</i></td></tr>
+							<tr><td class="col-xs-2">type</td><td>{$info.type}</td></tr>
+							<tr><td class="col-xs-2">default</td><td>`{$info.vald}`</td></tr>
+							{if $info.type == 'boolean'}
+							<tr><td class="col-xs-2">value</td><td>
+							<select name="{$info.name}" id="{$info.name}" value="{$info.valc}">
+								<option value="true"  {if $info.vald == 'true'}selected{/if} >true</option>
+								<option value="false" {if $info.vald == 'false'}selected{/if}>false</option>
+							</select>
+							</td></tr>
+							{else}
+							<tr><td class="col-xs-2">value</td><td><input type="text" name="{$info.name}" id="{$info.name}" value="{$info.valc}"></td></tr>
+							{/if}
+							<tr><td></td><td></td></tr>
+						</tbody>
+					</table>
+				{/foreach}
+				</div>
+			</div>
+	<hr /><br /><br />
+{/foreach}
+<input type="submit" value="Save Config">
+
+</form>
+
+{include file="_foot.tpl"}
