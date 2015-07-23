@@ -3,14 +3,15 @@
 		<title>ARKontrol - A dedicated server manager for ARK: Survival Evolved</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="/css/scheme.{$_INICONF['webscheme']}.css">
+		<link rel="stylesheet" href="/includes/tpl/themes/{$_INICONF['webtheme']}/theme.css">
+		
 		<script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 	<!-- <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> -->
 		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="/main.js"></script>
-
-		<style type="text/css">
-		{include file="{$_INICONF['webdocroot']}/includes/tpl/themes/{$_INICONF['webtheme']}/theme.css"}
-		</style>
+	
+		
 	</head>
 	
 	<body>
@@ -24,20 +25,24 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
+					{if empty($valid_login)}
 					<a class="navbar-brand" href="/">Home</a>
+					{else}
+					<a class="navbar-brand" href="/do/dashboard.php">Home</a>
+					{/if}
 				</div>
 				<div id="navbar" class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">
 					
-						<li class=""><a class="" href="http://arkcontrol.com">ARKontrol.com</a></li>
+						<li class=""><a class="" href="http://arkontrol.com">ARKontrol.com</a></li>
 						
 						{if !empty($valid_login)}
 							<li><a class="" href="/do/dashboard.php">Dashboard</a></li>
 						{/if}
 					
-						<li><a href="/do/help.php">Help</a></li>
-						<li><a href="/do/premium.php">Premium</a></li>
-						
+					{*	<li><a href="/do/help.php">Help</a></li>
+						<li><a href="/do/premium.php">Premium</a></li> *}
+						<li><a href="/do/about.php">About</a></li>
 						
 						{if empty($valid_login)}
 						<li class=""><a class="" href="/do/dashboard.php">Admin</a></li>
