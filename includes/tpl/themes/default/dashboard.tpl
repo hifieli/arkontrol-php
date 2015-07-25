@@ -63,7 +63,6 @@
 				<h4>Planned for the future</h4>
 				<ul class="nav nav-stacked">
 					
-					<li><a href="/do/dashboard.php">...probably log file exposure</a></li>
 					<li><a href="/do/dashboard.php">Backups of the world state</a></li>
 					<li><a href="/do/dashboard.php">...Possibly to an external site</a></li>
 					<li><a href="/do/dashboard.php">Additional Security Recommendations</a></li>
