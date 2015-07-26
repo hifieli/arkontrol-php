@@ -55,6 +55,9 @@
 				<ul class="nav nav-stacked">
 
 					<li><a href="/do/dashboard.php">Dino/Player level ramps</a></li>
+					<li><a href="/do/dashboard.php">Dino/Player XP/level caps</a></li>
+					<li><a href="/do/dashboard.php">Harvested Resource Scaling</a></li>
+					<li><a href="/do/dashboard.php">Item/Corpse Decomposition Scale</a></li>
 					<li><a href="/do/dashboard.php">(s)FTP access to game files</a></li>
 
 				</ul>
@@ -73,6 +76,7 @@
 				<h4>Will it be possible?</h4>
 				<ul class="nav nav-stacked">
 				
+					<li><a href="/do/dashboard.php">Server Console Commands</a></li>
 					<li><a href="/do/dashboard.php">rCon Commands</a></li>
 					<li><a href="/do/dashboard.php">pull data from the world state</a></li>
 					<li><a href="/do/dashboard.php">edit data in the world state</a></li>

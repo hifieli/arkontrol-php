@@ -107,4 +107,32 @@
 	
 </div>
 
+<script>
+var HasUnsavedChanges = false;
+
+$(document).ready(function() {
+	
+	$('input').each(function () {
+		$(this).change( function () {
+			HasUnsavedChanges = true;
+		});
+	});
+	
+	$('input[type=submit]').each(function () {
+		$(this).click( function () {
+			HasUnsavedChanges = false;
+		});
+	});
+	
+	$(window).bind('beforeunload', function(){
+	
+		if (HasUnsavedChanges) {
+			return 'You have made changes that are not saved. You may proceed and abandon the changes, or return and save your changes.';
+		}
+
+	});
+	
+});
+</script>
+
 {include file="_foot.tpl"}

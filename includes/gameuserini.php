@@ -9,7 +9,11 @@ source: http://ark.gamepedia.com/Server_Configuration
 $gameuserini = array(
 
 	'GameUserSettings.ini'	=> array(
+	
+	
+	
 		'/script/engine.gamesession'	=> array(
+		
 			'MaxPlayers'	=> array(
 				'name'	=> 'MaxPlayers',
 				'type'	=> 'integer',
@@ -21,6 +25,7 @@ $gameuserini = array(
 		),
 		
 		'SessionSettings'	=> array(
+		
 			'SessionName'	=> array(
 				'name'	=> 'SessionName',
 				'type'	=> 'string',
@@ -32,6 +37,7 @@ $gameuserini = array(
 		),
 		
 		'ServerSettings'	=> array(
+		
 			'alwaysNotifyPlayerJoined'	=> array(
 				'name'	=> 'alwaysNotifyPlayerJoined',
 				'type'	=> 'boolean',
