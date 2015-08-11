@@ -137,7 +137,7 @@
 					}
 				}
 				
-				$iniGame->gameini = $ini_comb['Game.ini'];
+				$iniGame->gameini = $newGameIni;
 				$iniGame->write();
 			}
 			
