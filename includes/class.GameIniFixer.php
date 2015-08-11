@@ -41,6 +41,7 @@ class GameIniFixer {
 	//these are the keys that need brackets
 	public $inikeys	= array(
 		'OverrideEngramEntries',
+		'OverrideNamedEngramEntries',
 		'DinoSpawnWeightMultipliers',
 		'LevelExperienceRampOverrides',
 		'OverridePlayerLevelEngramPoints'
@@ -71,8 +72,12 @@ class GameIniFixer {
 //var_dump($this->gameinistr);
 		foreach ($this->gameinistr as $ini_sect => $kvp_array) {
 			foreach ($kvp_array as $key => $val) {
-				foreach ($val as $param => $info) {
-					$this->gameini[ $ini_sect ][ $key ][] = $this->_decodeData($info);
+				if (is_array($val)) {
+					foreach ($val as $param => $info) {
+						$this->gameini[ $ini_sect ][ $key ][] = $this->_decodeData($info);
+					}
+				} else {
+					$this->gameini[ $ini_sect ][ $key ] = $val;
 				}
 			}
 		}
@@ -85,8 +90,12 @@ class GameIniFixer {
 		foreach ($this->gameini as $ini_sect => $kvp_array) {
 			foreach ($kvp_array as $key => $val) {
 
-				foreach ($val as $param => $info) {
-					$this->gameinistr[ $ini_sect ][ $key ][ $param ]  = $this->_encodeData($info);
+				if (is_array($val)) {
+					foreach ($val as $param => $info) {
+						$this->gameinistr[ $ini_sect ][ $key ][ $param ]  = $this->_encodeData($info);
+					}
+				} else {
+					$this->gameinistr[ $ini_sect ][ $key ][ $param ]  = $val;
 				}
 			}
 		}
