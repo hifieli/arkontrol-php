@@ -72,12 +72,8 @@ class GameIniFixer {
 //var_dump($this->gameinistr);
 		foreach ($this->gameinistr as $ini_sect => $kvp_array) {
 			foreach ($kvp_array as $key => $val) {
-				if (is_array($val)) {
-					foreach ($val as $param => $info) {
-						$this->gameini[ $ini_sect ][ $key ][] = $this->_decodeData($info);
-					}
-				} else {
-					$this->gameini[ $ini_sect ][ $key ] = $val;
+				foreach ($val as $param => $info) {
+					$this->gameini[ $ini_sect ][ $key ][] = $this->_decodeData($info);
 				}
 			}
 		}
@@ -89,13 +85,8 @@ class GameIniFixer {
 		$this->gameinistr = array();
 		foreach ($this->gameini as $ini_sect => $kvp_array) {
 			foreach ($kvp_array as $key => $val) {
-
-				if (is_array($val)) {
-					foreach ($val as $param => $info) {
-						$this->gameinistr[ $ini_sect ][ $key ][ $param ]  = $this->_encodeData($info);
-					}
-				} else {
-					$this->gameinistr[ $ini_sect ][ $key ][ $param ]  = $val;
+				foreach ($val as $param => $info) {
+					$this->gameinistr[ $ini_sect ][ $key ][ $param ]  = $this->_encodeData($info);
 				}
 			}
 		}
