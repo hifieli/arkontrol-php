@@ -122,7 +122,21 @@
 				}				
 			}
 			
+			
+			
 			if (!empty($files_diffed['Game.ini'])) {
+				
+				$newGameIni	= array();
+				foreach ($ini_comb['Game.ini'] as $ini_sect => $sect_arr) {
+					foreach ($sect_arr as $key => $info) {
+						if (isset($info['valc'])) {
+							$newGameIni[ $ini_sect ][ $key  ] = $info['valc'];
+						} else {
+							$newGameIni[ $ini_sect ][ $key  ] = $info;
+						}
+					}
+				}
+				
 				$iniGame->gameini = $ini_comb['Game.ini'];
 				$iniGame->write();
 			}
