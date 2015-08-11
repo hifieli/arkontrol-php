@@ -21,17 +21,17 @@
 			$iniGame->gameini['/script/shootergame.shootergamemode'] = array();
 		}
 		
-		//Build OverrideEngramEntries array if not there.
-		if (empty($iniGame->gameini['/script/shootergame.shootergamemode']['OverrideEngramEntries'])) {
-			$iniGame->gameini['/script/shootergame.shootergamemode']['OverrideEngramEntries'] = array();
+		//Build OverrideNamedEngramEntries array if not there.
+		if (empty($iniGame->gameini['/script/shootergame.shootergamemode']['OverrideNamedEngramEntries'])) {
+			$iniGame->gameini['/script/shootergame.shootergamemode']['OverrideNamedEngramEntries'] = array();
 		}
 		//Get a smaller variable
-		$Engrams	= $iniGame->gameini['/script/shootergame.shootergamemode']['OverrideEngramEntries'];
+		$Engrams	= $iniGame->gameini['/script/shootergame.shootergamemode']['OverrideNamedEngramEntries'];
 		
 		//send it to the view for debugging 
 		$_VIEW->assign('engram_alreadyini', $Engrams);
 		
-		//assuming we found entries for OverrideEngramEntries already in the INI file,
+		//assuming we found entries for OverrideNamedEngramEntries already in the INI file,
 		if (!empty($Engrams)) {
 		
 			//carefully merge the INI details over the defaults.
@@ -39,7 +39,7 @@
 				//EngramIndex=<index>[,EngramHidden=<hidden>][,EngramPointsCost=<cost>][,EngramLevelRequirement=<level>][,RemoveEngramPreReq=<remove_prereq>]
 				
 		
-				$defaults							= $engram_defaults[ $iniinfo['EngramIndex'] ];
+				$defaults							= $engram_defaults[ $iniinfo['EngramClassName'] ];
 				$iniinfo['EngramHidden']			= isset($iniinfo['EngramHidden'])			? $iniinfo['EngramHidden']			: $defaults['EngramHidden'];
 				$iniinfo['EngramPointsCost']		= isset($iniinfo['EngramPointsCost'])		? $iniinfo['EngramPointsCost']		: $defaults['EngramPointsCost'];
 				$iniinfo['EngramLevelRequirement']	= isset($iniinfo['EngramLevelRequirement'])	? $iniinfo['EngramLevelRequirement']: $defaults['EngramLevelRequirement'];
@@ -55,7 +55,7 @@
 					$iniinfo['prereq2'] = $defaults['prereq2'];
 				}
 				
-				$engram_combined[ $iniinfo['EngramIndex'] ] = $iniinfo;
+				$engram_combined[ $iniinfo['EngramClassName'] ] = $iniinfo;
 			
 			}
 			
@@ -80,13 +80,18 @@
 			$engram_combined[ $id ]['EngramPointsCost']			= (isset($_POST["EngramPointsCost_{$id}"]))			? $_POST["EngramPointsCost_{$id}"]								: $engram_combined[ $id ]['EngramPointsCost'];
 			$engram_combined[ $id ]['EngramLevelRequirement']	= (isset($_POST["EngramLevelRequirement_{$id}"]))	? $_POST["EngramLevelRequirement_{$id}"]						: $engram_combined[ $id ]['EngramLevelRequirement'];
 			
-			$engrams_towrite[ $id ] = $engram_combined[ $id ];
-			unset($engrams_towrite[ $id ]['name']);
-			unset($engrams_towrite[ $id ]['prereq1']);
-			unset($engrams_towrite[ $id ]['prereq2']);
+			$purged	=	$engram_combined[ $id ]; //purged as in, we have removed all of the keys that don't go into the INI file:
+			
+			unset($purged['name']);
+			unset($purged['thumbnail']);
+			unset($purged['prereq1']);
+			unset($purged['prereq2']);
+			
+			$engrams_towrite[] = $purged;
+
 		}
 
-		$iniGame->gameini['/script/shootergame.shootergamemode']['OverrideEngramEntries'] = $engrams_towrite;
+		$iniGame->gameini['/script/shootergame.shootergamemode']['OverrideNamedEngramEntries'] = $engrams_towrite;
 		$iniGame->write();
 		
 		//there were diffs, make sure we send a message telling them to restart ARK dedicated server.

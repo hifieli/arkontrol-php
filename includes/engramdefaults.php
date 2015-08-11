@@ -1,1500 +1,1912 @@
 <?php
-//EngramIndex=<index>[,EngramHidden=<hidden>][,EngramPointsCost=<cost>][,EngramLevelRequirement=<level>][,RemoveEngramPreReq=<remove_prereq>]
-	$engram_defaults	= array (
-  0 =>
-  array (
-    'EngramIndex'		=> 0,
-    'EngramLevelRequirement'	=> 2,
-    'name'		=> 'Campfire',
-    'EngramPointsCost'		=> 3,
-  ),
-  1 =>
-  array (
-    'EngramIndex'		=> 1,
-    'EngramLevelRequirement'	=> 2,
-    'name'		=> 'Stone Hatchet',
-    'EngramPointsCost'		=> 3,
-  ),
-  2 =>
-  array (
-    'EngramIndex'		=> 2,
-    'EngramLevelRequirement'	=> 2,
-    'name'		=> 'Spear',
-    'EngramPointsCost'		=> 3,
-  ),
-  3 =>
-  array (
-    'EngramIndex'		=> 3,
-    'EngramLevelRequirement'	=> 2,
-    'name'		=> 'Note',
-    'EngramPointsCost'		=> 3,
-  ),
-  4 =>
-  array (
-    'EngramIndex'		=> 4,
-    'EngramLevelRequirement'	=> 2,
-    'name'		=> 'Cloth Pants',
-    'EngramPointsCost'		=> 3,
-  ),
-  5 =>
-  array (
-    'EngramIndex'		=> 5,
-    'EngramLevelRequirement'	=> 2,
-    'name'		=> 'Cloth Shirt',
-    'EngramPointsCost'		=> 3,
-  ),
-  6 =>
-  array (
-    'EngramIndex'		=> 6,
-    'EngramLevelRequirement'	=> 2,
-    'name'		=> 'Thatch Foundation',
-    'EngramPointsCost'		=> 3,
-  ),
-  7 =>
-  array (
-    'EngramIndex'		=> 7,
-    'EngramLevelRequirement'	=> 2,
-    'name'		=> 'Thatch Doorframe',
-    'EngramPointsCost'		=> 3,
-  ),
-  8 =>
-  array (
-    'EngramIndex'		=> 8,
-    'EngramLevelRequirement'	=> 3,
-    'name'		=> 'Waterskin',
-    'EngramPointsCost'		=> 6,
-  ),
-  9 =>
-  array (
-    'EngramIndex'		=> 9,
-    'EngramLevelRequirement'	=> 3,
-    'name'		=> 'Cloth Gloves',
-    'EngramPointsCost'		=> 3,
-  ),
-  10 =>
-  array (
-    'EngramIndex'		=> 10,
-    'EngramLevelRequirement'	=> 3,
-    'name'		=> 'Cloth Boots',
-    'EngramPointsCost'		=> 3,
-  ),
-  11 =>
-  array (
-    'EngramIndex'		=> 11,
-    'EngramLevelRequirement'	=> 3,
-    'name'		=> 'Cloth Hat',
-    'EngramPointsCost'		=> 3,
-  ),
-  12 =>
-  array (
-    'EngramIndex'		=> 12,
-    'EngramLevelRequirement'	=> 3,
-    'name'		=> 'Wooden Sign',
-    'EngramPointsCost'		=> 3,
-  ),
-  13 =>
-  array (
-    'EngramIndex'		=> 13,
-    'EngramLevelRequirement'	=> 3,
-    'name'		=> 'Hide Sleeping Bag',
-    'EngramPointsCost'		=> 3,
-  ),
-  14 =>
-  array (
-    'EngramIndex'		=> 14,
-    'EngramLevelRequirement'	=> 3,
-    'name'		=> 'Thatch Roof',
-    'EngramPointsCost'		=> 3,
-  ),
-  15 =>
-  array (
-    'EngramIndex'		=> 15,
-    'EngramLevelRequirement'	=> 3,
-    'name'		=> 'Thatch Wall',
-    'EngramPointsCost'		=> 3,
-  ),
-  16 =>
-  array (
-    'EngramIndex'		=> 16,
-    'EngramLevelRequirement'	=> 3,
-    'name'		=> 'Thatch Door',
-    'EngramPointsCost'		=> 3,
-    'prereq1'	=> 'Thatch Doorframe',
-  ),
-  17 =>
-  array (
-    'EngramIndex'		=> 17,
-    'EngramLevelRequirement'	=> 5,
-    'name'		=> 'Slingshot',
-    'EngramPointsCost'		=> 6,
-  ),
-  18 =>
-  array (
-    'EngramIndex'		=> 18,
-    'EngramLevelRequirement'	=> 5,
-    'name'		=> 'Storage Box',
-    'EngramPointsCost'		=> 6,
-  ),
-  19 =>
-  array (
-    'EngramIndex'		=> 19,
-    'EngramLevelRequirement'	=> 5,
-    'name'		=> 'Simple Bed',
-    'EngramPointsCost'		=> 8,
-    'prereq1'	=> 'Hide Sleeping Bag',
-  ),
-  20 =>
-  array (
-    'EngramIndex'		=> 20,
-    'EngramLevelRequirement'	=> 5,
-    'name'		=> 'Phiomia Saddle',
-    'EngramPointsCost'		=> 6,
-  ),
-  21 =>
-  array (
-    'EngramIndex'		=> 21,
-    'EngramLevelRequirement'	=> 5,
-    'name'		=> 'Mortar and Pestle',
-    'EngramPointsCost'		=> 6,
-  ),
-  22 =>
-  array (
-    'EngramIndex'		=> 22,
-    'EngramLevelRequirement'	=> 5,
-    'name'		=> 'Sparkpowder',
-    'EngramPointsCost'		=> 3,
-  ),
-  23 =>
-  array (
-    'EngramIndex'		=> 23,
-    'EngramLevelRequirement'	=> 5,
-    'name'		=> 'Blood Extraction Syringe',
-    'EngramPointsCost'		=> 6,
-    'prereq1'	=> 'Waterskin',
-  ),
-  24 =>
-  array (
-    'EngramIndex'		=> 24,
-    'EngramLevelRequirement'	=> 5,
-    'name'		=> 'Narcotic',
-    'EngramPointsCost'		=> 6,
-  ),
-  25 =>
-  array (
-    'EngramIndex'		=> 25,
-    'EngramLevelRequirement'	=> 5,
-    'name'		=> 'Paintbrush',
-    'EngramPointsCost'		=> 3,
-  ),
-  26 =>
-  array (
-    'EngramIndex'		=> 26,
-    'EngramLevelRequirement'	=> 5,
-    'name'		=> 'Flag',
-    'EngramPointsCost'		=> 6,
-  ),
-  27 =>
-  array (
-    'EngramIndex'		=> 27,
-    'EngramLevelRequirement'	=> 5,
-    'name'		=> 'Standing Torch',
-    'EngramPointsCost'		=> 6,
-  ),
-  28 =>
-  array (
-    'EngramIndex'		=> 28,
-    'EngramLevelRequirement'	=> 5,
-    'name'		=> 'Wooden Foundation',
-    'EngramPointsCost'		=> 6,
-    'prereq1'	=> 'Thatch Foundation',
-  ),
-  29 =>
-  array (
-    'EngramIndex'		=> 29,
-    'EngramLevelRequirement'	=> 5,
-    'name'		=> 'Wooden Wall',
-    'EngramPointsCost'		=> 7,
-    'prereq1'	=> 'Thatch Wall',
-  ),
-  30 =>
-  array (
-    'EngramIndex'		=> 30,
-    'EngramLevelRequirement'	=> 10,
-    'name'		=> 'Cooking Pot',
-    'EngramPointsCost'		=> 9,
-    'prereq1'	=> 'Campfire',
-  ),
-  31 =>
-  array (
-    'EngramIndex'		=> 31,
-    'EngramLevelRequirement'	=> 10,
-    'name'		=> 'Cementing Paste',
-    'EngramPointsCost'		=> 3,
-  ),
-  32 =>
-  array (
-    'EngramIndex'		=> 32,
-    'EngramLevelRequirement'	=> 10,
-    'name'		=> 'Stimulant',
-    'EngramPointsCost'		=> 6,
-  ),
-  33 =>
-  array (
-    'EngramIndex'		=> 33,
-    'EngramLevelRequirement'	=> 10,
-    'name'		=> 'Gunpowder',
-    'EngramPointsCost'		=> 2,
-    'prereq1'	=> 'Sparkpowder',
-  ),
-  34 =>
-  array (
-    'EngramIndex'		=> 34,
-    'EngramLevelRequirement'	=> 10,
-    'name'		=> 'Flare Gun',
-    'EngramPointsCost'		=> 6,
-    'prereq1'	=> 'Gunpowder',
-  ),
-  35 =>
-  array (
-    'EngramIndex'		=> 35,
-    'EngramLevelRequirement'	=> 10,
-    'name'		=> 'Compass',
-    'EngramPointsCost'		=> 5,
-  ),
-  36 =>
-  array (
-    'EngramIndex'		=> 36,
-    'EngramLevelRequirement'	=> 10,
-    'name'		=> 'Spyglass',
-    'EngramPointsCost'		=> 4,
-  ),
-  37 =>
-  array (
-    'EngramIndex'		=> 37,
-    'EngramLevelRequirement'	=> 10,
-    'name'		=> 'Small Crop Plot',
-    'EngramPointsCost'		=> 9,
-  ),
-  38 =>
-  array (
-    'EngramIndex'		=> 38,
-    'EngramLevelRequirement'	=> 10,
-    'name'		=> 'Parasaur Saddle',
-    'EngramPointsCost'		=> 9,
-  ),
-  39 =>
-  array (
-    'EngramIndex'		=> 39,
-    'EngramLevelRequirement'	=> 10,
-    'name'		=> 'Ichthyosaurus Saddle',
-    'EngramPointsCost'		=> 8,
-  ),
-  40 =>
-  array (
-    'EngramIndex'		=> 40,
-    'EngramLevelRequirement'	=> 10,
-    'name'		=> 'Stone Irrigation Pipe-Intake',
-    'EngramPointsCost'		=> 5,
-  ),
-  41 =>
-  array (
-    'EngramIndex'		=> 41,
-    'EngramLevelRequirement'	=> 10,
-    'name'		=> 'Stone Irrigation Pipe-Straight',
-    'EngramPointsCost'		=> 2,
-    'prereq1'	=> 'Stone Irrigation Pipe - Intake',
-  ),
-  42 =>
-  array (
-    'EngramIndex'		=> 42,
-    'EngramLevelRequirement'	=> 10,
-    'name'		=> 'Stone Irrigation Pipe-Tap',
-    'EngramPointsCost'		=> 5,
-    'prereq1'	=> 'Stone Irrigation Pipe - Intake',
-  ),
-  43 =>
-  array (
-    'EngramIndex'		=> 43,
-    'EngramLevelRequirement'	=> 10,
-    'name'		=> 'Wooden Spike Wall',
-    'EngramPointsCost'		=> 4,
-  ),
-  44 =>
-  array (
-    'EngramIndex'		=> 44,
-    'EngramLevelRequirement'	=> 10,
-    'name'		=> 'Wooden Wall Sign',
-    'EngramPointsCost'		=> 2,
-    'prereq1'	=> 'Wooden Sign',
-  ),
-  45 =>
-  array (
-    'EngramIndex'		=> 45,
-    'EngramLevelRequirement'	=> 10,
-    'name'		=> 'Wooden Ceiling',
-    'EngramPointsCost'		=> 6,
-    'prereq1'	=> 'Thatch Roof',
-  ),
-  46 =>
-  array (
-    'EngramIndex'		=> 46,
-    'EngramLevelRequirement'	=> 10,
-    'name'		=> 'Wooden Doorframe',
-    'EngramPointsCost'		=> 6,
-    'prereq1'	=> 'Thatch Doorframe',
-    'prereq2'	=> 'Wooden Wall',
-  ),
-  47 =>
-  array (
-    'EngramIndex'		=> 47,
-    'EngramLevelRequirement'	=> 10,
-    'name'		=> 'Wooden Door',
-    'EngramPointsCost'		=> 4,
-    'prereq1'	=> 'Thatch Door',
-    'prereq2'	=> 'Wooden Doorframe',
-  ),
-  48 =>
-  array (
-    'EngramIndex'		=> 48,
-    'EngramLevelRequirement'	=> 15,
-    'name'		=> 'Wooden Ramp',
-    'EngramPointsCost'		=> 3,
-    'prereq1'	=> 'Wooden Ceiling',
-  ),
-  49 =>
-  array (
-    'EngramIndex'		=> 49,
-    'EngramLevelRequirement'	=> 15,
-    'name'		=> 'Hide Pants',
-    'EngramPointsCost'		=> 9,
-    'prereq1'	=> 'Cloth Pants',
-  ),
-  50 =>
-  array (
-    'EngramIndex'		=> 50,
-    'EngramLevelRequirement'	=> 15,
-    'name'		=> 'Wooden Fence Foundation',
-    'EngramPointsCost'		=> 6,
-    'prereq1'	=> 'Wooden Foundation',
-  ),
-  51 =>
-  array (
-    'EngramIndex'		=> 51,
-    'EngramLevelRequirement'	=> 15,
-    'name'		=> 'Hide Shirt',
-    'EngramPointsCost'		=> 6,
-    'prereq1'	=> 'Cloth Shirt',
-  ),
-  52 =>
-  array (
-    'EngramIndex'		=> 52,
-    'EngramLevelRequirement'	=> 15,
-    'name'		=> 'Bow',
-    'EngramPointsCost'		=> 11,
-    'prereq1'	=> 'Slingshot',
-  ),
-  53 =>
-  array (
-    'EngramIndex'		=> 53,
-    'EngramLevelRequirement'	=> 15,
-    'name'		=> 'Stone Arrow',
-    'EngramPointsCost'		=> 2,
-  ),
-  54 =>
-  array (
-    'EngramIndex'		=> 54,
-    'EngramLevelRequirement'	=> 15,
-    'name'		=> 'Large Storage Box',
-    'EngramPointsCost'		=> 9,
-    'prereq1'	=> 'Storage Box',
-  ),
-  55 =>
-  array (
-    'EngramIndex'		=> 55,
-    'EngramLevelRequirement'	=> 15,
-    'name'		=> 'Parachute',
-    'EngramPointsCost'		=> 6,
-  ),
-  56 =>
-  array (
-    'EngramIndex'		=> 56,
-    'EngramLevelRequirement'	=> 15,
-    'name'		=> 'Raptor Saddle',
-    'EngramPointsCost'		=> 9,
-  ),
-  57 =>
-  array (
-    'EngramIndex'		=> 57,
-    'EngramLevelRequirement'	=> 15,
-    'name'		=> 'Stone Irrigation Pipe-Intersection',
-    'EngramPointsCost'		=> 7,
-    'prereq1'	=> 'Stone Irrigation Pipe-Straight',
-  ),
-  58 =>
-  array (
-    'EngramIndex'		=> 58,
-    'EngramLevelRequirement'	=> 15,
-    'name'		=> 'Stone Irrigation Pipe-Inclined',
-    'EngramPointsCost'		=> 4,
-    'prereq1'	=> 'Stone Irrigation Pipe-Straight',
-  ),
-  59 =>
-  array (
-    'EngramIndex'		=> 59,
-    'EngramLevelRequirement'	=> 15,
-    'name'		=> 'Stone Irrigation Pipe-Vertical',
-    'EngramPointsCost'		=> 4,
-    'prereq1'	=> 'Stone Irrigation Pipe-Straight',
-  ),
-  60 =>
-  array (
-    'EngramIndex'		=> 60,
-    'EngramLevelRequirement'	=> 15,
-    'name'		=> 'Compost Bin',
-    'EngramPointsCost'		=> 8,
-    'prereq1'	=> 'Storage Box',
-  ),
-  61 =>
-  array (
-    'EngramIndex'		=> 61,
-    'EngramLevelRequirement'	=> 15,
-    'name'		=> 'Stone Fence Foundation',
-    'EngramPointsCost'		=> 6,
-    'prereq1'	=> 'Wooden Fence Foundation',
-  ),
-  62 =>
-  array (
-    'EngramIndex'		=> 62,
-    'EngramLevelRequirement'	=> 15,
-    'name'		=> 'Stone Wall',
-    'EngramPointsCost'		=> 8,
-    'prereq1'	=> 'Wooden Wall',
-  ),
-  63 =>
-  array (
-    'EngramIndex'		=> 63,
-    'EngramLevelRequirement'	=> 15,
-    'name'		=> 'Water Reservoir',
-    'EngramPointsCost'		=> 7,
-    'prereq1'	=> 'Cementing Paste',
-  ),
-  64 =>
-  array (
-    'EngramIndex'		=> 64,
-    'EngramLevelRequirement'	=> 15,
-    'name'		=> 'Wooden Billboard',
-    'EngramPointsCost'		=> 4,
-    'prereq1'	=> 'Wooden Sign',
-  ),
-  65 =>
-  array (
-    'EngramIndex'		=> 65,
-    'EngramLevelRequirement'	=> 15,
-    'name'		=> 'Wooden Pillar',
-    'EngramPointsCost'		=> 9,
-    'prereq1'	=> 'Wooden Foundation',
-  ),
-  66 =>
-  array (
-    'EngramIndex'		=> 66,
-    'EngramLevelRequirement'	=> 15,
-    'name'		=> 'Wooden Hatchframe',
-    'EngramPointsCost'		=> 9,
-    'prereq1'	=> 'Wooden Ceiling',
-  ),
-  67 =>
-  array (
-    'EngramIndex'		=> 67,
-    'EngramLevelRequirement'	=> 15,
-    'name'		=> 'Wooden Ladder',
-    'EngramPointsCost'		=> 6,
-  ),
-  68 =>
-  array (
-    'EngramIndex'		=> 68,
-    'EngramLevelRequirement'	=> 20,
-    'name'		=> 'Hide Gloves',
-    'EngramPointsCost'		=> 9,
-    'prereq1'	=> 'Cloth Gloves',
-  ),
-  69 =>
-  array (
-    'EngramIndex'		=> 69,
-    'EngramLevelRequirement'	=> 20,
-    'name'		=> 'Hide Boots',
-    'EngramPointsCost'		=> 9,
-    'prereq1'	=> 'Cloth Boots',
-  ),
-  70 =>
-  array (
-    'EngramIndex'		=> 70,
-    'EngramLevelRequirement'	=> 20,
-    'name'		=> 'Hide Hat',
-    'EngramPointsCost'		=> 12,
-    'prereq1'	=> 'Cloth Hat',
-  ),
-  71 =>
-  array (
-    'EngramIndex'		=> 71,
-    'EngramLevelRequirement'	=> 20,
-    'name'		=> 'Tranquilizer Arrow',
-    'EngramPointsCost'		=> 15,
-    'prereq1'	=> 'Stone Arrow',
-    'prereq2'	=> 'Narcotic',
-  ),
-  72 =>
-  array (
-    'EngramIndex'		=> 72,
-    'EngramLevelRequirement'	=> 20,
-    'name'		=> 'Refining Forge',
-    'EngramPointsCost'		=> 21,
-    'prereq1'	=> 'Campfire',
-  ),
-  73 =>
-  array (
-    'EngramIndex'		=> 73,
-    'EngramLevelRequirement'	=> 20,
-    'name'		=> 'Trike Saddle',
-    'EngramPointsCost'		=> 12,
-  ),
-  74 =>
-  array (
-    'EngramIndex'		=> 74,
-    'EngramLevelRequirement'	=> 20,
-    'name'		=> 'Preserving Bin',
-    'EngramPointsCost'		=> 9,
-    'prereq1'	=> 'Storage Box',
-  ),
-  75 =>
-  array (
-    'EngramIndex'		=> 75,
-    'EngramLevelRequirement'	=> 20,
-    'name'		=> 'Dinosaur Gateway',
-    'EngramPointsCost'		=> 9,
-    'prereq1'	=> 'Wooden Doorframe',
-  ),
-  76 =>
-  array (
-    'EngramIndex'		=> 76,
-    'EngramLevelRequirement'	=> 20,
-    'name'		=> 'Dinosaur Gate',
-    'EngramPointsCost'		=> 6,
-    'prereq1'	=> 'Dinosaur Gateway',
-  ),
-  77 =>
-  array (
-    'EngramIndex'		=> 77,
-    'EngramLevelRequirement'	=> 20,
-    'name'		=> 'Wooden Catwalk',
-    'EngramPointsCost'		=> 9,
-    'prereq1'	=> 'Wooden Ceiling',
-  ),
-  78 =>
-  array (
-    'EngramIndex'		=> 78,
-    'EngramLevelRequirement'	=> 20,
-    'name'		=> 'Wooden Trapdoor',
-    'EngramPointsCost'		=> 6,
-    'prereq1'	=> 'Wooden Hatchframe',
-  ),
-  79 =>
-  array (
-    'EngramIndex'		=> 79,
-    'EngramLevelRequirement'	=> 20,
-    'name'		=> 'Wooden Windowframe',
-    'EngramPointsCost'		=> 9,
-    'prereq1'	=> 'Wooden Wall',
-  ),
-  80 =>
-  array (
-    'EngramIndex'		=> 80,
-    'EngramLevelRequirement'	=> 20,
-    'name'		=> 'Stone Foundation',
-    'EngramPointsCost'		=> 6,
-    'prereq1'	=> 'Wooden Foundation',
-  ),
-  81 =>
-  array (
-    'EngramIndex'		=> 81,
-    'EngramLevelRequirement'	=> 20,
-    'name'		=> 'Stone Ceiling',
-    'EngramPointsCost'		=> 6,
-    'prereq1'	=> 'Wooden Ceiling',
-  ),
-  82 =>
-  array (
-    'EngramIndex'		=> 82,
-    'EngramLevelRequirement'	=> 20,
-    'name'		=> 'Stone Doorframe',
-    'EngramPointsCost'		=> 6,
-    'prereq1'	=> 'Wooden Doorframe',
-    'prereq2'	=> 'Stone Wall',
-  ),
-  83 =>
-  array (
-    'EngramIndex'		=> 83,
-    'EngramLevelRequirement'	=> 20,
-    'name'		=> 'Reinforced Wooden Door',
-    'EngramPointsCost'		=> 4,
-    'prereq1'	=> 'Wooden Door',
-    'prereq2'	=> 'Stone Doorframe',
-  ),
-  84 =>
-  array (
-    'EngramIndex'		=> 84,
-    'EngramLevelRequirement'	=> 20,
-    'name'		=> 'Stone Dinosaur Gateway',
-    'EngramPointsCost'		=> 9,
-    'prereq1'	=> 'Dinosaur Gateway',
-    'prereq2'	=> 'Stone Doorframe',
-  ),
-  85 =>
-  array (
-    'EngramIndex'		=> 85,
-    'EngramLevelRequirement'	=> 20,
-    'name'		=> 'Reinforced Dinosaur Gate',
-    'EngramPointsCost'		=> 6,
-    'prereq1'	=> 'Dinosaur Gate',
-    'prereq2'	=> 'Stone Dinosaur Gateway',
-  ),
-  86 =>
-  array (
-    'EngramIndex'		=> 86,
-    'EngramLevelRequirement'	=> 20,
-    'name'		=> 'Bookshelf',
-    'EngramPointsCost'		=> 15,
-    'prereq1'	=> 'Large Storage Box',
-  ),
-  87 =>
-  array (
-    'EngramIndex'		=> 87,
-    'EngramLevelRequirement'	=> 25,
-    'name'		=> 'Smithy',
-    'EngramPointsCost'		=> 16,
-  ),
-  88 =>
-  array (
-    'EngramIndex'		=> 88,
-    'EngramLevelRequirement'	=> 25,
-    'name'		=> 'Metal Spike Wall',
-    'EngramPointsCost'		=> 11,
-  ),
-  89 =>
-  array (
-    'EngramIndex'		=> 89,
-    'EngramLevelRequirement'	=> 25,
-    'name'		=> 'Metal Pick',
-    'EngramPointsCost'		=> 12,
-  ),
-  90 =>
-  array (
-    'EngramIndex'		=> 90,
-    'EngramLevelRequirement'	=> 25,
-    'name'		=> 'Metal Hatchet',
-    'EngramPointsCost'		=> 12,
-    'prereq1'	=> 'Stone Hatchet',
-  ),
-  91 =>
-  array (
-    'EngramIndex'		=> 91,
-    'EngramLevelRequirement'	=> 25,
-    'name'		=> 'Pike',
-    'EngramPointsCost'		=> 16,
-    'prereq1'	=> 'Spear',
-  ),
-  92 =>
-  array (
-    'EngramIndex'		=> 92,
-    'EngramLevelRequirement'	=> 25,
-    'name'		=> 'Pulmonoscorpius Saddle',
-    'EngramPointsCost'		=> 12,
-  ),
-  93 =>
-  array (
-    'EngramIndex'		=> 93,
-    'EngramLevelRequirement'	=> 25,
-    'name'		=> 'Carbonemys Saddle',
-    'EngramPointsCost'		=> 12,
-  ),
-  94 =>
-  array (
-    'EngramIndex'		=> 94,
-    'EngramLevelRequirement'	=> 25,
-    'name'		=> 'Medium Crop Plot',
-    'EngramPointsCost'		=> 12,
-    'prereq1'	=> 'Small Crop Plot',
-  ),
-  95 =>
-  array (
-    'EngramIndex'		=> 95,
-    'EngramLevelRequirement'	=> 25,
-    'name'		=> 'Metal Sign',
-    'EngramPointsCost'		=> 15,
-    'prereq1'	=> 'Wooden Sign',
-  ),
-  96 =>
-  array (
-    'EngramIndex'		=> 96,
-    'EngramLevelRequirement'	=> 25,
-    'name'		=> 'Stone Pillar',
-    'EngramPointsCost'		=> 8,
-    'prereq1'	=> 'Wooden Pillar',
-    'prereq2'	=> 'Stone Foundation',
-  ),
-  97 =>
-  array (
-    'EngramIndex'		=> 97,
-    'EngramLevelRequirement'	=> 25,
-    'name'		=> 'Stone Hatchframe',
-    'EngramPointsCost'		=> 8,
-    'prereq1'	=> 'Wooden Hatchframe',
-    'prereq2'	=> 'Stone Ceiling',
-  ),
-  98 =>
-  array (
-    'EngramIndex'		=> 98,
-    'EngramLevelRequirement'	=> 25,
-    'name'		=> 'Stone Windowframe',
-    'EngramPointsCost'		=> 11,
-    'prereq1'	=> 'Wooden Windowframe',
-    'prereq2'	=> 'Stone Wall',
-  ),
-  99 =>
-  array (
-    'EngramIndex'		=> 99,
-    'EngramLevelRequirement'	=> 25,
-    'name'		=> 'Wooden Window',
-    'EngramPointsCost'		=> 12,
-    'prereq1'	=> 'Wooden Windowframe',
-  ),
-  100 =>
-  array (
-    'EngramIndex'		=> 100,
-    'EngramLevelRequirement'	=> 30,
-    'name'		=> 'Chitin Leggings',
-    'EngramPointsCost'		=> 15,
-    'prereq1'	=> 'Hide Leggings',
-  ),
-  101 =>
-  array (
-    'EngramIndex'		=> 101,
-    'EngramLevelRequirement'	=> 30,
-    'name'		=> 'Chitin Chestpiece',
-    'EngramPointsCost'		=> 18,
-    'prereq1'	=> 'Hide Shirt',
-  ),
-  102 =>
-  array (
-    'EngramIndex'		=> 102,
-    'EngramLevelRequirement'	=> 30,
-    'name'		=> 'Chitin Helmet',
-    'EngramPointsCost'		=> 18,
-    'prereq1'	=> 'Hide Hat',
-  ),
-  103 =>
-  array (
-    'EngramIndex'		=> 103,
-    'EngramLevelRequirement'	=> 30,
-    'name'		=> 'Water Jar',
-    'EngramPointsCost'		=> 12,
-    'prereq1'	=> 'Waterskin',
-  ),
-  104 =>
-  array (
-    'EngramIndex'		=> 104,
-    'EngramLevelRequirement'	=> 30,
-    'name'		=> 'Simple Pistol',
-    'EngramPointsCost'		=> 15,
-    'prereq1'	=> 'Flare Gun',
-  ),
-  105 =>
-  array (
-    'EngramIndex'		=> 105,
-    'EngramLevelRequirement'	=> 30,
-    'name'		=> 'Scope Weapons',
-    'EngramPointsCost'		=> 13,
-    'prereq1'	=> 'Spyglass',
-  ),
-  106 =>
-  array (
-    'EngramIndex'		=> 106,
-    'EngramLevelRequirement'	=> 30,
-    'name'		=> 'Simple Bullet',
-    'EngramPointsCost'		=> 6,
-    'prereq1'	=> 'Gunpowder',
-  ),
-  107 =>
-  array (
-    'EngramIndex'		=> 107,
-    'EngramLevelRequirement'	=> 30,
-    'name'		=> 'Stego Saddle',
-    'EngramPointsCost'		=> 15,
-  ),
-  108 =>
-  array (
-    'EngramIndex'		=> 108,
-    'EngramLevelRequirement'	=> 30,
-    'name'		=> 'Grenade',
-    'EngramPointsCost'		=> 20,
-    'prereq1'	=> 'Gunpowder',
-  ),
-  109 =>
-  array (
-    'EngramIndex'		=> 109,
-    'EngramLevelRequirement'	=> 30,
-    'name'		=> 'Metal Wall Sign',
-    'EngramPointsCost'		=> 6,
-    'prereq1'	=> 'Wooden Wall Sign',
-    'prereq2'	=> 'Metal Sign',
-  ),
-  110 =>
-  array (
-    'EngramIndex'		=> 110,
-    'EngramLevelRequirement'	=> 30,
-    'name'		=> 'Metal Foundation',
-    'EngramPointsCost'		=> 24,
-    'prereq1'	=> 'Wooden Foundation',
-  ),
-  111 =>
-  array (
-    'EngramIndex'		=> 111,
-    'EngramLevelRequirement'	=> 30,
-    'name'		=> 'Metal Wall',
-    'EngramPointsCost'		=> 15,
-    'prereq1'	=> 'Wooden Wall',
-  ),
-  112 =>
-  array (
-    'EngramIndex'		=> 112,
-    'EngramLevelRequirement'	=> 30,
-    'name'		=> 'Metal Doorframe',
-    'EngramPointsCost'		=> 24,
-    'prereq1'	=> 'Wooden Doorframe',
-    'prereq2'	=> 'Metal Wall',
-  ),
-  113 =>
-  array (
-    'EngramIndex'		=> 113,
-    'EngramLevelRequirement'	=> 35,
-    'name'		=> 'Chitin Gauntlets',
-    'EngramPointsCost'		=> 15,
-    'prereq1'	=> 'Cloth Gloves',
-  ),
-  114 =>
-  array (
-    'EngramIndex'		=> 114,
-    'EngramLevelRequirement'	=> 35,
-    'name'		=> 'Chitin Boots',
-    'EngramPointsCost'		=> 15,
-    'prereq1'	=> 'Hide Boots',
-  ),
-  115 =>
-  array (
-    'EngramIndex'		=> 115,
-    'EngramLevelRequirement'	=> 35,
-    'name'		=> 'Longneck Rifle',
-    'EngramPointsCost'		=> 18,
-    'prereq1'	=> 'Flare Gun',
-  ),
-  116 =>
-  array (
-    'EngramIndex'		=> 116,
-    'EngramLevelRequirement'	=> 35,
-    'name'		=> 'Simple Rifle Ammo',
-    'EngramPointsCost'		=> 6,
-    'prereq1'	=> 'Gunpowder',
-  ),
-  117 =>
-  array (
-    'EngramIndex'		=> 117,
-    'EngramLevelRequirement'	=> 35,
-    'name'		=> 'Large Crop Plot',
-    'EngramPointsCost'		=> 15,
-    'prereq1'	=> 'Medium Crop Plot',
-  ),
-  118 =>
-  array (
-    'EngramIndex'		=> 118,
-    'EngramLevelRequirement'	=> 35,
-    'name'		=> 'Pteranodon Saddle',
-    'EngramPointsCost'		=> 15,
-  ),
-  119 =>
-  array (
-    'EngramIndex'		=> 119,
-    'EngramLevelRequirement'	=> 35,
-    'name'		=> 'Sarco Saddle',
-    'EngramPointsCost'		=> 15,
-  ),
-  120 =>
-  array (
-    'EngramIndex'		=> 120,
-    'EngramLevelRequirement'	=> 35,
-    'name'		=> 'Shotgun',
-    'EngramPointsCost'		=> 18,
-    'prereq1'	=> 'Flare Gun',
-  ),
-  121 =>
-  array (
-    'EngramIndex'		=> 121,
-    'EngramLevelRequirement'	=> 35,
-    'name'		=> 'Simple Shotgun Ammo',
-    'EngramPointsCost'		=> 6,
-    'prereq1'	=> 'Simple Bullet',
-  ),
-  122 =>
-  array (
-    'EngramIndex'		=> 122,
-    'EngramLevelRequirement'	=> 35,
-    'name'		=> 'Metal Pillar',
-    'EngramPointsCost'		=> 18,
-    'prereq1'	=> 'Metal Foundation',
-    'prereq2'	=> 'Wooden Pillar',
-  ),
-  123 =>
-  array (
-    'EngramIndex'		=> 123,
-    'EngramLevelRequirement'	=> 35,
-    'name'		=> 'Metal Ceiling',
-    'EngramPointsCost'		=> 15,
-    'prereq1'	=> 'Wooden Ceiling',
-  ),
-  124 =>
-  array (
-    'EngramIndex'		=> 124,
-    'EngramLevelRequirement'	=> 35,
-    'name'		=> 'Metal Door',
-    'EngramPointsCost'		=> 12,
-    'prereq1'	=> 'Wooden Door',
-    'prereq2'	=> 'Metal Doorframe',
-  ),
-  125 =>
-  array (
-    'EngramIndex'		=> 125,
-    'EngramLevelRequirement'	=> 35,
-    'name'		=> 'Metal Ramp',
-    'EngramPointsCost'		=> 12,
-    'prereq1'	=> 'Wooden Ramp',
-    'prereq2'	=> 'Metal Ceiling',
-  ),
-  126 =>
-  array (
-    'EngramIndex'		=> 126,
-    'EngramLevelRequirement'	=> 40,
-    'name'		=> 'Fabricator',
-    'EngramPointsCost'		=> 24,
-    'prereq1'	=> 'Smithy',
-  ),
-  127 =>
-  array (
-    'EngramIndex'		=> 127,
-    'EngramLevelRequirement'	=> 40,
-    'name'		=> 'Silencer Weapons',
-    'EngramPointsCost'		=> 13,
-  ),
-  128 =>
-  array (
-    'EngramIndex'		=> 128,
-    'EngramLevelRequirement'	=> 40,
-    'name'		=> 'Ankylo Saddle',
-    'EngramPointsCost'		=> 18,
-  ),
-  129 =>
-  array (
-    'EngramIndex'		=> 129,
-    'EngramLevelRequirement'	=> 40,
-    'name'		=> 'Mammoth Saddle',
-    'EngramPointsCost'		=> 18,
-  ),
-  130 =>
-  array (
-    'EngramIndex'		=> 130,
-    'EngramLevelRequirement'	=> 40,
-    'name'		=> 'Metal Irrigation Pipe-Tap',
-    'EngramPointsCost'		=> 15,
-    'prereq1'	=> 'Stone Irrigation Pipe-Intake',
-  ),
-  131 =>
-  array (
-    'EngramIndex'		=> 131,
-    'EngramLevelRequirement'	=> 40,
-    'name'		=> 'Metal Irrigation Pipe-Straight',
-    'EngramPointsCost'		=> 12,
-    'prereq1'	=> 'Stone Irrigation Pipe-Straight',
-    'prereq2'	=> 'Metal Irrigation Pipe-Tap',
-  ),
-  132 =>
-  array (
-    'EngramIndex'		=> 132,
-    'EngramLevelRequirement'	=> 40,
-    'name'		=> 'Metal Hatchframe',
-    'EngramPointsCost'		=> 18,
-    'prereq1'	=> 'Wooden Hatchframe',
-    'prereq2'	=> 'Metal Ceiling',
-  ),
-  133 =>
-  array (
-    'EngramIndex'		=> 133,
-    'EngramLevelRequirement'	=> 40,
-    'name'		=> 'Metal Trapdoor',
-    'EngramPointsCost'		=> 14,
-    'prereq1'	=> 'Wooden Trapdoor',
-    'prereq2'	=> 'Metal Hatchframe',
-  ),
-  134 =>
-  array (
-    'EngramIndex'		=> 134,
-    'EngramLevelRequirement'	=> 40,
-    'name'		=> 'Metal Fence Foundation',
-    'EngramPointsCost'		=> 12,
-    'prereq1'	=> 'Wooden Fence Foundation',
-    'prereq2'	=> 'Metal Foundation',
-  ),
-  135 =>
-  array (
-    'EngramIndex'		=> 135,
-    'EngramLevelRequirement'	=> 40,
-    'name'		=> 'Metal Dinosaur Gateway',
-    'EngramPointsCost'		=> 12,
-    'prereq1'	=> 'Dinosaur Gateway',
-    'prereq2'	=> 'Metal Doorframe',
-  ),
-  136 =>
-  array (
-    'EngramIndex'		=> 136,
-    'EngramLevelRequirement'	=> 40,
-    'name'		=> 'Metal Dinosaur Gate',
-    'EngramPointsCost'		=> 8,
-    'prereq1'	=> 'Dinosaur Gate',
-    'prereq2'	=> 'Metal Dinosaur Gateway',
-  ),
-  137 =>
-  array (
-    'EngramIndex'		=> 137,
-    'EngramLevelRequirement'	=> 40,
-    'name'		=> 'Polymer',
-    'EngramPointsCost'		=> 6,
-  ),
-  138 =>
-  array (
-    'EngramIndex'		=> 138,
-    'EngramLevelRequirement'	=> 40,
-    'name'		=> 'Electronics',
-    'EngramPointsCost'		=> 6,
-  ),
-  139 =>
-  array (
-    'EngramIndex'		=> 139,
-    'EngramLevelRequirement'	=> 45,
-    'name'		=> 'Flak Leggings',
-    'EngramPointsCost'		=> 15,
-    'prereq1'	=> 'Chitin Leggings',
-  ),
-  140 =>
-  array (
-    'EngramIndex'		=> 140,
-    'EngramLevelRequirement'	=> 45,
-    'name'		=> 'Flak Chestpiece',
-    'EngramPointsCost'		=> 18,
-    'prereq1'	=> 'Chitin Chestpiece',
-  ),
-  141 =>
-  array (
-    'EngramIndex'		=> 141,
-    'EngramLevelRequirement'	=> 45,
-    'name'		=> 'Improvised Explosive Device',
-    'EngramPointsCost'		=> 30,
-    'prereq1'	=> 'Grenade',
-  ),
-  142 =>
-  array (
-    'EngramIndex'		=> 142,
-    'EngramLevelRequirement'	=> 45,
-    'name'		=> 'Metal Irrigation Pipe-Intersection',
-    'EngramPointsCost'		=> 18,
-    'prereq1'	=> 'Stone Irrigation Pipe-Intersection',
-    'prereq2'	=> 'Metal Irrigation Pipe-Straight',
-  ),
-  143 =>
-  array (
-    'EngramIndex'		=> 143,
-    'EngramLevelRequirement'	=> 45,
-    'name'		=> 'Metal Irrigation Pipe-Inclined',
-    'EngramPointsCost'		=> 12,
-    'prereq1'	=> 'Stone Irrigation Pipe-Inclined',
-    'prereq2'	=> 'Metal Irrigation Pipe-Straight',
-  ),
-  144 =>
-  array (
-    'EngramIndex'		=> 144,
-    'EngramLevelRequirement'	=> 45,
-    'name'		=> 'Metal Irrigation Pipe-Vertical',
-    'EngramPointsCost'		=> 12,
-    'prereq1'	=> 'Stone Irrigation Pipe-Vertical',
-    'prereq2'	=> 'Metal Irrigation Pipe-Straight',
-  ),
-  145 =>
-  array (
-    'EngramIndex'		=> 145,
-    'EngramLevelRequirement'	=> 45,
-    'name'		=> 'Metal Irrigation Pipe-Tap',
-    'EngramPointsCost'		=> 18,
-    'prereq1'	=> 'Stone Irrigation Pipe-Tap',
-    'prereq2'	=> 'Metal Irrigation Pipe-Straight',
-  ),
-  146 =>
-  array (
-    'EngramIndex'		=> 146,
-    'EngramLevelRequirement'	=> 45,
-    'name'		=> 'Metal Water Reservoir',
-    'EngramPointsCost'		=> 20,
-    'prereq1'	=> 'Water Reservoir',
-  ),
-  147 =>
-  array (
-    'EngramIndex'		=> 147,
-    'EngramLevelRequirement'	=> 45,
-    'name'		=> 'Megalodon Saddle',
-    'EngramPointsCost'		=> 18,
-  ),
-  148 =>
-  array (
-    'EngramIndex'		=> 148,
-    'EngramLevelRequirement'	=> 45,
-    'name'		=> 'Sabertooth Saddle',
-    'EngramPointsCost'		=> 18,
-  ),
-  149 =>
-  array (
-    'EngramIndex'		=> 149,
-    'EngramLevelRequirement'	=> 45,
-    'name'		=> 'Metal Windowframe',
-    'EngramPointsCost'		=> 18,
-    'prereq1'	=> 'Wooden Windowframe',
-    'prereq2'	=> 'Metal Wall',
-  ),
-  150 =>
-  array (
-    'EngramIndex'		=> 150,
-    'EngramLevelRequirement'	=> 45,
-    'name'		=> 'Metal Ladder',
-    'EngramPointsCost'		=> 21,
-    'prereq1'	=> 'Wooden Ladder',
-  ),
-  151 =>
-  array (
-    'EngramIndex'		=> 151,
-    'EngramLevelRequirement'	=> 45,
-    'name'		=> 'Flashlight Weapons',
-    'EngramPointsCost'		=> 18,
-  ),
-  152 =>
-  array (
-    'EngramIndex'		=> 152,
-    'EngramLevelRequirement'	=> 45,
-    'name'		=> 'GPS',
-    'EngramPointsCost'		=> 21,
-    'prereq1'	=> 'Compass',
-  ),
-  153 =>
-  array (
-    'EngramIndex'		=> 153,
-    'EngramLevelRequirement'	=> 50,
-    'name'		=> 'Flak Boots',
-    'EngramPointsCost'		=> 16,
-    'prereq1'	=> 'Chitin Boots',
-  ),
-  154 =>
-  array (
-    'EngramIndex'		=> 154,
-    'EngramLevelRequirement'	=> 50,
-    'name'		=> 'Flak Gauntlets',
-    'EngramPointsCost'		=> 16,
-    'prereq1'	=> 'Chitin Gauntlets',
-  ),
-  155 =>
-  array (
-    'EngramIndex'		=> 155,
-    'EngramLevelRequirement'	=> 50,
-    'name'		=> 'Flak Helmet',
-    'EngramPointsCost'		=> 20,
-    'prereq1'	=> 'Chitin Helmet',
-  ),
-  156 =>
-  array (
-    'EngramIndex'		=> 156,
-    'EngramLevelRequirement'	=> 50,
-    'name'		=> 'Metal Billboard',
-    'EngramPointsCost'		=> 15,
-    'prereq1'	=> 'Wooden Billboard',
-    'prereq2'	=> 'Metal Sign',
-  ),
-  157 =>
-  array (
-    'EngramIndex'		=> 157,
-    'EngramLevelRequirement'	=> 50,
-    'name'		=> 'Metal Window',
-    'EngramPointsCost'		=> 18,
-    'prereq1'	=> 'Wooden Window',
-    'prereq2'	=> 'Metal Windowframe',
-  ),
-  158 =>
-  array (
-    'EngramIndex'		=> 158,
-    'EngramLevelRequirement'	=> 50,
-    'name'		=> 'Metal Catwalk',
-    'EngramPointsCost'		=> 18,
-    'prereq1'	=> 'Wooden Catwalk',
-    'prereq2'	=> 'Metal Ceiling',
-  ),
-  159 =>
-  array (
-    'EngramIndex'		=> 159,
-    'EngramLevelRequirement'	=> 50,
-    'name'		=> 'Carno Saddle',
-    'EngramPointsCost'		=> 21,
-  ),
-  160 =>
-  array (
-    'EngramIndex'		=> 160,
-    'EngramLevelRequirement'	=> 50,
-    'name'		=> 'Electrical Generator',
-    'EngramPointsCost'		=> 24,
-  ),
-  161 =>
-  array (
-    'EngramIndex'		=> 161,
-    'EngramLevelRequirement'	=> 50,
-    'name'		=> 'Straight Electrical Cable',
-    'EngramPointsCost'		=> 16,
-    'prereq1'	=> 'Electrical Generator',
-  ),
-  162 =>
-  array (
-    'EngramIndex'		=> 162,
-    'EngramLevelRequirement'	=> 50,
-    'name'		=> 'Electrical Outlet',
-    'EngramPointsCost'		=> 16,
-    'prereq1'	=> 'Electrical Generator',
-  ),
-  163 =>
-  array (
-    'EngramIndex'		=> 163,
-    'EngramLevelRequirement'	=> 50,
-    'name'		=> 'Fabricated Pistol',
-    'EngramPointsCost'		=> 18,
-    'prereq1'	=> 'Simple Pistol',
-  ),
-  164 =>
-  array (
-    'EngramIndex'		=> 164,
-    'EngramLevelRequirement'	=> 50,
-    'name'		=> 'Advanced Bullet',
-    'EngramPointsCost'		=> 8,
-    'prereq1'	=> 'Simple Bullet',
-  ),
-  165 =>
-  array (
-    'EngramIndex'		=> 165,
-    'EngramLevelRequirement'	=> 50,
-    'name'		=> 'Remote Keypad',
-    'EngramPointsCost'		=> 18,
-    'prereq1'	=> 'Electronics',
-  ),
-  166 =>
-  array (
-    'EngramIndex'		=> 166,
-    'EngramLevelRequirement'	=> 50,
-    'name'		=> 'Lamppost',
-    'EngramPointsCost'		=> 20,
-    'prereq1'	=> 'Standing Torch',
-  ),
-  167 =>
-  array (
-    'EngramIndex'		=> 167,
-    'EngramLevelRequirement'	=> 55,
-    'name'		=> 'Inclined Electrical Cable',
-    'EngramPointsCost'		=> 16,
-    'prereq1'	=> 'Straight Electrical Cable',
-  ),
-  168 =>
-  array (
-    'EngramIndex'		=> 168,
-    'EngramLevelRequirement'	=> 55,
-    'name'		=> 'Vertical Electrical Cable',
-    'EngramPointsCost'		=> 16,
-    'prereq1'	=> 'Straight Electrical Cable',
-  ),
-  169 =>
-  array (
-    'EngramIndex'		=> 169,
-    'EngramLevelRequirement'	=> 55,
-    'name'		=> 'Electrical Cable Intersection',
-    'EngramPointsCost'		=> 24,
-    'prereq1'	=> 'Straight Electrical Cable',
-  ),
-  170 =>
-  array (
-    'EngramIndex'		=> 170,
-    'EngramLevelRequirement'	=> 55,
-    'name'		=> 'Argentavis Saddle',
-    'EngramPointsCost'		=> 21,
-  ),
-  171 =>
-  array (
-    'EngramIndex'		=> 171,
-    'EngramLevelRequirement'	=> 55,
-    'name'		=> 'Bronto Saddle',
-    'EngramPointsCost'		=> 21,
-  ),
-  172 =>
-  array (
-    'EngramIndex'		=> 172,
-    'EngramLevelRequirement'	=> 55,
-    'name'		=> 'Refrigerator',
-    'EngramPointsCost'		=> 20,
-    'prereq1'	=> 'Large Storage Box',
-  ),
-  173 =>
-  array (
-    'EngramIndex'		=> 173,
-    'EngramLevelRequirement'	=> 55,
-    'name'		=> 'Air Conditioner',
-    'EngramPointsCost'		=> 21,
-    'prereq1'	=> 'Refrigerator',
-  ),
-  174 =>
-  array (
-    'EngramIndex'		=> 174,
-    'EngramLevelRequirement'	=> 55,
-    'name'		=> 'C4 Remote Detonator',
-    'EngramPointsCost'		=> 24,
-    'prereq1'	=> 'Electronics',
-  ),
-  175 =>
-  array (
-    'EngramIndex'		=> 175,
-    'EngramLevelRequirement'	=> 55,
-    'name'		=> 'C4 Charge',
-    'EngramPointsCost'		=> 12,
-    'prereq1'	=> 'Improvised Explosive Device',
-  ),
-  176 =>
-  array (
-    'EngramIndex'		=> 176,
-    'EngramLevelRequirement'	=> 55,
-    'name'		=> 'Assault Rifle',
-    'EngramPointsCost'		=> 24,
-    'prereq1'	=> 'Longneck Rifle',
-  ),
-  177 =>
-  array (
-    'EngramIndex'		=> 177,
-    'EngramLevelRequirement'	=> 55,
-    'name'		=> 'Advanced Rifle Bullet',
-    'EngramPointsCost'		=> 8,
-    'prereq1'	=> 'Simple Rifle Bullet',
-  ),
-  178 =>
-  array (
-    'EngramIndex'		=> 178,
-    'EngramLevelRequirement'	=> 55,
-    'name'		=> 'Laser Attachment',
-    'EngramPointsCost'		=> 24,
-    'prereq1'	=> 'unknown',
-  ),
-  179 =>
-  array (
-    'EngramIndex'		=> 179,
-    'EngramLevelRequirement'	=> 55,
-    'name'		=> 'Holo-Scope',
-    'EngramPointsCost'		=> 24,
-  ),
-  180 =>
-  array (
-    'EngramIndex'		=> 180,
-    'EngramLevelRequirement'	=> 55,
-    'name'		=> 'Behemoth Gateway',
-    'EngramPointsCost'		=> 28,
-    'prereq1'	=> 'Metal Dinosaur Gateway',
-  ),
-  181 =>
-  array (
-    'EngramIndex'		=> 181,
-    'EngramLevelRequirement'	=> 55,
-    'name'		=> 'Behemoth Gate',
-    'EngramPointsCost'		=> 15,
-    'prereq1'	=> 'Metal Dinosaur Gate',
-    'prereq2'	=> 'Behemoth Gateway',
-  ),
-  182 =>
-  array (
-    'EngramIndex'		=> 182,
-    'EngramLevelRequirement'	=> 60,
-    'name'		=> 'Tyrannosaurus Saddle',
-    'EngramPointsCost'		=> 40,
-  ),
-  183 =>
-  array (
-    'EngramIndex'		=> 183,
-    'EngramLevelRequirement'	=> 60,
-    'name'		=> 'Spino Saddle',
-    'EngramPointsCost'		=> 40,
-  ),
-  184 =>
-  array (
-    'EngramIndex'		=> 184,
-    'EngramLevelRequirement'	=> 60,
-    'name'		=> 'Rocket Launcher',
-    'EngramPointsCost'		=> 32,
-    'prereq1'	=> 'Longneck Rifle',
-  ),
-  185 =>
-  array (
-    'EngramIndex'		=> 185,
-    'EngramLevelRequirement'	=> 60,
-    'name'		=> 'Rocket Propelled Grenade',
-    'EngramPointsCost'		=> 8,
-    'prereq1'	=> 'Grenade',
-  ),
-  186 =>
-  array (
-    'EngramIndex'		=> 186,
-    'EngramLevelRequirement'	=> 60,
-    'name'		=> 'Auto Turret',
-    'EngramPointsCost'		=> 40,
-    'prereq1'	=> 'Assault Rifle',
-  ),
-  187 =>
-  array (
-    'EngramIndex'		=> 187,
-    'EngramLevelRequirement'	=> 65,
-    'name'		=> 'Heavy Miners Helmet',
-    'EngramPointsCost'		=> 35,
-    'prereq1'	=> 'Flak Helmet',
-  ),
-  188 =>
-  array (
-    'EngramIndex'		=> 188,
-    'EngramLevelRequirement'	=> 65,
-    'name'		=> 'Vault',
-    'EngramPointsCost'		=> 30,
-    'prereq1'	=> 'Large Storage Box',
-  ),
-  189 =>
-  array (
-    'EngramIndex'		=> 189,
-    'EngramLevelRequirement'	=> 65,
-    'name'		=> 'Plesiosaur Saddle',
-    'EngramPointsCost'		=> 40,
-  ),
+
+$engram_defaults	= array (
+	'EngramEntry_AdvancedBullet_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_AdvancedBullet_C',
+			'EngramLevelRequirement'	=> 50,
+			'EngramPointsCost'			=> 8,
+			'name'						=> 'Advanced Bullet',
+			'thumbnail'					=> '50px-Advanced_Bullet.png',
+			'prereq1'					=> 'Simple Bullet',
+	),
+	'EngramEntry_AdvancedRifleBullet_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_AdvancedRifleBullet_C',
+			'EngramLevelRequirement'	=> 55,
+			'EngramPointsCost'			=> 8,
+			'name'						=> 'Advanced Rifle Bullet',
+			'thumbnail'					=> '50px-Advanced_Rifle_Bullet.png',
+			'prereq1'					=> 'Simple Rifle Bullet',
+	),
+	'EngramEntry_AirConditioner_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_AirConditioner_C',
+			'EngramLevelRequirement'	=> 55,
+			'EngramPointsCost'			=> 21,
+			'name'						=> 'Air Conditioner',
+			'thumbnail'					=> '50px-Air_Conditioner.png',
+			'prereq1'					=> 'Refrigerator',
+	),
+	'EngramEntry_AlarmTrap_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_AlarmTrap_C',
+			'EngramLevelRequirement'	=> 20,
+			'EngramPointsCost'			=> 7,
+			'name'						=> 'Tripwire Alarm Trap',
+			'thumbnail'					=> '50px-Tripwire_Alarm_Trap.png',
+	),
+	'EngramEntry_AnvilBench_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_AnvilBench_C',
+			'EngramLevelRequirement'	=> 25,
+			'EngramPointsCost'			=> 16,
+			'name'						=> 'Smithy',
+			'thumbnail'					=> '50px-Smithy.png',
+	),
+	'EngramEntry_ArrowStone_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_ArrowStone_C',
+			'EngramLevelRequirement'	=> 15,
+			'EngramPointsCost'			=> 2,
+			'name'						=> 'Stone Arrow',
+			'thumbnail'					=> '50px-Stone_Arrow.png',
+	),
+	'EngramEntry_ArrowTranq_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_ArrowTranq_C',
+			'EngramLevelRequirement'	=> 20,
+			'EngramPointsCost'			=> 15,
+			'name'						=> 'Tranq Arrow',
+			'thumbnail'					=> '50px-Tranquilizer_Arrow.png',
+		    'prereq1'					=> 'Stone Arrow',
+			'prereq2'					=> 'Narcotic',
+	),
+	'EngramEntry_BearTrap_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_BearTrap_C',
+			'EngramLevelRequirement'	=> 25,
+			'EngramPointsCost'			=> 9,
+			'name'						=> 'Bear Trap',
+			'thumbnail'					=> '50px-Bear_Trap.png',
+	),
+	'EngramEntry_BearTrap_Large_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_BearTrap_Large_C',
+			'EngramLevelRequirement'	=> 25,
+			'EngramPointsCost'			=> 12,
+			'name'						=> 'Bear Trap Large',
+			'thumbnail'					=> '50px-Large_Bear_Trap.png',
+	),
+	'EngramEntry_BloodExtractor_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_BloodExtractor_C',
+			'EngramLevelRequirement'	=> 5,
+			'EngramPointsCost'			=> 6,
+			'name'						=> 'Blood Extractor',
+			'thumbnail'					=> '50px-Blood_Extraction_Syringe.png',
+			'prereq1'					=> 'Waterskin',
+	),
+	'EngramEntry_Bookshelf_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Bookshelf_C',
+			'EngramLevelRequirement'	=> 20,
+			'EngramPointsCost'			=> 15,
+			'name'						=> 'Bookshelf',
+			'thumbnail'					=> '50px-Bookshelf.png',
+			'prereq1'					=> 'Large Storage Box',
+	),
+	'EngramEntry_Bow_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Bow_C',
+			'EngramLevelRequirement'	=> 15,
+			'EngramPointsCost'			=> 11,
+			'name'						=> 'Bow',
+			'thumbnail'					=> '50px-Bow.png',
+			'prereq1'					=> 'Slingshot',
+	),
+	'EngramEntry_C4Ammo_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_C4Ammo_C',
+			'EngramLevelRequirement'	=> 55,
+			'EngramPointsCost'			=> 12,
+			'name'						=> 'C4 Charge',
+			'thumbnail'					=> '50px-C4_Charge.png',
+			'prereq1'					=> 'Improvised Explosive Device',
+	),
+	'EngramEntry_Campfire_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Campfire_C',
+			'EngramLevelRequirement'	=> 2,
+			'EngramPointsCost'			=> 3,
+			'name'						=> 'Campfire',
+			'thumbnail'					=> '50px-Campfire.png',
+	),
+	'EngramEntry_Canteen_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Canteen_C',
+			'EngramLevelRequirement'	=> 50,
+			'EngramPointsCost'			=> 24,
+			'name'						=> 'Canteen',
+			'thumbnail'					=> '50px-Canteen.png',
+	),
+	'EngramEntry_ChitinBoots_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_ChitinBoots_C',
+			'EngramLevelRequirement'	=> 35,
+			'EngramPointsCost'			=> 15,
+			'name'						=> 'Chitin Boots',
+			'thumbnail'					=> '50px-Chitin_Boots.png',
+			'prereq1'					=> 'Hide Boots',
+	),
+	'EngramEntry_ChitinGloves_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_ChitinGloves_C',
+			'EngramLevelRequirement'	=> 35,
+			'EngramPointsCost'			=> 15,
+			'name'						=> 'Chitin Gauntlets',
+			'thumbnail'					=> '50px-Chitin_Gauntlets.png',
+			'prereq1'					=> 'Cloth Gloves',
+	),
+	'EngramEntry_ChitinHelmet_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_ChitinHelmet_C',
+			'EngramLevelRequirement'	=> 30,
+			'EngramPointsCost'			=> 18,
+			'name'						=> 'Chitin Helmet',
+			'thumbnail'					=> '50px-Chitin_Helmet.png',
+			'prereq1'					=> 'Hide Hat',
+	),
+	'EngramEntry_ChitinPants_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_ChitinPants_C',
+			'EngramLevelRequirement'	=> 30,
+			'EngramPointsCost'			=> 15,
+			'name'						=> 'Chitin Leggings',
+			'thumbnail'					=> '50px-Chitin_Leggings.png',
+			'prereq1'					=> 'Hide Leggings'
+	),
+	'EngramEntry_ChitinPaste_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_ChitinPaste_C',
+			'EngramLevelRequirement'	=> 10,
+			'EngramPointsCost'			=> 3,
+			'name'						=> 'Cementing Paste',
+			'thumbnail'					=> '50px-Cementing_Paste.png',
+	),
+	'EngramEntry_ChitinShirt_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_ChitinShirt_C',
+			'EngramLevelRequirement'	=> 30,
+			'EngramPointsCost'			=> 18,
+			'name'						=> 'Chitin Chestpiece',
+			'thumbnail'					=> '50px-Chitin_Chestpiece.png',
+			'prereq1'					=> 'Hide Shirt',
+			
+	),
+	'EngramEntry_ClothBoots_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_ClothBoots_C',
+			'EngramLevelRequirement'	=> 3,
+			'EngramPointsCost'			=> 3,
+			'name'						=> 'Cloth Boots',
+			'thumbnail'					=> '50px-Cloth_Boots.png',
+	),
+	'EngramEntry_ClothGloves_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_ClothGloves_C',
+			'EngramLevelRequirement'	=> 3,
+			'EngramPointsCost'			=> 3,
+			'name'						=> 'Cloth Gloves',
+			'thumbnail'					=> '50px-Cloth_Gloves.png',
+	),
+	'EngramEntry_ClothHelmet_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_ClothHelmet_C',
+			'EngramLevelRequirement'	=> 3,
+			'EngramPointsCost'			=> 3,
+			'name'						=> 'Cloth Helmet',
+			'thumbnail'					=> '50px-Cloth_Hat.png',
+	),
+	'EngramEntry_ClothPants_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_ClothPants_C',
+			'EngramLevelRequirement'	=> 2,
+			'EngramPointsCost'			=> 3,
+			'name'						=> 'Cloth Pants',
+			'thumbnail'					=> '50px-Cloth_Pants.png',
+	),
+	'EngramEntry_ClothShirt_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_ClothShirt_C',
+			'EngramLevelRequirement'	=> 2,
+			'EngramPointsCost'			=> 3,
+			'name'						=> 'Cloth Shirt',
+			'thumbnail'					=> '50px-Cloth_Shirt.png',
+	),
+	'EngramEntry_Compass_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Compass_C',
+			'EngramLevelRequirement'	=> 10,
+			'EngramPointsCost'			=> 5,
+			'name'						=> 'Compass',
+			'thumbnail'					=> '50px-Compass.png',
+	),
+	'EngramEntry_CompostBin_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_CompostBin_C',
+			'EngramLevelRequirement'	=> 15,
+			'EngramPointsCost'			=> 8,
+			'name'						=> 'Compost Bin',
+			'thumbnail'					=> '50px-Compost_Bin.png',
+			'prereq1'					=> 'Storage Box',
+	),
+	'EngramEntry_CompoundArrow_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_CompoundArrow_C',
+			'EngramLevelRequirement'	=> 70,
+			'EngramPointsCost'			=> 35,
+			'name'						=> 'Metal Arrow',
+			'thumbnail'					=> '50px-Metal_Arrow.png',
+	),
+	'EngramEntry_CompoundBow_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_CompoundBow_C',
+			'EngramLevelRequirement'	=> 70,
+			'EngramPointsCost'			=> 40,
+			'name'						=> 'Compound Bow',
+			'thumbnail'					=> '50px-Compound_Bow.png',
+	),
+	'EngramEntry_CookingPot_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_CookingPot_C',
+			'EngramLevelRequirement'	=> 10,
+			'EngramPointsCost'			=> 9,
+			'name'						=> 'Cooking Pot',
+			'thumbnail'					=> '50px-Cooking_Pot.png',
+			'prereq1'					=> 'Campfire',
+	),
+	'EngramEntry_CropPlot_Large_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_CropPlot_Large_C',
+			'EngramLevelRequirement'	=> 35,
+			'EngramPointsCost'			=> 15,
+			'name'						=> 'Large Crop Plot',
+			'thumbnail'					=> '50px-Large_Crop_Plot.png',
+			'prereq1'					=> 'Medium Crop Plot',
+	),
+	'EngramEntry_CropPlot_Medium_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_CropPlot_Medium_C',
+			'EngramLevelRequirement'	=> 25,
+			'EngramPointsCost'			=> 12,
+			'name'						=> 'Crop Plot Medium',
+			'thumbnail'					=> '50px-Medium_Crop_Plot.png',
+			'prereq1'					=> 'Small Crop Plot',
+	),
+	'EngramEntry_CropPlot_Small_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_CropPlot_Small_C',
+			'EngramLevelRequirement'	=> 10,
+			'EngramPointsCost'			=> 9,
+			'name'						=> 'Small Crop Plot',
+			'thumbnail'					=> '50px-Small_Crop_Plot.png',
+	),
+	'EngramEntry_Crossbow_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Crossbow_C',
+			'EngramLevelRequirement'	=> 25,
+			'EngramPointsCost'			=> 23,
+			'name'						=> 'Crossbow',
+			'thumbnail'					=> '50px-Crossbow.png',
+			'prereq1'					=> 'Bow',
+			
+	),
+	'EngramEntry_Electronics_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Electronics_C',
+			'EngramLevelRequirement'	=> 40,
+			'EngramPointsCost'			=> 6,
+			'name'						=> 'Electronics',
+			'thumbnail'					=> '50px-Electronics.png',
+	),
+	'EngramEntry_Fabricator_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Fabricator_C',
+			'EngramLevelRequirement'	=> 40,
+			'EngramPointsCost'			=> 24,
+			'name'						=> 'Fabricator',
+			'thumbnail'					=> '50px-Fabricator.png',
+			'prereq1'					=> 'Smithy',
+	),
+	'EngramEntry_FeedingTrough_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_FeedingTrough_C',
+			'EngramLevelRequirement'	=> 15,
+			'EngramPointsCost'			=> 12,
+			'name'						=> 'Feeding Trough',
+			'thumbnail'					=> '50px-Feeding_Trough.png',
+	),
+	'EngramEntry_FenceFoundation_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_FenceFoundation_C',
+			'EngramLevelRequirement'	=> 999,
+			'EngramPointsCost'			=> 999,
+			'name'						=> 'Fence Foundation',
+			'thumbnail'					=> '50px-FenceFoundation.png',
+			'skip'						=> true,
+	),
+	'EngramEntry_Flag_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Flag_C',
+			'EngramLevelRequirement'	=> 5,
+			'EngramPointsCost'			=> 6,
+			'name'						=> 'Multi Panel Flag',
+			'thumbnail'					=> '50px-Flag.png',
+	),
+	'EngramEntry_FlagSingle_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_FlagSingle_C',
+			'EngramLevelRequirement'	=> 5,
+			'EngramPointsCost'			=> 6,
+			'name'						=> 'Single Panel Flag',
+			'thumbnail'					=> '50px-Flag.png',
+	),
+	'EngramEntry_FlareLauncher_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_FlareLauncher_C',
+			'EngramLevelRequirement'	=> 10,
+			'EngramPointsCost'			=> 6,
+			'name'						=> 'Flare Gun',
+			'thumbnail'					=> '50px-Flare_Gun.png',
+			'prereq1'					=> 'Gunpowder',
+	),
+	'EngramEntry_Flashlight_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Flashlight_C',
+			'EngramLevelRequirement'	=> 45,
+			'EngramPointsCost'			=> 18,
+			'name'						=> 'Flashlight',
+			'thumbnail'					=> '50px-Flashlight_Weapons.png',
+	),
+	'EngramEntry_Forge_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Forge_C',
+			'EngramLevelRequirement'	=> 20,
+			'EngramPointsCost'			=> 21,
+			'name'						=> 'Refining Forge',
+			'thumbnail'					=> '50px-Refining_Forge.png',
+			'prereq1'					=> 'Campfire',
+	),
+	'EngramEntry_GPS_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_GPS_C',
+			'EngramLevelRequirement'	=> 45,
+			'EngramPointsCost'			=> 21,
+			'name'						=> 'GPS',
+			'thumbnail'					=> '50px-GPS.png',
+			'prereq1'					=> 'Compass',
+	),
+	'EngramEntry_Grenade_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Grenade_C',
+			'EngramLevelRequirement'	=> 30,
+			'EngramPointsCost'			=> 20,
+			'name'						=> 'Grenade',
+			'thumbnail'					=> '50px-Grenade.png',
+			'prereq1'					=> 'Gunpowder',
+	),
+	'EngramEntry_Grill_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Grill_C',
+			'EngramLevelRequirement'	=> 45,
+			'EngramPointsCost'			=> 40,
+			'name'						=> 'Industrial Grill',
+			'thumbnail'					=> '50px-Industrial_Grill.png',
+			'prereq1'					=> 'Fabricator',
+	),
+	'EngramEntry_Gunpowder_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Gunpowder_C',
+			'EngramLevelRequirement'	=> 10,
+			'EngramPointsCost'			=> 2,
+			'name'						=> 'Gunpowder',
+			'thumbnail'					=> '50px-Gunpowder.png',
+			'prereq1'					=> 'Sparkpowder',
+	),
+	'EngramEntry_HideBoots_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_HideBoots_C',
+			'EngramLevelRequirement'	=> 20,
+			'EngramPointsCost'			=> 9,
+			'name'						=> 'Hide Boots',
+			'thumbnail'					=> '50px-Hide_Boots.png',
+			'prereq1'					=> 'Cloth Boots',
+	),
+	'EngramEntry_HideGloves_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_HideGloves_C',
+			'EngramLevelRequirement'	=> 20,
+			'EngramPointsCost'			=> 9,
+			'name'						=> 'Hide Gloves',
+			'thumbnail'					=> '50px-Hide_Gloves.png',
+			'prereq1'					=> 'Cloth Gloves',
+	),
+	'EngramEntry_HideHelmet_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_HideHelmet_C',
+			'EngramLevelRequirement'	=> 20,
+			'EngramPointsCost'			=> 12,
+			'name'						=> 'Hide Hat',
+			'thumbnail'					=> '50px-Hide_Hat.png',
+			'prereq1'					=> 'Cloth Hat',
+	),
+	'EngramEntry_HidePants_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_HidePants_C',
+			'EngramLevelRequirement'	=> 15,
+			'EngramPointsCost'			=> 9,
+			'name'						=> 'Hide Pants',
+			'thumbnail'					=> '50px-Hide_Pants.png',
+			'prereq1'					=> 'Cloth Pants',
+	),
+	'EngramEntry_HideShirt_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_HideShirt_C',
+			'EngramLevelRequirement'	=> 15,
+			'EngramPointsCost'			=> 6,
+			'name'						=> 'Hide Shirt',
+			'thumbnail'					=> '50px-Hide_Shirt.png',
+			'prereq1'					=> 'Cloth Shirt',
+	),
+	'EngramEntry_HideSleepingBag_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_HideSleepingBag_C',
+			'EngramLevelRequirement'	=> 3,
+			'EngramPointsCost'			=> 3,
+			'name'						=> 'Hide Sleeping Bag',
+			'thumbnail'					=> '50px-Hide_Sleeping_Bag.png',
+	),
+	'EngramEntry_HoloScope_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_HoloScope_C',
+			'EngramLevelRequirement'	=> 55,
+			'EngramPointsCost'			=> 24,
+			'name'						=> 'Holo Scope',
+			'thumbnail'					=> '50px-Holo_Scope.png',
+	),
+	'EngramEntry_IceBox_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_IceBox_C',
+			'EngramLevelRequirement'	=> 55,
+			'EngramPointsCost'			=> 20,
+			'name'						=> 'Refrigerator',
+			'thumbnail'					=> '50px-Refrigerator.png',
+	),
+	'EngramEntry_Keypad_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Keypad_C',
+			'EngramLevelRequirement'	=> 50,
+			'EngramPointsCost'			=> 18,
+			'name'						=> 'Remote Keypad',
+			'thumbnail'					=> '50px-Remote_Keypad.png',
+			'prereq1'					=> 'Electronics',
+	),
+	'EngramEntry_Lamppost_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Lamppost_C',
+			'EngramLevelRequirement'	=> 50,
+			'EngramPointsCost'			=> 20,
+			'name'						=> 'Lamppost',
+			'thumbnail'					=> '50px-Lamppost.png',
+			 'prereq1'					=> 'Standing Torch'
+	),
+	'EngramEntry_LamppostOmni_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_LamppostOmni_C',
+			'EngramLevelRequirement'	=> 50,
+			'EngramPointsCost'			=> 20,
+			'name'						=> 'Omnidirectional Lamppost',
+			'thumbnail'					=> '50px-Omnidirectional_Lamppost.png',
+	),
+	'EngramEntry_Laser_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Laser_C',
+			'EngramLevelRequirement'	=> 55,
+			'EngramPointsCost'			=> 24,
+			'name'						=> 'Laser Attachment',
+			'thumbnail'					=> '50px-Laser_Attachment.png',
+			'prereq1'					=> 'unknown',
+	),
+	'EngramEntry_MachinedPistol_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MachinedPistol_C',
+			'EngramLevelRequirement'	=> 50,
+			'EngramPointsCost'			=> 18,
+			'name'						=> 'Fabricated Pistol',
+			'thumbnail'					=> '50px-Fabricated_Pistol.png',
+			'prereq1'					=> 'Simple Pistol',
+	),
+	'EngramEntry_MachinedRifle_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MachinedRifle_C',
+			'EngramLevelRequirement'	=> 55,
+			'EngramPointsCost'			=> 24,
+			'name'						=> 'Assault Rifle',
+			'thumbnail'					=> '50px-Assault_Rifle.png',
+			'prereq1'					=> 'Longneck Rifle',
+	),
+	'EngramEntry_MachinedShotgun_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MachinedShotgun_C',
+			'EngramLevelRequirement'	=> 50,
+			'EngramPointsCost'			=> 18,
+			'name'						=> 'Pump Action Shotgun',
+			'thumbnail'					=> '50px-Pump-Action_Shotgun.png',
+			'prereq1'					=> 'Shotgun'
+	),
+	'EngramEntry_MetalBoots_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalBoots_C',
+			'EngramLevelRequirement'	=> 50,
+			'EngramPointsCost'			=> 16,
+			'name'						=> 'Flak Boots',
+			'thumbnail'					=> '50px-Flak_Boots.png',
+			'prereq1'					=> 'Chitin Boots',
+	),
+	'EngramEntry_MetalCatwalk_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalCatwalk_C',
+			'EngramLevelRequirement'	=> 50,
+			'EngramPointsCost'			=> 18,
+			'name'						=> 'Metal Catwalk',
+			'thumbnail'					=> '50px-Metal_Catwalk.png',
+			'prereq1'					=> 'Wooden Catwalk',
+			'prereq2'					=> 'Metal Ceiling',
+	),
+	'EngramEntry_MetalCeiling_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalCeiling_C',
+			'EngramLevelRequirement'	=> 35,
+			'EngramPointsCost'			=> 15,
+			'name'						=> 'Metal Ceiling',
+			'thumbnail'					=> '50px-Metal_Ceiling.png',
+			'prereq1'					=> 'Wooden Ceiling',
+	),
+	'EngramEntry_MetalCeilingWithTrapdoor_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalCeilingWithTrapdoor_C',
+			'EngramLevelRequirement'	=> 40,
+			'EngramPointsCost'			=> 18,
+			'name'						=> 'Metal Ceiling With Trapdoor',
+			'thumbnail'					=> '50px-Metal_Hatchframe.png',
+			'prereq1'					=> 'Wooden Hatchframe',
+			'prereq2'					=> 'Metal Ceiling',
+	),
+	'EngramEntry_MetalDoor_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalDoor_C',
+			'EngramLevelRequirement'	=> 35,
+			'EngramPointsCost'			=> 12,
+			'name'						=> 'Metal Door',
+			'thumbnail'					=> '50px-Metal_Door.png',
+			'prereq1'					=> 'Wooden Door',
+			'prereq2'					=> 'Metal Doorframe',
+	),
+	'EngramEntry_MetalFenceFoundation_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalFenceFoundation_C',
+			'EngramLevelRequirement'	=> 40,
+			'EngramPointsCost'			=> 12,
+			'name'						=> 'Metal Fence Foundation',
+			'thumbnail'					=> '50px-Metal_Fence_Foundation.png',
+			'prereq1'					=> 'Wooden Fence Foundation',
+			'prereq2'					=> 'Metal Foundation',
+	),
+	'EngramEntry_MetalFloor_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalFloor_C',
+			'EngramLevelRequirement'	=> 30,
+			'EngramPointsCost'			=> 24,
+			'name'						=> 'Metal Foundation',
+			'thumbnail'					=> '50px-Metal_Foundation.png',
+			'prereq1'					=> 'Wooden Foundation',
+	),
+	'EngramEntry_MetalGate_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalGate_C',
+			'EngramLevelRequirement'	=> 40,
+			'EngramPointsCost'			=> 8,
+			'name'						=> 'Metal Dinosaur Gate',
+			'thumbnail'					=> '50px-Metal_Dinosaur_Gate.png',
+			'prereq1'					=> 'Dinosaur Gate',
+			'prereq2'					=> 'Metal Dinosaur Gateway',
+	),
+	'EngramEntry_MetalGateway_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalGateway_C',
+			'EngramLevelRequirement'	=> 40,
+			'EngramPointsCost'			=> 12,
+			'name'						=> 'Metal Dinosaur Gateway',
+			'thumbnail'					=> '50px-Metal_Dinosaur_Gateway.png',
+			'prereq1'					=> 'Dinosaur Gateway',
+			'prereq2'					=> 'Metal Doorframe',
+	),
+	'EngramEntry_MetalGateway_Large_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalGateway_Large_C',
+			'EngramLevelRequirement'	=> 55,
+			'EngramPointsCost'			=> 28,
+			'name'						=> 'Behemoth Gateway',
+			'thumbnail'					=> '50px-Behemoth_Gateway.png',
+			'prereq1'					=> 'Metal Dinosaur Gateway',
+			
+	),
+	'EngramEntry_MetalGate_Large_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalGate_Large_C',
+			'EngramLevelRequirement'	=> 55,
+			'EngramPointsCost'			=> 15,
+			'name'						=> 'Behemoth Gate',
+			'thumbnail'					=> '50px-Behemoth_Gate.png',
+			'prereq1'					=> 'Metal Dinosaur Gate',
+			'prereq2'					=> 'Behemoth Gateway',
+			
+	),
+	'EngramEntry_MetalGloves_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalGloves_C',
+			'EngramLevelRequirement'	=> 50,
+			'EngramPointsCost'			=> 16,
+			'name'						=> 'Flak Gauntlets',
+			'thumbnail'					=> '50px-Flak_Gauntlets.png',
+			'prereq1'					=> 'Chitin Gauntlets',
+	),
+	'EngramEntry_MetalHatchet_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalHatchet_C',
+			'EngramLevelRequirement'	=> 25,
+			'EngramPointsCost'			=> 12,
+			'name'						=> 'Metal Hatchet',
+			'thumbnail'					=> '50px-Metal_Hatchet.png',
+			'prereq1'					=> 'Stone Hatchet',
+	),
+	'EngramEntry_MetalHelmet_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalHelmet_C',
+			'EngramLevelRequirement'	=> 50,
+			'EngramPointsCost'			=> 20,
+			'name'						=> 'Flak Helmet',
+			'thumbnail'					=> '50px-Flak_Helmet.png',
+			'prereq1'					=> 'Chitin Helmet',
+	),
+	'EngramEntry_MetalLadder_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalLadder_C',
+			'EngramLevelRequirement'	=> 45,
+			'EngramPointsCost'			=> 21,
+			'name'						=> 'Metal Ladder',
+			'thumbnail'					=> '50px-Metal_Ladder.png',
+			'prereq1'					=> 'Wooden Ladder',
+	),
+	'EngramEntry_MetalPants_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalPants_C',
+			'EngramLevelRequirement'	=> 45,
+			'EngramPointsCost'			=> 15,
+			'name'						=> 'Flak Leggings',
+			'thumbnail'					=> '50px-Flak_Leggings.png',
+			'prereq1'					=> 'Chitin Leggings',
+	),
+	'EngramEntry_MetalPick_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalPick_C',
+			'EngramLevelRequirement'	=> 25,
+			'EngramPointsCost'			=> 12,
+			'name'						=> 'Metal Pick',
+			'thumbnail'					=> '50px-Metal_Pick.png',
+	),
+	'EngramEntry_MetalPillar_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalPillar_C',
+			'EngramLevelRequirement'	=> 35,
+			'EngramPointsCost'			=> 18,
+			'name'						=> 'Metal Pillar',
+			'thumbnail'					=> '50px-Metal_Pillar.png',
+			'prereq1'					=> 'Metal Foundation',
+			'prereq2'					=> 'Wooden Pillar',
+	),
+	'EngramEntry_MetalPipeIncline_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalPipeIncline_C',
+			'EngramLevelRequirement'	=> 45,
+			'EngramPointsCost'			=> 12,
+			'name'						=> 'Metal Irrigation Pipe-Inclined',
+			'thumbnail'					=> '50px-Metal_Irrigation_Pipe_Inclined.png',
+			'prereq1'					=> 'Stone Irrigation Pipe-Inclined',
+			'prereq2'					=> 'Metal Irrigation Pipe-Straight',
+	),
+	'EngramEntry_MetalPipeIntake_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalPipeIntake_C',
+			'EngramLevelRequirement'	=> 40,
+			'EngramPointsCost'			=> 15,
+			'name'						=> 'Metal Irrigation Pipe-Intake',
+			'thumbnail'					=> '50px-Metal_Irrigation_Pipe_Intake.png',
+			'prereq1'					=> 'Stone Irrigation Pipe-Intake',
+	),
+	'EngramEntry_MetalPipeIntersection_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalPipeIntersection_C',
+			'EngramLevelRequirement'	=> 45,
+			'EngramPointsCost'			=> 18,
+			'name'						=> 'Metal Irrigation Pipe-Intersection',
+			'thumbnail'					=> '50px-Metal_Irrigation_Pipe_Intersection.png',
+			'prereq1'					=> 'Stone Irrigation Pipe-Intersection',
+			'prereq2'					=> 'Metal Irrigation Pipe-Straight',
+	),
+	'EngramEntry_MetalPipeStraight_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalPipeStraight_C',
+			'EngramLevelRequirement'	=> 40,
+			'EngramPointsCost'			=> 12,
+			'name'						=> 'Metal Irrigation Pipe-Straight',
+			'thumbnail'					=> '50px-Metal_Irrigation_Pipe_Straight.png',
+			'prereq1'					=> 'Stone Irrigation Pipe-Straight',
+			'prereq2'					=> 'Metal Irrigation Pipe-Tap',
+	),
+	'EngramEntry_MetalPipeTap_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalPipeTap_C',
+			'EngramLevelRequirement'	=> 45,
+			'EngramPointsCost'			=> 18,
+			'name'						=> 'Metal Irrigation Pipe-Tap',
+			'thumbnail'					=> '50px-Metal_Irrigation_Pipe_Tap.png',
+			'prereq1'					=> 'Stone Irrigation Pipe-Tap',
+			'prereq2'					=> 'Metal Irrigation Pipe-Straight',
+	),
+	'EngramEntry_MetalPipeVertical_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalPipeVertical_C',
+			'EngramLevelRequirement'	=> 45,
+			'EngramPointsCost'			=> 12,
+			'name'						=> 'Metal Irrigation Pipe-Vertical',
+			'thumbnail'					=> '50px-Metal_Irrigation_Pipe_Vertical.png',
+			'prereq1'					=> 'Stone Irrigation Pipe-Vertical',
+			'prereq2'					=> 'Metal Irrigation Pipe-Straight',
+	),
+	'EngramEntry_MetalRamp_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalRamp_C',
+			'EngramLevelRequirement'	=> 35,
+			'EngramPointsCost'			=> 12,
+			'name'						=> 'Metal Ramp',
+			'thumbnail'					=> '50px-Metal_Ramp.png',
+			'prereq1'					=> 'Wooden Ramp',
+			'prereq2'					=> 'Metal Ceiling',
+	),
+	'EngramEntry_MetalShirt_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalShirt_C',
+			'EngramLevelRequirement'	=> 45,
+			'EngramPointsCost'			=> 18,
+			'name'						=> 'Flak Chestpiece',
+			'thumbnail'					=> '50px-Flak_Chestpiece.png',
+			'prereq1'					=> 'Chitin Chestpiece',
+	),
+	'EngramEntry_MetalSickle_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalSickle_C',
+			'EngramLevelRequirement'	=> 30,
+			'EngramPointsCost'			=> 12,
+			'name'						=> 'Metal Sickle',
+			'thumbnail'					=> '50px-Metal_Sickle.png',
+	),
+	'EngramEntry_MetalSign_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalSign_C',
+			'EngramLevelRequirement'	=> 25,
+			'EngramPointsCost'			=> 15,
+			'name'						=> 'Metal Sign',
+			'thumbnail'					=> '50px-Metal_Sign.png',
+			'prereq1'					=> 'Wooden Sign',
+	),
+	'EngramEntry_MetalSign_Large_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalSign_Large_C',
+			'EngramLevelRequirement'	=> 50,
+			'EngramPointsCost'			=> 15,
+			'name'						=> 'Metal Sign Large',
+			'thumbnail'					=> '50px-Metal_Billboard.png',
+			'prereq1'					=> 'Wooden Billboard',
+			'prereq2'					=> 'Metal Sign',
+	),
+	'EngramEntry_MetalSign_Wall_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalSign_Wall_C',
+			'EngramLevelRequirement'	=> 30,
+			'EngramPointsCost'			=> 6,
+			'name'						=> 'Metal Wall Sign',
+			'thumbnail'					=> '50px-Metal_Wall_Sign.png',
+			'prereq1'					=> 'Wooden Wall Sign',
+			'prereq2'					=> 'Metal Sign',
+	),
+	'EngramEntry_MetalSpikeWall_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalSpikeWall_C',
+			'EngramLevelRequirement'	=> 25,
+			'EngramPointsCost'			=> 11,
+			'name'						=> 'Metal Spike Wall',
+			'thumbnail'					=> '50px-Metal_Spike_Wall.png',
+	),
+	'EngramEntry_MetalTrapdoor_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalTrapdoor_C',
+			'EngramLevelRequirement'	=> 40,
+			'EngramPointsCost'			=> 14,
+			'name'						=> 'Metal Trapdoor',
+			'thumbnail'					=> '50px-Metal_Trapdoor.png',
+			'prereq1'					=> 'Wooden Trapdoor',
+			'prereq2'					=> 'Metal Hatchframe',
+	),
+	'EngramEntry_MetalWall_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalWall_C',
+			'EngramLevelRequirement'	=> 30,
+			'EngramPointsCost'			=> 15,
+			'name'						=> 'Metal Wall',
+			'thumbnail'					=> '50px-Metal_Wall.png',
+			'prereq1'					=> 'Wooden Wall',
+	),
+	'EngramEntry_MetalWallWithDoor_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalWallWithDoor_C',
+			'EngramLevelRequirement'	=> 30,
+			'EngramPointsCost'			=> 24,
+			'name'						=> 'Metal Doorframe',
+			'thumbnail'					=> '50px-Metal_Doorframe.png',
+			'prereq1'					=> 'Wooden Doorframe',
+			'prereq2'					=> 'Metal Wall',
+	),
+	'EngramEntry_MetalWallWithWindow_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalWallWithWindow_C',
+			'EngramLevelRequirement'	=> 45,
+			'EngramPointsCost'			=> 18,
+			'name'						=> 'Metal Windowframe',
+			'thumbnail'					=> '50px-Metal_Windowframe.png',
+			'prereq1'					=> 'Wooden Windowframe',
+			'prereq2'					=> 'Metal Wall',
+	),
+	'EngramEntry_MetalWindow_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MetalWindow_C',
+			'EngramLevelRequirement'	=> 50,
+			'EngramPointsCost'			=> 18,
+			'name'						=> 'Metal Window',
+			'thumbnail'					=> '50px-Metal_Window.png',
+			'prereq1'					=> 'Wooden Window',
+			'prereq2'					=> 'Metal Windowframe',			
+	),
+	'EngramEntry_MinersHelmet_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MinersHelmet_C',
+			'EngramLevelRequirement'	=> 65,
+			'EngramPointsCost'			=> 35,
+			'name'						=> 'Heavy Miners Helmet',
+			'thumbnail'					=> '50px-Heavy_Miners_Helmet.png',
+			'prereq1'					=> 'Flak Helmet',
+	),
+	'EngramEntry_MortarAndPestle_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MortarAndPestle_C',
+			'EngramLevelRequirement'	=> 5,
+			'EngramPointsCost'			=> 6,
+			'name'						=> 'Mortar And Pestle',
+			'thumbnail'					=> '50px-Mortar_And_Pestle.png',
+	),
+	'EngramEntry_Narcotic_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Narcotic_C',
+			'EngramLevelRequirement'	=> 5,
+			'EngramPointsCost'			=> 6,
+			'name'						=> 'Narcotic',
+			'thumbnail'					=> '50px-Narcotic.png',
+	),
+	'EngramEntry_NotePaper_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_NotePaper_C',
+			'EngramLevelRequirement'	=> 2,
+			'EngramPointsCost'			=> 3,
+			'name'						=> 'Note Paper',
+			'thumbnail'					=> '50px-Note.png',
+	),
+	'EngramEntry_Paintbrush_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Paintbrush_C',
+			'EngramLevelRequirement'	=> 5,
+			'EngramPointsCost'			=> 3,
+			'name'						=> 'Paintbrush',
+			'thumbnail'					=> '50px-Paintbrush.png',
+	),
+	'EngramEntry_Parachute_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Parachute_C',
+			'EngramLevelRequirement'	=> 15,
+			'EngramPointsCost'			=> 6,
+			'name'						=> 'Parachute',
+			'thumbnail'					=> '50px-Parachute.png',
+	),
+	'EngramEntry_Pike_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Pike_C',
+			'EngramLevelRequirement'	=> 25,
+			'EngramPointsCost'			=> 16,
+			'name'						=> 'Pike',
+			'thumbnail'					=> '50px-Pike.png',
+			'prereq1'					=> 'Spear',
+	),
+	'EngramEntry_Pistol_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Pistol_C',
+			'EngramLevelRequirement'	=> 30,
+			'EngramPointsCost'			=> 15,
+			'name'						=> 'Simple Pistol',
+			'thumbnail'					=> '50px-Simple_Pistol.png',
+			'prereq1'					=> 'Flare Gun',
+	),
+	'EngramEntry_PoisonTrap_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_PoisonTrap_C',
+			'EngramLevelRequirement'	=> 25,
+			'EngramPointsCost'			=> 9,
+			'name'						=> 'Tripwire Narcotic Trap',
+			'thumbnail'					=> '50px-Tripwire_Narcotic_Trap.png',
+	),
+	'EngramEntry_Polymer_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Polymer_C',
+			'EngramLevelRequirement'	=> 40,
+			'EngramPointsCost'			=> 6,
+			'name'						=> 'Polymer',
+			'thumbnail'					=> '50px-Polymer.png',
+	),
+	'EngramEntry_PowerCableIncline_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_PowerCableIncline_C',
+			'EngramLevelRequirement'	=> 55,
+			'EngramPointsCost'			=> 16,
+			'name'						=> 'Inclined Electrical Cable',
+			'thumbnail'					=> '50px-Inclined_Electrical_Cable.png',
+			'prereq1'					=> 'Straight Electrical Cable',
+	),
+	'EngramEntry_PowerCableIntersection_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_PowerCableIntersection_C',
+			'EngramLevelRequirement'	=> 55,
+			'EngramPointsCost'			=> 24,
+			'name'						=> 'Electrical Cable Intersection',
+			'thumbnail'					=> '50px-Electrical_Cable_Intersection.png',
+			'prereq1'					=> 'Straight Electrical Cable',
+	),
+	'EngramEntry_PowerCableStraight_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_PowerCableStraight_C',
+			'EngramLevelRequirement'	=> 50,
+			'EngramPointsCost'			=> 16,
+			'name'						=> 'Straight Electrical Cable',
+			'thumbnail'					=> '50px-Straight_Electrical_Cable.png',
+			'prereq1'					=> 'Electrical Generator',
+	),
+	'EngramEntry_PowerCableVertical_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_PowerCableVertical_C',
+			'EngramLevelRequirement'	=> 55,
+			'EngramPointsCost'			=> 16,
+			'name'						=> 'Vertical Electrical Cable',
+			'thumbnail'					=> '50px-Vertical_Electrical_Cable.png',
+			'prereq1'					=> 'Straight Electrical Cable',
+	),
+	'EngramEntry_PowerGenerator_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_PowerGenerator_C',
+			'EngramLevelRequirement'	=> 50,
+			'EngramPointsCost'			=> 24,
+			'name'						=> 'Electrical Generator',
+			'thumbnail'					=> '50px-Electrical_Generator.png',
+	),
+	'EngramEntry_PowerOutlet_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_PowerOutlet_C',
+			'EngramLevelRequirement'	=> 50,
+			'EngramPointsCost'			=> 16,
+			'name'						=> 'Electrical Outlet',
+			'thumbnail'					=> '50px-Electrical_Outlet.png',
+			'prereq1'					=> 'Electrical Generator',
+	),
+	'EngramEntry_PreservingBin_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_PreservingBin_C',
+			'EngramLevelRequirement'	=> 20,
+			'EngramPointsCost'			=> 9,
+			'name'						=> 'Preserving Bin',
+			'thumbnail'					=> '50px-Preserving_Bin.png',
+			'prereq1'					=> 'Storage Box',
+	),
+	'EngramEntry_Radio_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Radio_C',
+			'EngramLevelRequirement'	=> 999,
+			'EngramPointsCost'			=> 999,
+			'name'						=> 'Radio',
+			'thumbnail'					=> '50px-Radio.png',
+			'skip'						=> true,
+	),
+	'EngramEntry_RocketAmmo_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_RocketAmmo_C',
+			'EngramLevelRequirement'	=> 60,
+			'EngramPointsCost'			=> 8,
+			'name'						=> 'Rocket Propelled Grenade',
+			'thumbnail'					=> '50px-Rocket_Propelled_Grenade.png',
+			'prereq1'					=> 'Grenade',
+	),
+	'EngramEntry_RocketLauncher_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_RocketLauncher_C',
+			'EngramLevelRequirement'	=> 60,
+			'EngramPointsCost'			=> 32,
+			'name'						=> 'Rocket Launcher',
+			'thumbnail'					=> '50px-Rocket_Launcher.png',
+			'prereq1'					=> 'Longneck Rifle',
+	),
+	'EngramEntry_Saddle_Ankylo_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Saddle_Ankylo_C',
+			'EngramLevelRequirement'	=> 40,
+			'EngramPointsCost'			=> 18,
+			'name'						=> 'Ankylo Saddle',
+			'thumbnail'					=> '50px-Ankylo_Saddle.png',
+	),
+	'EngramEntry_Saddle_Argentavis_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Saddle_Argentavis_C',
+			'EngramLevelRequirement'	=> 55,
+			'EngramPointsCost'			=> 21,
+			'name'						=> 'Argentavis Saddle',
+			'thumbnail'					=> '50px-Argentavis_Saddle.png',
+	),
+	'EngramEntry_Saddle_Carno_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Saddle_Carno_C',
+			'EngramLevelRequirement'	=> 50,
+			'EngramPointsCost'			=> 21,
+			'name'						=> 'Carno Saddle',
+			'thumbnail'					=> '50px-Carno_Saddle.png',
+	),
+	'EngramEntry_Saddle_Dolphin_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Saddle_Dolphin_C',
+			'EngramLevelRequirement'	=> 10,
+			'EngramPointsCost'			=> 8,
+			'name'						=> 'Ichthyosaurus Saddle',
+			'thumbnail'					=> '50px-Ichthyosaurus_Saddle.png',
+	),
+	'EngramEntry_Saddle_Mammoth_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Saddle_Mammoth_C',
+			'EngramLevelRequirement'	=> 40,
+			'EngramPointsCost'			=> 18,
+			'name'						=> 'Mammoth Saddle',
+			'thumbnail'					=> '50px-Mammoth_Saddle.png',
+	),
+	'EngramEntry_Saddle_Megalodon_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Saddle_Megalodon_C',
+			'EngramLevelRequirement'	=> 45,
+			'EngramPointsCost'			=> 18,
+			'name'						=> 'Megalodon Saddle',
+			'thumbnail'					=> '50px-Megalodon_Saddle.png',
+	),
+	'EngramEntry_Saddle_Para_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Saddle_Para_C',
+			'EngramLevelRequirement'	=> 10,
+			'EngramPointsCost'			=> 9,
+			'name'						=> 'Parasaur Saddle',
+			'thumbnail'					=> '50px-Parasaur_Saddle.png',
+	),
+	'EngramEntry_Saddle_Phiomia_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Saddle_Phiomia_C',
+			'EngramLevelRequirement'	=> 5,
+			'EngramPointsCost'			=> 6,
+			'name'						=> 'Phiomia Saddle',
+			'thumbnail'					=> '50px-Phiomia_Saddle.png',
+	),
+	'EngramEntry_Saddle_Plesia_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Saddle_Plesia_C',
+			'EngramLevelRequirement'	=> 65,
+			'EngramPointsCost'			=> 40,
+			'name'						=> 'Plesiosaur Saddle',
+			'thumbnail'					=> '50px-Plesiosaur_Saddle.png',
+	),
+	'EngramEntry_Saddle_Ptero_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Saddle_Ptero_C',
+			'EngramLevelRequirement'	=> 35,
+			'EngramPointsCost'			=> 15,
+			'name'						=> 'Ptero Saddle',
+			'thumbnail'					=> '50px-Pteranodon_Saddle.png',
+	),
+	'EngramEntry_Saddle_Raptor_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Saddle_Raptor_C',
+			'EngramLevelRequirement'	=> 15,
+			'EngramPointsCost'			=> 9,
+			'name'						=> 'Raptor Saddle',
+			'thumbnail'					=> '50px-Raptor_Saddle.png',
+	),
+	'EngramEntry_Saddle_Rex_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Saddle_Rex_C',
+			'EngramLevelRequirement'	=> 60,
+			'EngramPointsCost'			=> 40,
+			'name'						=> 'Rex Saddle',
+			'thumbnail'					=> '50px-Tyrannosaurus_Saddle.png',
+	),
+	'EngramEntry_Saddle_Saber_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Saddle_Saber_C',
+			'EngramLevelRequirement'	=> 45,
+			'EngramPointsCost'			=> 18,
+			'name'						=> 'Saber Saddle',
+			'thumbnail'					=> '50px-Sabertooth_Saddle.png',
+	),
+	'EngramEntry_Saddle_Sarco_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Saddle_Sarco_C',
+			'EngramLevelRequirement'	=> 35,
+			'EngramPointsCost'			=> 15,
+			'name'						=> 'Sarco Saddle',
+			'thumbnail'					=> '50px-Sarco_Saddle.png',
+	),
+	'EngramEntry_Saddle_Sauro_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Saddle_Sauro_C',
+			'EngramLevelRequirement'	=> 55,
+			'EngramPointsCost'			=> 21,
+			'name'						=> 'Sauro Saddle',
+			'thumbnail'					=> '50px-Bronto_Saddle.png',
+	),
+	'EngramEntry_Saddle_Scorpion_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Saddle_Scorpion_C',
+			'EngramLevelRequirement'	=> 25,
+			'EngramPointsCost'			=> 12,
+			'name'						=> 'Scorpion Saddle',
+			'thumbnail'					=> '50px-Pulmonoscorpius_Saddle.png',
+	),
+	'EngramEntry_Saddle_Spino_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Saddle_Spino_C',
+			'EngramLevelRequirement'	=> 60,
+			'EngramPointsCost'			=> 40,
+			'name'						=> 'Spino Saddle',
+			'thumbnail'					=> '50px-Spino_Saddle.png',
+	),
+	'EngramEntry_Saddle_Stego_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Saddle_Stego_C',
+			'EngramLevelRequirement'	=> 30,
+			'EngramPointsCost'			=> 15,
+			'name'						=> 'Stego Saddle',
+			'thumbnail'					=> '50px-Stego_Saddle.png',
+	),
+	'EngramEntry_Saddle_Trike_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Saddle_Trike_C',
+			'EngramLevelRequirement'	=> 20,
+			'EngramPointsCost'			=> 12,
+			'name'						=> 'Trike Saddle',
+			'thumbnail'					=> '50px-Trike_Saddle.png',
+	),
+	'EngramEntry_Saddle_Turtle_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Saddle_Turtle_C',
+			'EngramLevelRequirement'	=> 25,
+			'EngramPointsCost'			=> 12,
+			'name'						=> 'Turtle Saddle',
+			'thumbnail'					=> '50px-Carbonemys_Saddle.png',
+	),
+	'EngramEntry_Scope_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Scope_C',
+			'EngramLevelRequirement'	=> 30,
+			'EngramPointsCost'			=> 13,
+			'name'						=> 'Scope',
+			'thumbnail'					=> '50px-Scope_Weapons.png',
+			'prereq1'					=> 'Spyglass',
+	),
+	'EngramEntry_Silencer_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Silencer_C',
+			'EngramLevelRequirement'	=> 40,
+			'EngramPointsCost'			=> 13,
+			'name'						=> 'Silencer',
+			'thumbnail'					=> '50px-Silencer_Weapons.png',
+	),
+	'EngramEntry_SimpleBed_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_SimpleBed_C',
+			'EngramLevelRequirement'	=> 5,
+			'EngramPointsCost'			=> 8,
+			'name'						=> 'Simple Bed',
+			'thumbnail'					=> '50px-Simple_Bed.png',
+	),
+	'EngramEntry_SimpleBullet_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_SimpleBullet_C',
+			'EngramLevelRequirement'	=> 30,
+			'EngramPointsCost'			=> 6,
+			'name'						=> 'Simple Bullet',
+			'thumbnail'					=> '50px-Simple_Bullet.png',
+			'prereq1'					=> 'Gunpowder',
+	),
+	'EngramEntry_SimpleRifle_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_SimpleRifle_C',
+			'EngramLevelRequirement'	=> 35,
+			'EngramPointsCost'			=> 18,
+			'name'						=> 'Longneck Rifle',
+			'thumbnail'					=> '50px-Longneck_Rifle.png',
+			'prereq1'					=> 'Flare Gun',
+	),
+	'EngramEntry_SimpleRifleBullet_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_SimpleRifleBullet_C',
+			'EngramLevelRequirement'	=> 35,
+			'EngramPointsCost'			=> 6,
+			'name'						=> 'Simple Rifle Ammo',
+			'thumbnail'					=> '50px-Simple_Rifle_Ammo.png',
+			'prereq1'					=> 'Gunpowder',
+	),
+	'EngramEntry_SimpleShotgun_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_SimpleShotgun_C',
+			'EngramLevelRequirement'	=> 35,
+			'EngramPointsCost'			=> 18,
+			'name'						=> 'Shotgun',
+			'thumbnail'					=> '50px-Shotgun.png',
+			'prereq1'					=> 'Flare Gun',
+	),
+	'EngramEntry_SimpleShotgunBullet_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_SimpleShotgunBullet_C',
+			'EngramLevelRequirement'	=> 35,
+			'EngramPointsCost'			=> 6,
+			'name'						=> 'Simple Shotgun Ammo',
+			'thumbnail'					=> '50px-Simple_Shotgun_Ammo.png',
+			'prereq1'					=> 'Simple Bullet',
+	),
+	'EngramEntry_Slingshot_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Slingshot_C',
+			'EngramLevelRequirement'	=> 5,
+			'EngramPointsCost'			=> 6,
+			'name'						=> 'Slingshot',
+			'thumbnail'					=> '50px-Slingshot.png',
+	),
+	'EngramEntry_Sparkpowder_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Sparkpowder_C',
+			'EngramLevelRequirement'	=> 5,
+			'EngramPointsCost'			=> 3,
+			'name'						=> 'Sparkpowder',
+			'thumbnail'					=> '50px-Sparkpowder.png',
+	),
+	'EngramEntry_Spear_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Spear_C',
+			'EngramLevelRequirement'	=> 2,
+			'EngramPointsCost'			=> 3,
+			'name'						=> 'Spear',
+			'thumbnail'					=> '50px-Spear.png',
+	),
+	'EngramEntry_Spyglass_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Spyglass_C',
+			'EngramLevelRequirement'	=> 10,
+			'EngramPointsCost'			=> 4,
+			'name'						=> 'Spyglass',
+			'thumbnail'					=> '50px-Spyglass.png',
+	),
+	'EngramEntry_StandingTorch_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_StandingTorch_C',
+			'EngramLevelRequirement'	=> 5,
+			'EngramPointsCost'			=> 6,
+			'name'						=> 'Standing Torch',
+			'thumbnail'					=> '50px-Standing_Torch.png',
+	),
+	'EngramEntry_Stimulant_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Stimulant_C',
+			'EngramLevelRequirement'	=> 10,
+			'EngramPointsCost'			=> 6,
+			'name'						=> 'Stimulant',
+			'thumbnail'					=> '50px-Stimulant.png',
+	),
+	'EngramEntry_StoneCeiling_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_StoneCeiling_C',
+			'EngramLevelRequirement'	=> 20,
+			'EngramPointsCost'			=> 6,
+			'name'						=> 'Stone Ceiling',
+			'thumbnail'					=> '50px-Stone_Ceiling.png',
+			'prereq1'					=> 'Wooden Ceiling',
+	),
+	'EngramEntry_StoneCeilingWithTrapdoor_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_StoneCeilingWithTrapdoor_C',
+			'EngramLevelRequirement'	=> 25,
+			'EngramPointsCost'			=> 8,
+			'name'						=> 'Stone Hatchframe',
+			'thumbnail'					=> '50px-Stone_Hatchframe.png',
+			'prereq1'					=> 'Wooden Hatchframe',
+			'prereq2'					=> 'Stone Ceiling',
+	),
+	'EngramEntry_StoneDoor_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_StoneDoor_C',
+			'EngramLevelRequirement'	=> 20,
+			'EngramPointsCost'			=> 4,
+			'name'						=> 'Reinforced Wooden Door',
+			'thumbnail'					=> '50px-Reinforced_Wooden_Door.png',
+			'prereq1'					=> 'Wooden Door',
+			'prereq2'					=> 'Stone Doorframe',
+	),
+	'EngramEntry_StoneFenceFoundation_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_StoneFenceFoundation_C',
+			'EngramLevelRequirement'	=> 15,
+			'EngramPointsCost'			=> 6,
+			'name'						=> 'Stone Fence Foundation',
+			'thumbnail'					=> '50px-Stone_Fence_Foundation.png',
+			'prereq1'					=> 'Wooden Fence Foundation',
+	),
+	'EngramEntry_StoneFloor_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_StoneFloor_C',
+			'EngramLevelRequirement'	=> 20,
+			'EngramPointsCost'			=> 6,
+			'name'						=> 'Stone Foundation',
+			'thumbnail'					=> '50px-Stone_Foundation.png',
+			'prereq1'					=> 'Wooden Foundation',
+	),
+	'EngramEntry_StoneGate_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_StoneGate_C',
+			'EngramLevelRequirement'	=> 20,
+			'EngramPointsCost'			=> 6,
+			'name'						=> 'Reinforced Dinosaur Gate',
+			'thumbnail'					=> '50px-Reinforced_Dinosaur_Gate.png',
+			'prereq1'					=> 'Dinosaur Gate',
+			'prereq2'					=> 'Stone Dinosaur Gateway',
+	),
+	'EngramEntry_StoneGateLarge_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_StoneGateLarge_C',
+			'EngramLevelRequirement'	=> 999,
+			'EngramPointsCost'			=> 999,
+			'name'						=> 'Stone Gate Large',
+			'thumbnail'					=> '',
+			'skip'						=> true,
+	),
+	'EngramEntry_StoneGateway_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_StoneGateway_C',
+			'EngramLevelRequirement'	=> 20,
+			'EngramPointsCost'			=> 9,
+			'name'						=> 'Stone Dinosaur Gateway',
+			'thumbnail'					=> '50px-Stone_Dinosaur_Gateway.png',
+			'prereq1'					=> 'Dinosaur Gateway',
+			'prereq2'					=> 'Stone Doorframe',
+	),
+	'EngramEntry_StoneGateway_Large_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_StoneGateway_Large_C',
+			'EngramLevelRequirement'	=> 999,
+			'EngramPointsCost'			=> 999,
+			'name'						=> 'Stone Gateway Large',
+			'thumbnail'					=> '',
+			'skip'						=> true,
+	),
+	'EngramEntry_StoneHatchet_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_StoneHatchet_C',
+			'EngramLevelRequirement'	=> 2,
+			'EngramPointsCost'			=> 3,
+			'name'						=> 'Stone Hatchet',
+			'thumbnail'					=> '50px-Stone_Hatchet.png',
+	),
+	'EngramEntry_StonePick_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_StonePick_C',
+			'EngramLevelRequirement'	=> 1,
+			'EngramPointsCost'			=> 0,
+			'name'						=> 'Stone Pick',
+			'thumbnail'					=> '50px-Stone_Pick.png',
+	),
+	'EngramEntry_StonePillar_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_StonePillar_C',
+			'EngramLevelRequirement'	=> 25,
+			'EngramPointsCost'			=> 8,
+			'name'						=> 'Stone Pillar',
+			'thumbnail'					=> '50px-Stone_Pillar.png',
+			'prereq1'					=> 'Wooden Pillar',
+			'prereq2'					=> 'Stone Foundation',
+	),
+	'EngramEntry_StonePipeInclined_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_StonePipeInclined_C',
+			'EngramLevelRequirement'	=> 15,
+			'EngramPointsCost'			=> 4,
+			'name'						=> 'Stone Irrigation Pipe-Inclined',
+			'thumbnail'					=> '50px-Stone_Irrigation_Pipe_Inclined.png',
+			'prereq1'					=> 'Stone Irrigation Pipe-Straight',
+	),
+	'EngramEntry_StonePipeIntake_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_StonePipeIntake_C',
+			'EngramLevelRequirement'	=> 10,
+			'EngramPointsCost'			=> 5,
+			'name'						=> 'Stone Pipe Intake',
+			'thumbnail'					=> '50px-Stone_Irrigation_Pipe_Intake.png',
+	),
+	'EngramEntry_StonePipeIntersection_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_StonePipeIntersection_C',
+			'EngramLevelRequirement'	=> 15,
+			'EngramPointsCost'			=> 7,
+			'name'						=> 'Stone Irrigation Pipe-Intersection',
+			'thumbnail'					=> '50px-Stone_Irrigation_Pipe_Intersection.png',
+			'prereq1'					=> 'Stone Irrigation Pipe-Straight',
+	),
+	'EngramEntry_StonePipeStraight_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_StonePipeStraight_C',
+			'EngramLevelRequirement'	=> 10,
+			'EngramPointsCost'			=> 2,
+			'name'						=> 'Stone Pipe Straight',
+			'thumbnail'					=> '50px-Stone_Irrigation_Pipe_Straight.png',
+			'prereq1'					=> 'Stone Pipe Intake',
+	),
+	'EngramEntry_StonePipeTap_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_StonePipeTap_C',
+			'EngramLevelRequirement'	=> 10,
+			'EngramPointsCost'			=> 5,
+			'name'						=> 'Stone Irrigation Pipe-Tap',
+			'thumbnail'					=> '50px-Stone_Irrigation_Pipe_Tap.png',
+			'prereq1'					=> 'Stone Pipe Intake',
+	),
+	'EngramEntry_StonePipeVertical_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_StonePipeVertical_C',
+			'EngramLevelRequirement'	=> 15,
+			'EngramPointsCost'			=> 4,
+			'name'						=> 'Stone Irrigation Pipe-Vertical',
+			'thumbnail'					=> '50px-Stone_Irrigation_Pipe_Vertical.png',
+			'prereq1'					=> 'Stone Irrigation Pipe-Straight',
+	),
+	'EngramEntry_StoneTrapdoor_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_StoneTrapdoor_C',
+			'EngramLevelRequirement'	=> 30,
+			'EngramPointsCost'			=> 10,
+			'name'						=> 'Reinforced Trapdoor',
+			'thumbnail'					=> '50px-Reinforced_Trapdoor.png',
+	),
+	'EngramEntry_StoneWall_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_StoneWall_C',
+			'EngramLevelRequirement'	=> 15,
+			'EngramPointsCost'			=> 8,
+			'name'						=> 'Stone Wall',
+			'thumbnail'					=> '50px-Stone_Wall.png',
+			'prereq1'					=> 'Wooden Wall',
+	),
+	'EngramEntry_StoneWallWithDoor_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_StoneWallWithDoor_C',
+			'EngramLevelRequirement'	=> 20,
+			'EngramPointsCost'			=> 6,
+			'name'						=> 'Stone Doorframe',
+			'thumbnail'					=> '50px-Stone_Doorframe.png',
+			'prereq1'					=> 'Wooden Doorframe',
+			'prereq2'					=> 'Stone Wall',
+	),
+	'EngramEntry_StoneWallWithWindow_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_StoneWallWithWindow_C',
+			'EngramLevelRequirement'	=> 25,
+			'EngramPointsCost'			=> 11,
+			'name'						=> 'Stone Windowframe',
+			'thumbnail'					=> '50px-Stone_Windowframe.png',
+			'prereq1'					=> 'Wooden Windowframe',
+			'prereq2'					=> 'Stone Wall',
+	),
+	'EngramEntry_StoneWindow_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_StoneWindow_C',
+			'EngramLevelRequirement'	=> 30,
+			'EngramPointsCost'			=> 10,
+			'name'						=> 'Reinforced Window',
+			'thumbnail'					=> '50px-Reinforced_Window.png',
+	),
+	'EngramEntry_StorageBox_Huge_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_StorageBox_Huge_C',
+			'EngramLevelRequirement'	=> 65,
+			'EngramPointsCost'			=> 30,
+			'name'						=> 'Vault',
+			'thumbnail'					=> '50px-Vault.png',
+			'prereq1'					=> 'Large Storage Box',
+	),
+	'EngramEntry_StorageBox_Large_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_StorageBox_Large_C',
+			'EngramLevelRequirement'	=> 15,
+			'EngramPointsCost'			=> 9,
+			'name'						=> 'Large Storage Box',
+			'thumbnail'					=> '50px-Large_Storage_Box.png',
+			'prereq1'					=> 'Storage Box',
+	),
+	'EngramEntry_StorageBox_Small_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_StorageBox_Small_C',
+			'EngramLevelRequirement'	=> 5,
+			'EngramPointsCost'			=> 6,
+			'name'						=> 'Storage Box',
+			'thumbnail'					=> '50px-Storage_Box.png',
+	),
+	'EngramEntry_ThatchCeiling_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_ThatchCeiling_C',
+			'EngramLevelRequirement'	=> 3,
+			'EngramPointsCost'			=> 3,
+			'name'						=> 'Thatch Roof',
+			'thumbnail'					=> '50px-Thatch_Roof.png',
+	),
+	'EngramEntry_ThatchDoor_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_ThatchDoor_C',
+			'EngramLevelRequirement'	=> 3,
+			'EngramPointsCost'			=> 3,
+			'name'						=> 'Thatch Door',
+			'thumbnail'					=> '50px-Thatch_Door.png',
+	),
+	'EngramEntry_ThatchFloor_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_ThatchFloor_C',
+			'EngramLevelRequirement'	=> 2,
+			'EngramPointsCost'			=> 3,
+			'name'						=> 'Thatch Foundation',
+			'thumbnail'					=> '50px-Thatch_Foundation.png',
+	),
+	'EngramEntry_ThatchWall_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_ThatchWall_C',
+			'EngramLevelRequirement'	=> 3,
+			'EngramPointsCost'			=> 3,
+			'name'						=> 'Thatch Wall',
+			'thumbnail'					=> '50px-Thatch_Wall.png',
+	),
+	'EngramEntry_ThatchWallWithDoor_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_ThatchWallWithDoor_C',
+			'EngramLevelRequirement'	=> 2,
+			'EngramPointsCost'			=> 3,
+			'name'						=> 'Thatch Doorframe',
+			'thumbnail'					=> '50px-Thatch_Doorframe.png',
+	),
+	'EngramEntry_Torch_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Torch_C',
+			'EngramLevelRequirement'	=> 1,
+			'EngramPointsCost'			=> 0,
+			'name'						=> 'Torch',
+			'thumbnail'					=> '50px-Torch.png',
+	),
+	'EngramEntry_Torch2_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Torch2_C',
+			'EngramLevelRequirement'	=> 999,
+			'EngramPointsCost'			=> 999,
+			'name'						=> 'Torch2',
+			'thumbnail'					=> '50px-Torch2.png',
+			'skip'						=> true,
+	),
+	'EngramEntry_TransGPS_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_TransGPS_C',
+			'EngramLevelRequirement'	=> 60,
+			'EngramPointsCost'			=> 20,
+			'name'						=> 'Transponder Tracker',
+			'thumbnail'					=> '50px-Transponder_Tracker.png',
+	),
+	'EngramEntry_TransGPSAmmo_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_TransGPSAmmo_C',
+			'EngramLevelRequirement'	=> 65,
+			'EngramPointsCost'			=> 20,
+			'name'						=> 'Transponder Node',
+			'thumbnail'					=> '50px-Transponder_Node.png',
+	),
+	'EngramEntry_TripwireC4_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_TripwireC4_C',
+			'EngramLevelRequirement'	=> 30,
+			'EngramPointsCost'			=> 45,
+			'name'						=> 'Improvised Explosive Device',
+			'thumbnail'					=> '50px-Improvised_Explosive_Device.png',
+			'prereq1'					=> 'Grenade',
+	),
+	'EngramEntry_Turret_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Turret_C',
+			'EngramLevelRequirement'	=> 60,
+			'EngramPointsCost'			=> 40,
+			'name'						=> 'Auto Turret',
+			'thumbnail'					=> '50px-Auto_Turret.png',
+			'prereq1'					=> 'Assault Rifle',
+	),
+	'EngramEntry_WaterJar_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_WaterJar_C',
+			'EngramLevelRequirement'	=> 30,
+			'EngramPointsCost'			=> 12,
+			'name'						=> 'Water Jar',
+			'thumbnail'					=> '50px-Water_Jar.png',
+			'prereq1'					=> 'Waterskin',
+	),
+	'EngramEntry_Waterskin_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_Waterskin_C',
+			'EngramLevelRequirement'	=> 3,
+			'EngramPointsCost'			=> 6,
+			'name'						=> 'Waterskin',
+			'thumbnail'					=> '50px-Waterskin.png',
+	),
+	'EngramEntry_WaterTank_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_WaterTank_C',
+			'EngramLevelRequirement'	=> 15,
+			'EngramPointsCost'			=> 7,
+			'name'						=> 'Water Reservoir',
+			'thumbnail'					=> '50px-Water_Reservoir.png',
+			'prereq1'					=> 'Cementing Paste',
+	),
+	'EngramEntry_WaterTankMetal_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_WaterTankMetal_C',
+			'EngramLevelRequirement'	=> 45,
+			'EngramPointsCost'			=> 20,
+			'name'						=> 'Metal Water Reservoir',
+			'thumbnail'					=> '50px-Metal_Water_Reservoir.png',
+			'prereq1'					=> 'Water Reservoir',
+	),
+	'EngramEntry_WeaponC4_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_WeaponC4_C',
+			'EngramLevelRequirement'	=> 55,
+			'EngramPointsCost'			=> 24,
+			'name'						=> 'C4 Remote Detonator',
+			'thumbnail'					=> '50px-C4_Remote_Detonator.png',
+			'prereq1'					=> 'Electronics',
+	),
+	'EngramEntry_WoodCatwalk_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_WoodCatwalk_C',
+			'EngramLevelRequirement'	=> 20,
+			'EngramPointsCost'			=> 9,
+			'name'						=> 'Wooden Catwalk',
+			'thumbnail'					=> '50px-Wooden_Catwalk.png',
+			'prereq1'					=> 'Wooden Ceiling',
+	),
+	'EngramEntry_WoodCeiling_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_WoodCeiling_C',
+			'EngramLevelRequirement'	=> 10,
+			'EngramPointsCost'			=> 6,
+			'name'						=> 'Wooden Ceiling',
+			'thumbnail'					=> '50px-Wooden_Ceiling.png',
+			'prereq1'					=> 'Thatch Roof',
+	),
+	'EngramEntry_WoodCeilingWithTrapdoor_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_WoodCeilingWithTrapdoor_C',
+			'EngramLevelRequirement'	=> 15,
+			'EngramPointsCost'			=> 9,
+			'name'						=> 'Wooden Hatchframe',
+			'thumbnail'					=> '50px-Wooden_Hatchframe.png',
+			'prereq1'					=> 'Wooden Ceiling',
+	),
+	'EngramEntry_WoodDoor_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_WoodDoor_C',
+			'EngramLevelRequirement'	=> 10,
+			'EngramPointsCost'			=> 4,
+			'name'						=> 'Wooden Door',
+			'thumbnail'					=> '50px-Wooden_Door.png',
+			'prereq1'					=> 'Thatch Door',
+			'prereq2'					=> 'Wooden Doorframe',
+	),
+	'EngramEntry_WoodFenceFoundation_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_WoodFenceFoundation_C',
+			'EngramLevelRequirement'	=> 15,
+			'EngramPointsCost'			=> 6,
+			'name'						=> 'Wooden Fence Foundation',
+			'thumbnail'					=> '50px-Wooden_Fence_Foundation.png',
+			'prereq1'					=> 'Wooden Foundation',
+	),
+	'EngramEntry_WoodFloor_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_WoodFloor_C',
+			'EngramLevelRequirement'	=> 5,
+			'EngramPointsCost'			=> 6,
+			'name'						=> 'Wooden Foundation',
+			'thumbnail'					=> '50px-Wooden_Foundation.png',
+	),
+	'EngramEntry_WoodGate_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_WoodGate_C',
+			'EngramLevelRequirement'	=> 20,
+			'EngramPointsCost'			=> 6,
+			'name'						=> 'Dinosaur Gate',
+			'thumbnail'					=> '50px-Dinosaur_Gate.png',
+			'prereq1'					=> 'Dinosaur Gateway',
+	),
+	'EngramEntry_WoodGateway_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_WoodGateway_C',
+			'EngramLevelRequirement'	=> 20,
+			'EngramPointsCost'			=> 9,
+			'name'						=> 'Dinosaur Gateway',
+			'thumbnail'					=> '50px-Dinosaur_Gateway.png',
+	),
+	'EngramEntry_WoodLadder_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_WoodLadder_C',
+			'EngramLevelRequirement'	=> 15,
+			'EngramPointsCost'			=> 6,
+			'name'						=> 'Wooden Ladder',
+			'thumbnail'					=> '50px-Wooden_Ladder.png',
+	),
+	'EngramEntry_WoodPillar_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_WoodPillar_C',
+			'EngramLevelRequirement'	=> 15,
+			'EngramPointsCost'			=> 9,
+			'name'						=> 'Wooden Pillar',
+			'thumbnail'					=> '50px-Wooden_Pillar.png',
+			'prereq1'					=> 'Wooden Foundation',
+	),
+	'EngramEntry_WoodRamp_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_WoodRamp_C',
+			'EngramLevelRequirement'	=> 15,
+			'EngramPointsCost'			=> 3,
+			'name'						=> 'Wooden Ramp',
+			'thumbnail'					=> '50px-Wooden_Ramp.png',
+			'prereq1'					=> 'Wooden Ceiling',
+	),
+	'EngramEntry_WoodSign_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_WoodSign_C',
+			'EngramLevelRequirement'	=> 3,
+			'EngramPointsCost'			=> 3,
+			'name'						=> 'Wooden Sign',
+			'thumbnail'					=> '50px-Wooden_Sign.png',
+	),
+	'EngramEntry_WoodSign_Large_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_WoodSign_Large_C',
+			'EngramLevelRequirement'	=> 15,
+			'EngramPointsCost'			=> 4,
+			'name'						=> 'Wooden Billboard',
+			'thumbnail'					=> '50px-Wooden_Billboard.png',
+			'prereq1'					=> 'Wooden Sign',
+	),
+	'EngramEntry_WoodSign_Wall_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_WoodSign_Wall_C',
+			'EngramLevelRequirement'	=> 10,
+			'EngramPointsCost'			=> 2,
+			'name'						=> 'Wooden Wall Sign',
+			'thumbnail'					=> '50px-Wooden_Wall_Sign.png',
+	),
+	'EngramEntry_WoodSpikeWall_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_WoodSpikeWall_C',
+			'EngramLevelRequirement'	=> 10,
+			'EngramPointsCost'			=> 4,
+			'name'						=> 'Wooden Spike Wall',
+			'thumbnail'					=> '50px-Wooden_Spike_Wall.png',
+	),
+	'EngramEntry_WoodTrapdoor_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_WoodTrapdoor_C',
+			'EngramLevelRequirement'	=> 20,
+			'EngramPointsCost'			=> 6,
+			'name'						=> 'Wooden Trapdoor',
+			'thumbnail'					=> '50px-Wooden_Trapdoor.png',
+			'prereq1'					=> 'Wooden Hatchframe',
+	),
+	'EngramEntry_WoodWall_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_WoodWall_C',
+			'EngramLevelRequirement'	=> 5,
+			'EngramPointsCost'			=> 7,
+			'name'						=> 'Wooden Wall',
+			'thumbnail'					=> '50px-Wooden_Wall.png',
+			'prereq1'					=> 'Thatch Wall',
+	),
+	'EngramEntry_WoodWallWithDoor_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_WoodWallWithDoor_C',
+			'EngramLevelRequirement'	=> 10,
+			'EngramPointsCost'			=> 6,
+			'name'						=> 'Wooden Doorframe',
+			'thumbnail'					=> '50px-Wooden_Doorframe.png',
+			'prereq1'					=> 'Thatch Doorframe',
+			'prereq2'					=> 'Wooden Wall',
+	),
+	'EngramEntry_WoodWallWithWindow_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_WoodWallWithWindow_C',
+			'EngramLevelRequirement'	=> 20,
+			'EngramPointsCost'			=> 9,
+			'name'						=> 'Wooden Windowframe',
+			'thumbnail'					=> '50px-Wooden_Windowframe.png',
+			'prereq1'					=> 'Wooden Wall',
+	),
+	'EngramEntry_WoodWindow_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_WoodWindow_C',
+			'EngramLevelRequirement'	=> 25,
+			'EngramPointsCost'			=> 12,
+			'name'						=> 'Wooden Window',
+			'thumbnail'					=> '50px-Wooden_Window.png',
+			'prereq1'					=> 'Wooden Windowframe',
+			
+	),
 );
 
-
-
 foreach ($engram_defaults as $id => $info) {
+	
+	
+	
 	$info['EngramHidden']		= 'false';
 	$info['RemoveEngramPreReq']	= 'false';
 	
 	$engram_defaults[ $id ]	= $info;
+	
+	if (!empty($info['skip'])) { unset($engram_defaults[ $id ]); }
+}
+
+
+
+usort($engram_defaults, "EngramSortByLevel");
+
+function EngramSortByLevel($a, $b)
+{
+    if ($a['EngramLevelRequirement'] == $b['EngramLevelRequirement']) {
+        return 0;
+    }
+    return ($a['EngramLevelRequirement'] < $b['EngramLevelRequirement']) ? -1 : 1;
 }
