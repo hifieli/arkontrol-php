@@ -17,14 +17,22 @@
 	//assemble array of ini settings. file->section->key = value
 	$all_ini		= scandir($_INICONF['settingspath']);
 	$ini_current	= array();
-	foreach ($all_ini as $this_ini) {
-		if (($this_ini != '.')  && ($this_ini != '..') ) {
-			$this_arr		= @parse_ini_file($_INICONF['settingspath'] . "/{$this_ini}", true);
-			$this_arr		= (!empty($this_arr)) ? $this_arr : array();
-			
-			$ini_current	= array_merge($ini_current, array($this_ini=>$this_arr));
+	if (!empty($all_ini)) {
+		foreach ($all_ini as $this_ini) {
+			if (($this_ini != '.')  && ($this_ini != '..') ) {
+				$this_arr		= @parse_ini_file($_INICONF['settingspath'] . "/{$this_ini}", true);
+				$this_arr		= (!empty($this_arr)) ? $this_arr : array();
+				
+				$ini_current	= array_merge($ini_current, array($this_ini=>$this_arr));
+			}
 		}
 	}
+	
+	//grab our Game.ini modeller (remember, nonstandard ini syntax and all that)
+	require_once($_INICONF['webdocroot'] . '/includes/class.GameIniFixer.php');
+	$iniGame					= new GameIniFixer($_INICONF);
+	$ini_current['Game.ini']	= $iniGame->gameini;
+	
 	
 	//Replace any values in the template with their real values from the ini files.
 	foreach ($ini_spec as $ini_file => $file_arr) {
@@ -112,6 +120,11 @@
 				if (!empty($newlines)) {
 					file_put_contents($ini_fullpath, implode("\r\n", $newlines));
 				}				
+			}
+			
+			if (!empty($files_diffed['Game.ini'])) {
+				$iniGame->gameini = $ini_comb['Game.ini'];
+				$iniGame->write();
 			}
 			
 			//if there were diffs, make sure we send a message telling them to restart ARK dedicated server.

@@ -99,25 +99,27 @@ class GameIniFixer {
 //var_dump($fromini);
 		$final = array();
 		if (!empty($fromini)) {
-			//"(EngramIndex=1,EngramHidden=false,EngramPointsCost=3,EngramLevelRequirement=3,RemoveEngramPreReq=true)"
-			
-			//remove parens
-			$fromini = str_replace('(', '', $fromini);
-			$fromini = str_replace(')', '', $fromini);
-			//"EngramIndex=1,EngramHidden=false"
-			
-			//split kvp's on the comma
-			$KVp	= explode(',', $fromini); 
-			//array('EngramIndex=1','EngramHidden=false')
-			
-			//split each key/value pair out and put into an array
-			foreach ($KVp as $pair) {
-				$parts	= explode('=', $pair);
+				//"(EngramIndex=1,EngramHidden=false,EngramPointsCost=3,EngramLevelRequirement=3,RemoveEngramPreReq=true)"
+			if (strstr($fromini,'(') !== false) {
+				//remove parens
+				$fromini = str_replace('(', '', $fromini);
+				$fromini = str_replace(')', '', $fromini);
+				//"EngramIndex=1,EngramHidden=false"
 				
-				$final [ $parts[0] ] = $parts[1];
+				//split kvp's on the comma
+				$KVp	= explode(',', $fromini); 
+				//array('EngramIndex=1','EngramHidden=false')
+				
+				//split each key/value pair out and put into an array
+				foreach ($KVp as $pair) {
+					$parts	= explode('=', $pair);
+					
+					$final [ $parts[0] ] = $parts[1];
+				}
+				//array('EngramIndex'=>1,'EngramHidden'=>false)
+			} else {
+				$final = $fromini;
 			}
-			//array('EngramIndex'=>1,'EngramHidden'=>false)
-			
 		}
 		return $final;
 	}
@@ -125,20 +127,24 @@ class GameIniFixer {
 
 		$final	= '';
 		if (!empty($asarray)) {
-			foreach ($asarray as $key => $val) {
-				if ($val === false) {
-					$final	.= "{$key}=false,";
-				} elseif ($val === true) {
-					$final	.= "{$key}=true,";
-				} else {
-					$final	.= "{$key}={$val},";
+			if (is_array($asarray)) {
+				foreach ($asarray as $key => $val) {
+					if ($val === false) {
+						$final	.= "{$key}=false,";
+					} elseif ($val === true) {
+						$final	.= "{$key}=true,";
+					} else {
+						$final	.= "{$key}={$val},";
+					}
 				}
+				$final	= rtrim($final, ',');
+				
+				$final	= "({$final})";
+				
+				//(EngramIndex=1,EngramHidden=false,EngramPointsCost=3,EngramLevelRequirement=3,RemoveEngramPreReq=true)
+			} else {
+				$final	= $asarray; //not an array, just pass the value back
 			}
-			$final	= rtrim($final, ',');
-			
-			$final	= "({$final})";
-			
-			//(EngramIndex=1,EngramHidden=false,EngramPointsCost=3,EngramLevelRequirement=3,RemoveEngramPreReq=true)
 		}
 
 		return $final;

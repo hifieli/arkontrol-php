@@ -86,6 +86,30 @@ $gameuserini = array(
 				'group'	=> 'general',
 				'desc'	=> 'Disables downloading characters from other servers',
 			),
+			'PreventDownloadSurvivors'	=> array(
+				'name'	=> 'PreventDownloadSurvivors',
+				'type'	=> 'boolean',
+				'vald'	=> 'false',
+				'valc'	=> 'false',
+				'group'	=> 'general',
+				'desc'	=> 'Disables downloading characters (only) from other servers',
+			),
+			'PreventDownloadItems'	=> array(
+				'name'	=> 'PreventDownloadItems',
+				'type'	=> 'boolean',
+				'vald'	=> 'false',
+				'valc'	=> 'false',
+				'group'	=> 'general',
+				'desc'	=> 'Disables downloading items (only) from other servers',
+			),
+			'PreventDownloadDinos'	=> array(
+				'name'	=> 'PreventDownloadDinos',
+				'type'	=> 'boolean',
+				'vald'	=> 'false',
+				'valc'	=> 'false',
+				'group'	=> 'general',
+				'desc'	=> 'Disables downloading dinos (only) from other servers',
+			),
 			'proximityChat'	=> array(
 				'name'	=> 'proximityChat',
 				'type'	=> 'boolean',
@@ -118,6 +142,15 @@ $gameuserini = array(
 				'group'	=> 'general',
 				'desc'	=> 'HUD always disabled',
 			),
+			
+			'AllowCaveBuildingPvE'	=> array(
+				'name'	=> 'AllowCaveBuildingPvE',
+				'type'	=> 'boolean',
+				'vald'	=> 'false',
+				'valc'	=> 'false',
+				'group'	=> 'environment',
+				'desc'	=> 'Allows building structures within caves',
+			),
 			'bDisableStructureDecayPvE'	=> array(
 				'name'	=> 'bDisableStructureDecayPvE',
 				'type'	=> 'boolean',
@@ -142,6 +175,14 @@ $gameuserini = array(
 				'group'	=> 'general',
 				'desc'	=> 'Specifies the maximum number of structures that can be constructed within a certain (currently hard-coded) range.',
 			),
+			'NewMaxStructuresInRange'	=> array(
+				'name'	=> 'NewMaxStructuresInRange',
+				'type'	=> 'integer',
+				'vald'	=> '6000',
+				'valc'	=> '6000',
+				'group'	=> 'general',
+				'desc'	=> 'Specifies the maximum number of structures that can be constructed within a certain range.',
+			),			
 			'DifficultyOffset'	=> array(
 				'name'	=> 'DifficultyOffset',
 				'type'	=> 'float',
@@ -165,6 +206,15 @@ $gameuserini = array(
 				'valc'	=> '',
 				'group'	=> 'authentication',
 				'desc'	=> 'If specified, players must provide this password (via the in-game console) to gain access to administrator commands on the server.',
+			),
+			
+			'SpectatorPassword'	=> array(
+				'name'	=> 'SpectatorPassword',
+				'type'	=> 'string',
+				'vald'	=> '',
+				'valc'	=> '',
+				'group'	=> 'authentication',
+				'desc'	=> 'If specified, players must provide this password to spectate the server.',
 			),
 			'DayCycleSpeedScale'	=> array(
 				'name'	=> 'DayCycleSpeedScale',
@@ -360,6 +410,82 @@ $gameuserini = array(
 			),
 		),
 	),
+
+	'Game.ini'				=> array(
+		'/script/shootergame.shootergamemode'	=> array(
+			'PvPZoneStructureDamageMultiplier'	=> array(
+				'name'	=> 'PvPZoneStructureDamageMultiplier',
+				'type'	=> 'float',
+				'vald'	=> 6.0,
+				'valc'	=> 6.0,
+				'group'	=> 'environment',
+				'desc'	=> 'In PvP, structures within caves/cave-entrances now take 6x damage',
+			),		
+			'OverrideMaxExperiencePointsPlayer'	=> array(
+				'name'	=> 'OverrideMaxExperiencePointsPlayer',
+				'type'	=> 'integer',
+				'vald'	=> 0,
+				'valc'	=> 0,
+				'group'	=> 'player',
+				'desc'	=> 'Set to larger than 0 to override the Max XP cap of players characters',
+			),	
+			'OverrideMaxExperiencePointsDino'	=> array(
+				'name'	=> 'OverrideMaxExperiencePointsDino',
+				'type'	=> 'float',
+				'vald'	=> 0,
+				'valc'	=> 0,
+				'group'	=> 'player',
+				'desc'	=> 'Set to larger than 0 to override the Max XP cap of dino characters',
+			),
+			'GlobalSpoilingTimeMultiplier'	=> array(
+				'name'	=> 'GlobalSpoilingTimeMultiplier',
+				'type'	=> 'float',
+				'vald'	=> 0,
+				'valc'	=> 0,
+				'group'	=> 'environment',
+				'desc'	=> 'Set to larger than 0 to override the spoiling time of perishables',
+			),
+			'GlobalItemDecompositionTimeMultiplier'	=> array(
+				'name'	=> 'GlobalItemDecompositionTimeMultiplier',
+				'type'	=> 'float',
+				'vald'	=> 0,
+				'valc'	=> 0,
+				'group'	=> 'environment',
+				'desc'	=> 'Set to larger than 0 to override the decomposition time for items on the ground',
+			),	
+			'GlobalCorpseDecompositionTimeMultiplier'	=> array(
+				'name'	=> 'GlobalCorpseDecompositionTimeMultiplier',
+				'type'	=> 'float',
+				'vald'	=> 0,
+				'valc'	=> 0,
+				'group'	=> 'environment',
+				'desc'	=> 'Set to larger than 0 to override the decomposition time for corpses on the ground',
+			),	
+		),
+/*
+
+to prevent Taming of specific Dino's:
+[/script/shootergame.shootergamemode]
+PreventDinoTameClassNames="Argent_Character_BP_C"
+PreventDinoTameClassNames="Ptero_Character_BP_C"
+//etc etc -- all dino classnames are in the ARK Dev Kit
+
+
+* Custom servers INI can now scale on a per-resource type basis the amount of resources harvested. In your server's Game.ini, for example:
+[/script/shootergame.shootergamemode]
+HarvestResourceItemAmountClassMultipliers=(ClassName="PrimalItemResource_Thatch_C",Multiplier=2.0)
+HarvestResourceItemAmountClassMultipliers=(ClassName="PrimalItemResource_Stone_C",Multiplier=4.0)
+
+
+[/script/shootergame.shootergamemode]
+bOnlyAllowSpecifiedEngrams=true/false
+Defaults false. If true, any Engram not explicitly specified in the EngramsOverride list will be Hidden. Useful for maintaining primitive servers even as we add new Engrams in Updates.
+
+*/
+
+	),
+
+	
 );
 
 ?>
