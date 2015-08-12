@@ -31,14 +31,14 @@
 			break;
 			case 'update':
 				$pretty_cmd	= 'update';
-				$issue_cmd	= "sudo -u www-data sudo service {$_INICONF['servicename']} stop && sudo -u steam {$_INICONF['steamcmdbin']} +login anonymous +force_install_dir {$_INICONF['force_install_dir']} +app_update {$_INICONF['steamappid']} +quit | tee /tmp/update.log";
+				$issue_cmd	= "sudo -u www-data sudo service {$_INICONF['servicename']} stop && sudo -u steam {$_INICONF['steamcmdbin']} +login anonymous +force_install_dir {$_INICONF['force_install_dir']} +app_update {$_INICONF['steamappid']} +quit"; // | tee /tmp/update.log
 				$logwatch	= true;
 				$_MSGS[]	= array('type'=>'info','msg'=>"arkontrol has issued the `update` command to the server. This process may some time to complete. Please don't forget, after the update, your server will be offline, and must be (re)started.");
 			break;
 			case 'reinstall':
 				//we should stop it first.
 				$pretty_cmd	= 'reinstall';
-				$issue_cmd	= "sudo -u www-data sudo service {$_INICONF['servicename']} stop && sudo rm -rf /home/steam/ark_ds/* && sudo -u steam {$_INICONF['steamcmdbin']} +login anonymous +force_install_dir {$_INICONF['force_install_dir']} +app_update {$_INICONF['steamappid']} +quit | tee /tmp/update.log";
+				$issue_cmd	= "sudo -u www-data sudo service {$_INICONF['servicename']} stop && sudo rm -rf /home/steam/ark_ds/* && sudo -u steam {$_INICONF['steamcmdbin']} +login anonymous +force_install_dir {$_INICONF['force_install_dir']} +app_update {$_INICONF['steamappid']} +quit"; // | tee /tmp/update.log
 			//	$issue_cmd	= "sudo rm -rf {$_INICONF['force_install_dir']}/* && sudo -u steam /home/steam/steamcmd/steamcmd.sh +login anonymous +force_install_dir {$_INICONF['force_install_dir']} +app_update {$_INICONF['steamappid']} +quit";
 				$logwatch	= true;
 				$_MSGS[]	= array('type'=>'info','msg'=>"arkontrol has issued the `reinstall` command to the server. This process will take some time to complete.");
@@ -57,7 +57,10 @@
 		}
 		
 		if (!empty($issue_cmd)) {
-			$response = exec($issue_cmd . " > /dev/null &");
+			
+			$destination = ($logwatch) ? '/tmp/update.log' : '/dev/null';
+			
+			$response = exec($issue_cmd . " > {$destination} &");
 			
 			//$response = exec($issue_cmd);
 			//$_MSGS[]	= array('type'=>'info','msg'=>"response: {$response}");
