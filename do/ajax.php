@@ -29,22 +29,23 @@
 						$cmd				= "service {$_INICONF['servicename']} status";
 						$server_status_raw	= exec($cmd);
 						$words				= explode(' ', $server_status_raw);
-						$server_status		= rtrim(',', (!empty($words[1]))? $words[1]: 'unknown');
+						$server_status 		= 'Unknown';
+						//$server_status		= rtrim(',', (!empty($words[1]))? $words[1]: 'unknown');
 						
 
-							if ( strstr($server_status, 'running') ) {
+							if ( strstr($server_status_raw, 'running') ) {
 								$server_status = 'Running';
 							}
 							
-							else if ( strstr($server_status, 'starting') ) {
+							else if ( strstr($server_status_raw, 'starting') ) {
 								$server_status = 'Starting';
 							}
 							
-							else if ( strstr($server_status, 'stopping') ) {
+							else if ( strstr($server_status_raw, 'stopping') ) {
 								$server_status = 'Stopping';
 							}
 							
-							else if ( strstr($server_status, 'waiting') ) {
+							else if ( strstr($server_status_raw, 'waiting') ) {
 								$server_status = 'Stopped';
 							}
 							else {
