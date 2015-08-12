@@ -11,7 +11,8 @@
 			
 					<p  id="logwatch_p"></p>
 					<textarea rows="15" id="logwatch_log" style="width: 100%; font-family: Courier New, Courier, terminal, system;"></textarea>
-					<p> * Be patient, it may take some time for the process to begin. It is common for the process to send large amounts of data to the log every minute or so, rather than small amounts of data every few seconds, which can be frustrating. <input type="button" class="btn btn-md logwatch_refresh" value="Refresh Log"></p>
+					<p class="text-muted"> * Be patient, it may take some time for the process to begin. It is common for the process to send large amounts of data to the log every minute or so, rather than small amounts of data every few seconds, which can be frustrating.</p>
+					<p><input type="button" class="btn btn-md logwatch_refresh" value="Refresh"></p>
 				</div>
 			</div>
 			{/if}
@@ -191,6 +192,7 @@ function start_logwatcher() {
 			logcnt++;
 			
 			if ( document.hasFocus() ) {
+				$('.logwatch_refresh').attr('value','fetching...');
 				ajax_request('ark-updatelog', {});
 			}
 		},
@@ -207,6 +209,8 @@ function callback_ark_updatelog(data) {
 	
 	$("#logwatch_log").html(data.log);
 	$("#logwatch_log").scrollTop(999999999);
+	
+	$('.logwatch_refresh').attr('value','Refresh');
 	
 }
 </script>
