@@ -62,7 +62,7 @@
 			
 			$response = exec($issue_cmd . " > {$destination} &");
 			
-			$response = exec($issue_cmd);
+			//$response = exec($issue_cmd);
 			$_MSGS[]	= array('type'=>'info','msg'=>"response: {$response}");
 			
 			if ($issue_cmd != 'start') {
