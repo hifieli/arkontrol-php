@@ -58,12 +58,12 @@
 		
 		if (!empty($issue_cmd)) {
 			
-			$destination = ($logwatch) ? '/tmp/update.log' : '/dev/null';
+			$destination = (!empty($logwatch)) ? '/tmp/update.log' : '/dev/null';
 			
 			$response = exec($issue_cmd . " > {$destination} &");
 			
-			//$response = exec($issue_cmd);
-			//$_MSGS[]	= array('type'=>'info','msg'=>"response: {$response}");
+			$response = exec($issue_cmd);
+			$_MSGS[]	= array('type'=>'info','msg'=>"response: {$response}");
 			
 			if ($issue_cmd != 'start') {
 				unset($_SESSION['need_to_restart']);

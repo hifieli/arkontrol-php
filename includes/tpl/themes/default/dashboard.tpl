@@ -35,7 +35,7 @@
 				<h4>ARKontrol Tools</h4>
 				<ul class="nav nav-stacked">			
 					<li><a href="/do/webAuth.php">Change ARKontrol Password</a></li>
-					<li><a href="/do/panelUpgrade.php">Upgrade ARKontrol</a></li>
+					<li><a href="/do/panelUpgrade.php">Update ARKontrol</a></li>
 					<li><a href="/do/systemDetails.php">System Details</a></li>
 					<li><a href="/do/webDebug.php">Debug</a></li>
 				</ul>
