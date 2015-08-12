@@ -36,7 +36,7 @@
 								<p>You are running the latest version, but you can refresh your copy if needed.</p>
 								<input type="submit" class="btn btn-info btn-lg" value="Refresh my Arkontrol panel">
 							{else}
-								<p>You are not running the latest version, and should update at earliest convenience. The new panel was released {$latest_version - $current_version} seconds after the version you are using.</p>
+								<p>You are not running the latest version, and should update at earliest convenience.</p>
 								<input type="submit" class="btn btn-success btn-lg" value="Update my Arkontrol panel now!">
 								<script>
 								$(document).ready(function() {
