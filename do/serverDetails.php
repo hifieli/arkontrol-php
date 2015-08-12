@@ -58,9 +58,9 @@
 		
 		if (!empty($issue_cmd)) {
 			
-			$destination = ($logwatch) ? '/tmp/update.log' : '/dev/null';
+			$destination = ($logwatch) ? '| tee /tmp/update.log' : '> /dev/null';
 			
-			$response = exec($issue_cmd . " > {$destination} &");
+			$response = exec($issue_cmd . " {$destination} &");
 			
 			//$response = exec($issue_cmd);
 			//$_MSGS[]	= array('type'=>'info','msg'=>"response: {$response}");
