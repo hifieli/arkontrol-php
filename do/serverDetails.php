@@ -31,7 +31,7 @@
 			break;
 			case 'update':
 				$pretty_cmd	= 'update';
-				$issue_cmd	= "sudo -u www-data sudo service {$_INICONF['servicename']} stop && sudo -u steam {$_INICONF['steamcmdbin']} +login anonymous +force_install_dir {$_INICONF['force_install_dir']} +app_update {$_INICONF['steamappid']} +quit"; // | tee /tmp/update.log
+				$issue_cmd	= "sudo -u www-data sudo service {$_INICONF['servicename']} stop ; sudo -u steam {$_INICONF['steamcmdbin']} +login anonymous +force_install_dir {$_INICONF['force_install_dir']} +app_update {$_INICONF['steamappid']} +quit"; // | tee /tmp/update.log
 				$logwatch	= true;
 				$_MSGS[]	= array('type'=>'info','msg'=>"arkontrol has issued the `update` command to the server. This process may some time to complete. Please don't forget, after the update, your server will be offline, and must be (re)started.");
 			break;
