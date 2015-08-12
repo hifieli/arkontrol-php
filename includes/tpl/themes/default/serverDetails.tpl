@@ -11,7 +11,7 @@
 			
 					<p  id="logwatch_p"></p>
 					<textarea rows="15" id="logwatch_log" style="width: 100%; font-family: Courier New, Courier, terminal, system;"></textarea>
-					
+					<p> * Be patient, it may take some time for the process to begin. It is common for the process to send large amounts of data to the log every minute or so, rather than small amounts of data every few seconds, which can be frustrating. <input type="button" class="btn btn-md logwatch_refresh" value="Refresh Log"></p>
 				</div>
 			</div>
 			{/if}
@@ -170,15 +170,26 @@ $(document).ready(function() {
 	});
 
 	if (logwatch > 0) {
+	
+		$('.logwatch_refresh').click( function () {
+			start_logwatcher();
+		});
+		
 		start_logwatcher();
 	}
 
 });
 
 function start_logwatcher() {
+	
+	logcnt		= 0;
+	
+	clearInterval(logwatcher);
+
 	logwatcher = setInterval(
 		function () {
 			logcnt++;
+			
 			if ( document.hasFocus() ) {
 				ajax_request('ark-updatelog', {});
 			}
