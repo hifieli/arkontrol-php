@@ -11,6 +11,11 @@
 	//game log file overview
 	//maybe check with an RSS feed of some kind for news and updates
 	
+	$running_as	= exec('whoami');
+	
+	$_SERVER['whoami']	= $running_as;
+	
+	
 	
 	//$_VIEW->assign('things', $stuff);
 	//$_VIEW->assign('_MSGS', $_MSGS);
