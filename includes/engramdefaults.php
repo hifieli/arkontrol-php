@@ -1901,7 +1901,7 @@ foreach ($engram_defaults as $id => $info) {
 
 
 
-usort($engram_defaults, "EngramSortByLevel");
+uasort($engram_defaults, "EngramSortByLevel");
 
 function EngramSortByLevel($a, $b)
 {

@@ -2,6 +2,16 @@
 
 <h2>ARK Dedicated Server Configuration</h2>
 
+{*
+	engram_combined
+	<pre>{$engram_combined|print_r}</pre>
+
+	engram_alreadyini
+	<pre>{$engram_alreadyini|print_r}</pre>
+
+	engram_defaults
+	<pre>{$engram_defaults|print_r}</pre>
+*}
 
 <div class="panel panel-default">
 	<div class="panel-heading">
@@ -36,7 +46,6 @@
 						<table>
 							<tr>
 								<td>
-								{*	<img src="/img/engrams/50px-{$info.name|ucwords|replace:' ':'_'|replace:'-':'_'}.png" alt="{$info.name}"> *}
 									<img src="/img/engrams/{$info.thumbnail}" alt="{$info.name}">
 								</td>
 								<td>

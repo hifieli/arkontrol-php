@@ -39,6 +39,8 @@
 						{if !empty($valid_login)}
 							<li><a class="" href="/do/dashboard.php">Dashboard</a></li>
 						{/if}
+						
+						<li><a href="http://steamcommunity.com/groups/arkontrol/">Help</a></li>
 					
 					{*	<li><a href="/do/help.php">Help</a></li>
 						<li><a href="/do/premium.php">Premium</a></li> *}

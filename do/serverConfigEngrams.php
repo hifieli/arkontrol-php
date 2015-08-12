@@ -48,6 +48,9 @@
 				
 				$iniinfo['name']		= $defaults['name'];
 				
+				if (isset($defaults['thumbnail'])) {
+					$iniinfo['thumbnail'] = $defaults['thumbnail'];
+				}
 				if (isset($defaults['prereq1'])) {
 					$iniinfo['prereq1'] = $defaults['prereq1'];
 				}

@@ -1,8 +1,5 @@
 {include file="_head.tpl"}
 
-<h1>Welcome back {$_INICONF['webadminname']}!</h1>
-
-<p><br /></p>
 
 {include file="serverStatus.tpl"}
 
@@ -53,7 +50,7 @@
 			<div class="col-md-4">
 				<h4>In the works</h4>
 				<ul class="nav nav-stacked">
-
+					<li><a href="/do/dashboard.php">Changing Maps/Mods</a></li>
 					<li><a href="/do/dashboard.php">Dino/Player level ramps</a></li>
 					<li><a href="/do/dashboard.php">Dino/Player XP/level caps</a></li>
 					<li><a href="/do/dashboard.php">Harvested Resource Scaling</a></li>

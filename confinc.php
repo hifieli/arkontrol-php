@@ -23,13 +23,9 @@ if ($_INICONF === false) {
 	die("Unable to parse config file. quitting.");
 }
 
-//marked for removal, we have these in there by default now
-//$_INICONF['webtheme']	= (empty($_INICONF['webtheme']))	? 'default' : $_INICONF['webtheme'];
-//$_INICONF['webscheme']	= (empty($_INICONF['webscheme']))	? 'default' : $_INICONF['webscheme'];
-
 //Handle the firstrun
 if (!empty($_INICONF['firstrun']) || !isset($_INICONF['webdocroot']) || (isset($_INICONF['webdocroot']) && file_exists($_INICONF['webdocroot'] . '/updated'))) {
-	$_INICONF['hostname']	= `hostname`;
+	$_INICONF['hostname']	= `hostname`; $_INICONF['hostname'] = trim($_INICONF['hostname']);
 	$_INICONF['inipath']	= $full_ini_path;
 	$_INICONF['webdocroot']	= dirname(__FILE__);
 	$_INICONF['firstrun']	= 0;
@@ -57,7 +53,6 @@ $_VIEW->assign('_INICONF', $_INICONF);
 
 //create the messages array
 $_MSGS	= array();
-
 
 
 

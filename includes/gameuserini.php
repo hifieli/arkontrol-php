@@ -469,12 +469,81 @@ to prevent Taming of specific Dino's:
 PreventDinoTameClassNames="Argent_Character_BP_C"
 PreventDinoTameClassNames="Ptero_Character_BP_C"
 //etc etc -- all dino classnames are in the ARK Dev Kit
+D:\SteamLibrary\steamapps\common\ARKDevKit\Projects\ShooterGame\Content\PrimalEarth\Dinos
+Ankylo_Character_BP.uasset
+Ant_Character_BP.uasset
+Argent_Character_BP.uasset
+Bat_Character_BP.uasset
+BoaFrill_Character_BP.uasset
+Carno_Character_BP.uasset
+Coel_Character_BP.uasset
+Dilo_Character_BP.uasset
+Dimorph_Character_BP.uasset
+Dodo_Character_BP.uasset
+Dolphin_Character_BP.uasset
+Dragonfly_Character_BP.uasset
+FlyingAnt_Character_BP.uasset
+Mammoth_Character_BP.uasset
+Megalodon_Character_BP.uasset
+MegaRex_Character_BP.uasset
+Para_Character_BP.uasset
+Phiomia_Character_BP.uasset
+Piranha_Character_BP.uasset
+Plesiosaur_Character_BP.uasset
+Ptero_Character_BP.uasset
+Raptor_Character_BP.uasset
+Rex_Character_BP.uasset
+Saber_Character_BP.uasset
+Sarco_Character_BP.uasset
+Sauropod_Character_BP.uasset
+Scorpion_Character_BP.uasset
+SpiderL_Character_BP.uasset
+SpiderS_Character_BP.uasset
+Spino_Character_BP.uasset
+Stego_Character_BP.uasset
+Trike_Character_BP.uasset
+Turtle_Character_BP.uasset
 
 
 * Custom servers INI can now scale on a per-resource type basis the amount of resources harvested. In your server's Game.ini, for example:
 [/script/shootergame.shootergamemode]
 HarvestResourceItemAmountClassMultipliers=(ClassName="PrimalItemResource_Thatch_C",Multiplier=2.0)
 HarvestResourceItemAmountClassMultipliers=(ClassName="PrimalItemResource_Stone_C",Multiplier=4.0)
+D:\SteamLibrary\steamapps\common\ARKDevKit\Projects\ShooterGame\Content\PrimalEarth\CoreBlueprints\Resources
+
+PrimalItemResource_Charcoal
+PrimalItemResource_Chitin
+PrimalItemResource_ChitinPaste
+PrimalItemResource_Craftable
+PrimalItemResource_Crystal
+PrimalItemResource_Electronics
+PrimalItemResource_Fibers
+PrimalItemResource_Flint
+PrimalItemResource_Gasoline
+PrimalItemResource_Gunpowder
+PrimalItemResource_Hide
+PrimalItemResource_Keratin
+PrimalItemResource_Metal
+PrimalItemResource_MetalIngot
+PrimalItemResource_Obsidian
+PrimalItemResource_Oil
+PrimalItemResource_Polymer
+PrimalItemResource_RareFlower
+PrimalItemResource_RareMushroom
+PrimalItemResource_Silicon
+PrimalItemResource_Sparkpowder
+PrimalItemResource_Stone
+PrimalItemResource_Temp
+PrimalItemResource_Thatch
+PrimalItemResource_Wood
+
+//I don't think these make sense in the 'harvest' context, but we shall see.
+PrimalItemResource_ApexDrop_Argentavis
+PrimalItemResource_ApexDrop_Megalodon
+PrimalItemResource_ApexDrop_Rex
+PrimalItemResource_ApexDrop_Sauro
+PrimalItemResource_ChitinOrKeratin
+
 
 
 [/script/shootergame.shootergamemode]

@@ -16,6 +16,7 @@
 	
 	//assemble array of ini settings. file->section->key = value
 	$all_ini		= scandir($_INICONF['settingspath']);
+	$ini_comb		= array();
 	$ini_current	= array();
 	if (!empty($all_ini)) {
 		foreach ($all_ini as $this_ini) {
