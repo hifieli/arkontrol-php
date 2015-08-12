@@ -17,17 +17,18 @@
 				<ul class="nav nav-stacked">
 					<li><a href="/do/serverDetails.php">Server Control</a></li>
 					<li><a href="/do/serverWhitelist.php">Admin Whitelist</a></li>
+					<li><a href="/do/serverProfiles.php">Manage Config Profiles</a></li>
 					<li><a href="/do/browseLogs.php">Server Logs</a></li>
 				</ul>
 			</div>
 
 			<div class="col-md-4">
 				<h4>ARK Configuration</h4>
-				<ul class="nav nav-stacked">			
-					<li><a href="/do/serverProfiles.php">Manage Profiles</a></li>
+				<ul class="nav nav-stacked">
 					<li><a href="/do/serverConfig.php">Server Config</a></li>
 					<li><a href="/do/serverConfigEngrams.php">Engram Config</a></li>
 					<li><a href="/do/serverConfigSpawn.php">Dino Spawn weights</a></li>
+					<li><a href="/do/serverConfigResource.php">Resource Harvest Config</a></li>
 					<li><a href="/do/serverConfigRaw.php">Raw Config Files</a></li>
 				</ul>
 			</div>
@@ -53,7 +54,6 @@
 					<li><a href="/do/dashboard.php">Changing Maps/Mods</a></li>
 					<li><a href="/do/dashboard.php">Dino/Player level ramps</a></li>
 					<li><a href="/do/dashboard.php">Dino/Player XP/level caps</a></li>
-					<li><a href="/do/dashboard.php">Harvested Resource Scaling</a></li>
 					<li><a href="/do/dashboard.php">Item/Corpse Decomposition Scale</a></li>
 					<li><a href="/do/dashboard.php">(s)FTP access to game files</a></li>
 

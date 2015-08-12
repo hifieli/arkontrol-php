@@ -17,6 +17,7 @@
 						<li><a href="/do/serverConfigRaw.php">Raw Config</a></li>
 						<li><a href="/do/serverConfigEngrams.php">Engram Config</a></li>
 						<li><a href="/do/serverConfigSpawn.php">Spawn Config</a></li>
+						<li><a href="/do/serverConfigResource.php">Resource Config</a></li>
 						<li><a href="/do/browseLogs.php">Server Logs</a></li>
 					</ul>
 				</li>
