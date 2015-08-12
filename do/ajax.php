@@ -31,28 +31,26 @@
 						$words				= explode(' ', $server_status_raw);
 						$server_status		= rtrim(',', (!empty($words[1]))? $words[1]: 'unknown');
 						
-						switch ($server_status) {
+
+							if ( strstr($server_status, 'running') ) {
+								$server_status = 'Running';
+							}
 							
-							case strstr($server_status, 'running') :
-								$server_status = 'running';
-							break;
+							else if ( strstr($server_status, 'starting') ) {
+								$server_status = 'Starting';
+							}
 							
-							case strstr($server_status, 'starting') :
-								$server_status = 'starting';
-							break;
+							else if ( strstr($server_status, 'stopping') ) {
+								$server_status = 'Stopping';
+							}
 							
-							case strstr($server_status, 'stopping') :
-								$server_status = 'stopping';
-							break;
-							
-							case strstr($server_status, 'waiting') :
-								$server_status = 'stopped';
-							break;
-							
-							
-							default:
-								$server_status = 'unknown';
-						}
+							else if ( strstr($server_status, 'waiting') ) {
+								$server_status = 'Stopped';
+							}
+							else {
+								$server_status = 'Unknown';
+							}
+						
 						$result	= 'success';
 						$cb		= 'callback_ark_status';
 						$data	= array(
