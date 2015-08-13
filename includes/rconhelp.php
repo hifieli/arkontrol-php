@@ -44,7 +44,7 @@ foreach ($rcon_base as $cat => $cmds) {
 	foreach ($cmds as $info) {
 		$rcon_help[ $info[0] ] = array(
 			'command'		=> $info[0],
-			'argumnets'		=> $info[1],
+			'arguments'		=> $info[1],
 			'description'	=> $info[2],
 			'group'			=> $cat,
 		);
