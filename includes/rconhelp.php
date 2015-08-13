@@ -5,7 +5,7 @@
 $rcon_help	= array();
 	
 $rcon_base	= array(
-	'player' =] array(
+	'player' => array(
 		array('listplayers', '', 'list current players in the server'),
 		array('kickplayer', '[Steam64ID]', 'kick player by steamID, cmd>>listplayers'),
 		array('allowplayertojoinnocheck', '[PlayerName]', 'add user to the whitelist, cmd>>listplayers'),
@@ -14,7 +14,7 @@ $rcon_base	= array(
 		array('unbanplayer', '[Steam64ID]', 'unban player by steamID'),
 		array('playersonly', '', 'Freeze crafting and creature movement'),
 	),
-	'server' =] array(
+	'server' => array(
 		array('slomo', '[0.0 - 5.0]', 'Speed up or slow down server time float multiplier'),
 		array('pause', '', 'Pauses the server.'),
 		array('destroyallenemies', '', 'WARNING(death): destroy all enemy/dino'),
@@ -22,7 +22,7 @@ $rcon_base	= array(
 		array('doexit', '', 'WARNING(corruption): kill server!! in rcon cmd>>pause cmd>>saveworld cmd>>doexit'),
 		array('settimeofday', '[00:00 - 23:59]', 'set time of day, 24hr separated by hrs:min'),
 	),
-	'chat' =] array(
+	'chat' => array(
 		array('setmessageoftheday', '[message]', 'sets the MOTD'),
 		array('showmessageoftheday', '[seconds]', 'displays the current MOTD'),
 		array('broadcast', '[message]', 'broadcast a message in the MOTD window to all players'),
@@ -31,8 +31,7 @@ $rcon_base	= array(
 		array('serverchatto', '"[Steam64ID]" [message]', 'msg user by steamID(steamID in quotes)'),
 		array('serverchattoplayer', '"[PlayerName]" [message]', 'msg user by playername(playername in quotes)'),
 	),
-
-	'program' =] array(
+	'program' => array(
 		array('man', '[cmd]', 'man [cmd]    info about command'),
 		array('help', '', 'prints back this list of commands'),
 		array('history', '(cmd)|chat', 'show chat/cmd history, use getchat to save chat history'),
