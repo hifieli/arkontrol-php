@@ -41,7 +41,7 @@
 			
 				$defaults						= $taming_defaults[ $ClassName ];
 				
-				$iniinfo['TamingDisabled']		= 1; 
+				$iniinfo['TamingDisabled']		= 1; //isset($iniinfo['TamingDisabled'])		? $iniinfo['TamingDisabled']	: $defaults['TamingDisabled'];
 				$iniinfo['name']				= $defaults['name'];
 				$iniinfo['ClassName']			= $ClassName;
 				
@@ -67,9 +67,10 @@
 		$saved				= $snapshot->create(null, 'snapshot');
 
 		$taming_towrite	= array();
+		$post_keys		= array_keys($_POST);
 		foreach ($taming_combined as $id => $info) {
 
-			$taming_combined[ $id ]['TamingDisabled']		= (isset($_POST["TamingDisabled_{$id}"]))	? (empty($_POST["TamingDisabled_{$id}"])?0:1)	: $taming_combined[ $id ]['TamingDisabled'];
+			$taming_combined[ $id ]['TamingDisabled']		= (in_array("TamingDisabled_{$id}", $post_keys))	? 1	: $taming_combined[ $id ]['TamingDisabled'];
 			
 			if (!empty($taming_combined[ $id ]['TamingDisabled'])) {	//we just plain ol' don't include the ones that we want to be tameable. we need to list only the ones that are untamable
 				
