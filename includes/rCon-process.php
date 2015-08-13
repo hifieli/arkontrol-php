@@ -11,13 +11,13 @@
 	//verify config info.
 	$go_ahead	= false;
 	try {
-		if (empty($gameuserini['ServerSettings']['ServerAdminPassword'])) throw new \Exception("'ServerAdminPassword' is required.");
-		if (empty($gameuserini['ServerSettings']['RCONEnabled'])) throw new \Exception("'RCONEnabled' must be set to 'true'.");
-		if (empty($gameuserini['ServerSettings']['RCONPort'])) throw new \Exception("'RCONPort' not set.");
+		if (empty($gameuserini['ServerSettings']['ServerAdminPassword']))	throw new \Exception("'ServerAdminPassword' is required.");
+		if (empty($gameuserini['ServerSettings']['RCONEnabled']))			throw new \Exception("'RCONEnabled' must be set to 'true'.");
+		if (empty($gameuserini['ServerSettings']['RCONPort']))				throw new \Exception("'RCONPort' not set.");
 		
-		if (empty($_REQUEST['rcon-cmd-string'])) throw new \Exception("No command issued."); //check for a command in $_POST
+		if (empty($_REQUEST['rcon-cmd-string']))							throw new \Exception("No command issued."); //check for a command in $_POST
 		
-		if (!empty($_SESSION['need_to_restart'])) throw new \Exception("Server is pending a restart to apply updated configuration.");
+		if (!empty($_SESSION['need_to_restart']))							throw new \Exception("Server is pending a restart to apply updated configuration.");
 		
 		$go_ahead	= true;
 		
