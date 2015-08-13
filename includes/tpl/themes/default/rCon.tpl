@@ -31,10 +31,10 @@
 					
 					<table class="table">
 						<tr>
-						{*	<td class="col-xs-2">Group</td> *}
-							<td class="col-xs-2">Command</td>
-							<td class="col-xs-2">Arguments</td>
-							<td>Description</td>
+						{*	<th class="col-xs-2">Group</th> *}
+							<th class="col-xs-2">Command</th>
+							<th class="col-xs-2">Arguments</th>
+							<th>Description</th>
 						</tr>
 						
 					{foreach $rcon_help as $cat => $info}
