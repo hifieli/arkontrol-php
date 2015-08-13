@@ -19,7 +19,7 @@ $gameuserini = array(
 				'type'	=> 'integer',
 				'vald'	=> '70',
 				'valc'	=> '70',
-				'group'	=> 'general',
+				'group'	=> 'General',
 				'desc'	=> 'Specifies the maximum number of players that can play on the server simultaneously.',
 			),
 		),
@@ -31,7 +31,7 @@ $gameuserini = array(
 				'type'	=> 'string',
 				'vald'	=> '',
 				'valc'	=> 'ARK dedicated server powered by ARKontrol - arkontrol.com',
-				'group'	=> 'general',
+				'group'	=> 'General',
 				'desc'	=> 'The name of the server as it appears in the server list.',
 			),
 		),
@@ -67,7 +67,7 @@ $gameuserini = array(
 				'type'	=> 'boolean',
 				'vald'	=> 'false',
 				'valc'	=> 'false',
-				'group'	=> 'general',
+				'group'	=> 'General',
 				'desc'	=> 'Voice chat turns global',
 			),
 			'ShowMapPlayerLocation'	=> array(
@@ -75,7 +75,7 @@ $gameuserini = array(
 				'type'	=> 'boolean',
 				'vald'	=> 'false',
 				'valc'	=> 'false',
-				'group'	=> 'general',
+				'group'	=> 'General',
 				'desc'	=> 'Show each player their own precise position when they view their map',
 			),
 			'noTributeDownloads'	=> array(
@@ -83,7 +83,7 @@ $gameuserini = array(
 				'type'	=> 'boolean',
 				'vald'	=> 'false',
 				'valc'	=> 'false',
-				'group'	=> 'general',
+				'group'	=> 'General',
 				'desc'	=> 'Disables downloading characters from other servers',
 			),
 			'PreventDownloadSurvivors'	=> array(
@@ -91,7 +91,7 @@ $gameuserini = array(
 				'type'	=> 'boolean',
 				'vald'	=> 'false',
 				'valc'	=> 'false',
-				'group'	=> 'general',
+				'group'	=> 'General',
 				'desc'	=> 'Disables downloading characters (only) from other servers',
 			),
 			'PreventDownloadItems'	=> array(
@@ -99,7 +99,7 @@ $gameuserini = array(
 				'type'	=> 'boolean',
 				'vald'	=> 'false',
 				'valc'	=> 'false',
-				'group'	=> 'general',
+				'group'	=> 'General',
 				'desc'	=> 'Disables downloading items (only) from other servers',
 			),
 			'PreventDownloadDinos'	=> array(
@@ -107,7 +107,7 @@ $gameuserini = array(
 				'type'	=> 'boolean',
 				'vald'	=> 'false',
 				'valc'	=> 'false',
-				'group'	=> 'general',
+				'group'	=> 'General',
 				'desc'	=> 'Disables downloading dinos (only) from other servers',
 			),
 			'proximityChat'	=> array(
@@ -123,7 +123,7 @@ $gameuserini = array(
 				'type'	=> 'boolean',
 				'vald'	=> 'false',
 				'valc'	=> 'false',
-				'group'	=> 'general',
+				'group'	=> 'PvP',
 				'desc'	=> 'Disables PvP, enables PvE',
 			),
 			'serverHardcore'	=> array(
@@ -131,7 +131,7 @@ $gameuserini = array(
 				'type'	=> 'boolean',
 				'vald'	=> 'false',
 				'valc'	=> 'false',
-				'group'	=> 'general',
+				'group'	=> 'General',
 				'desc'	=> 'Enables hardcore mode (player characters revert to level 1 upon death)',
 			),
 			'serverForceNoHud'	=> array(
@@ -139,7 +139,7 @@ $gameuserini = array(
 				'type'	=> 'boolean',
 				'vald'	=> 'false',
 				'valc'	=> 'false',
-				'group'	=> 'general',
+				'group'	=> 'General',
 				'desc'	=> 'HUD always disabled',
 			),
 			
@@ -148,7 +148,7 @@ $gameuserini = array(
 				'type'	=> 'boolean',
 				'vald'	=> 'false',
 				'valc'	=> 'false',
-				'group'	=> 'Environment',
+				'group'	=> 'Structures',
 				'desc'	=> 'Allows building structures within caves',
 			),
 			'bDisableStructureDecayPvE'	=> array(
@@ -156,7 +156,7 @@ $gameuserini = array(
 				'type'	=> 'boolean',
 				'vald'	=> 'false',
 				'valc'	=> 'false',
-				'group'	=> 'Environment',
+				'group'	=> 'Structures',
 				'desc'	=> 'Disable the gradual (7 days) decay of player structures',
 			),
 			'bAllowFlyerCarryPvE'	=> array(
@@ -164,7 +164,7 @@ $gameuserini = array(
 				'type'	=> 'boolean',
 				'vald'	=> 'false',
 				'valc'	=> 'false',
-				'group'	=> 'general',
+				'group'	=> 'General',
 				'desc'	=> 'Permit flying dinosaurs to pick up other dinosaurs and players when mounted by a player in PvE',
 			),
 			'MaxStructuresInRange'	=> array(
@@ -172,7 +172,7 @@ $gameuserini = array(
 				'type'	=> 'integer',
 				'vald'	=> '1300',
 				'valc'	=> '1300',
-				'group'	=> 'general',
+				'group'	=> 'Structures',
 				'desc'	=> 'Specifies the maximum number of structures that can be constructed within a certain (currently hard-coded) range.',
 			),
 			'NewMaxStructuresInRange'	=> array(
@@ -180,7 +180,7 @@ $gameuserini = array(
 				'type'	=> 'integer',
 				'vald'	=> '6000',
 				'valc'	=> '6000',
-				'group'	=> 'general',
+				'group'	=> 'Structures',
 				'desc'	=> 'Specifies the maximum number of structures that can be constructed within a certain range.',
 			),			
 			'DifficultyOffset'	=> array(
@@ -188,7 +188,7 @@ $gameuserini = array(
 				'type'	=> 'float',
 				'vald'	=> '0',
 				'valc'	=> '0',
-				'group'	=> 'general',
+				'group'	=> 'General',
 				'desc'	=> 'Specifies the difficulty level of the creatures and the quality (and frequency) of loot spawned by the server. At 0.0, creatures and loot scale down by approximately 50%. At 1.0, they scale up by approximately 300%.',
 			),
 			'ServerPassword'	=> array(
@@ -276,7 +276,7 @@ $gameuserini = array(
 				'type'	=> 'float',
 				'vald'	=> 1.0,
 				'valc'	=> 1.0,
-				'group'	=> 'Environment',
+				'group'	=> 'Structures',
 				'desc'	=> 'Specifies the scaling factor for the damage structures deal with their attacks (i.e. spiked walls). The default value 1 provides normal damage. Higher values increase damage. Lower values decrease it.',
 			),
 			'PlayerResistanceMultiplier'	=> array(
@@ -300,7 +300,7 @@ $gameuserini = array(
 				'type'	=> 'float',
 				'vald'	=> 1.0,
 				'valc'	=> 1.0,
-				'group'	=> 'Environment',
+				'group'	=> 'Structures',
 				'desc'	=> 'Specifies the scaling factor for the resistance to damage structures receive when attacked. The default value 1 provides normal damage. Higher values decrease resistance, increasing damage per attack. Lower values increase it, reducing damage per attack. A value of 0.5 results in a structure taking half damage while a value of 2.0 would result in a structure taking double normal damage.',
 			),
 			'ResourceNoReplenishRadiusStructures'	=> array(
@@ -308,7 +308,7 @@ $gameuserini = array(
 				'type'	=> 'float',
 				'vald'	=> 1.0,
 				'valc'	=> 1.0,
-				'group'	=> 'Environment',
+				'group'	=> 'Structures',
 				'desc'	=> 'Allow resources to regrow closer or farther away from structures.',
 			),
 			'ResourceNoReplenishRadiusPlayers'	=> array(
@@ -316,7 +316,7 @@ $gameuserini = array(
 				'type'	=> 'float',
 				'vald'	=> 1.0,
 				'valc'	=> 1.0,
-				'group'	=> 'Environment',
+				'group'	=> 'Structures',
 				'desc'	=> 'Allow resources to regrow closer or farther away from players.',
 			),
 			'XPMultiplier'	=> array(
@@ -332,7 +332,7 @@ $gameuserini = array(
 				'type'	=> 'float',
 				'vald'	=> 1.0,
 				'valc'	=> 1.0,
-				'group'	=> 'Environment',
+				'group'	=> 'Structures',
 				'desc'	=> 'Specifies the scaling factor for the decay rate of player structures in PvE mode. The specific effect(s) of this option and its range of valid values are unknown as of this writing.',
 			),
 			'PvEStructureDecayDestructionPeriod'	=> array(
@@ -340,7 +340,7 @@ $gameuserini = array(
 				'type'	=> 'Unknown',
 				'vald'	=> '0',
 				'valc'	=> '0',
-				'group'	=> 'Environment',
+				'group'	=> 'Structures',
 				'desc'	=> 'Specifies the time required for player structures to decay in PvE mode. The specific effect(s) of this option and its range of valid values are unknown as of this writing.',
 			),
 			'TamingSpeedMultiplier'	=> array(
@@ -449,7 +449,7 @@ $gameuserini = array(
 				'type'	=> 'float',
 				'vald'	=> 6.0,
 				'valc'	=> 6.0,
-				'group'	=> 'Environment',
+				'group'	=> 'PvP',
 				'desc'	=> 'In PvP, structures within caves/cave-entrances now take 6x damage',
 			),		
 			'OverrideMaxExperiencePointsPlayer'	=> array(
@@ -492,6 +492,39 @@ $gameuserini = array(
 				'group'	=> 'Environment',
 				'desc'	=> 'Set to larger than 0 to override the decomposition time for corpses on the ground',
 			),	
+			
+			'bIncreasePvPRespawnInterval'	=> array(
+				'name'	=> 'bIncreasePvPRespawnInterval',
+				'type'	=> 'boolean',
+				'vald'	=> 'true',
+				'valc'	=> 'true',
+				'group'	=> 'PvP',
+				'desc'	=> 'PvP servers have an optional +1 minute additonal respawn that doubles each time if you are killed by a team within 5 minutes of your previous death to that team (timer indicated on Spawn UI)',
+			),				
+			'IncreasePvPRespawnIntervalCheckPeriod'	=> array(
+				'name'	=> 'IncreasePvPRespawnIntervalCheckPeriod',
+				'type'	=> 'integer',
+				'vald'	=> 300,
+				'valc'	=> 300,
+				'group'	=> 'PvP',
+				'desc'	=> 'See "bIncreasePvPRespawnInterval". If you die again within this amount of time, we will add time to your next respawn.',
+			),	
+			'IncreasePvPRespawnIntervalMultiplier'	=> array(
+				'name'	=> 'IncreasePvPRespawnIntervalMultiplier',
+				'type'	=> 'integer',
+				'vald'	=> 2,
+				'valc'	=> 2,
+				'group'	=> 'PvP',
+				'desc'	=> 'See "bIncreasePvPRespawnInterval". Succesive deaths will cause the bIncreasePvPRespawnInterval to be multiplied by this number. 2 means each death will cause players to wait 1, 2, 4, 8, etc. minutes before respawning.',
+			),	
+			'IncreasePvPRespawnIntervalBaseAmount'	=> array(
+				'name'	=> 'IncreasePvPRespawnIntervalBaseAmount',
+				'type'	=> 'integer',
+				'vald'	=> 60,
+				'valc'	=> 60,
+				'group'	=> 'PvP',
+				'desc'	=> 'See "bIncreasePvPRespawnInterval". This is the base amount by which we will add time to the respawn counter',
+			),				
 		),
 /*
 
