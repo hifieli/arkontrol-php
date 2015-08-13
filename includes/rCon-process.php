@@ -31,7 +31,7 @@
 	//verify command
 	if (!empty($go_ahead)) {
 		
-		$user_cmd	= trim($_REQUEST['rcon-cmd-string']);	// the command as the user typed it
+		$user_cmd	= trim($_REQUEST['rcon-cmd-string']);	//the command as the user typed it
 		$cmd_check	= explode(' ', trim($user_cmd));		//split it on the space character to isolate the command iteself
 		$cmd_only	= trim($cmd_check[0]);					//woomp. there it is.
 		
@@ -48,7 +48,7 @@
 			$rCon = new Valve_RCON($gameuserini['ServerSettings']['ServerAdminPassword'], '127.0.0.1', $gameuserini['ServerSettings']['RCONPort'], Valve_RCON::PROTO_SOURCE);
 			$rCon->connect();
 			$rCon->authenticate();
-			$rcon_response = $rCon->execute($user_cmd);
+			$rcon_response = trim($rCon->execute($user_cmd));
 			$rCon->disconnect();
 			
 		}

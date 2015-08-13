@@ -16,6 +16,7 @@
 				<h4>ARK Admin Tools</h4>
 				<ul class="nav nav-stacked">
 					<li><a href="/do/serverDetails.php">Server Control</a></li>
+					<li><a href="/do/rCon.php">rCon Commands</a></li>
 					<li><a href="/do/serverWhitelist.php">Admin Whitelist</a></li>
 					<li><a href="/do/serverProfiles.php">Manage Config Profiles</a></li>
 					<li><a href="/do/browseLogs.php">Server Logs</a></li>
@@ -66,7 +67,7 @@
 				<ul class="nav nav-stacked">
 					
 					<li><a href="/do/dashboard.php">Backups of the world state</a></li>
-					<li><a href="/do/dashboard.php">...Possibly to an external site</a></li>
+					<li><a href="/do/dashboard.php">Possibly to an external site</a></li>
 					<li><a href="/do/dashboard.php">Additional Security Recommendations</a></li>
 
 				</ul>
@@ -75,8 +76,6 @@
 				<h4>Will it be possible?</h4>
 				<ul class="nav nav-stacked">
 				
-					<li><a href="/do/dashboard.php">Server Console Commands</a></li>
-					<li><a href="/do/dashboard.php">rCon Commands</a></li>
 					<li><a href="/do/dashboard.php">pull data from the world state</a></li>
 					<li><a href="/do/dashboard.php">edit data in the world state</a></li>
 
