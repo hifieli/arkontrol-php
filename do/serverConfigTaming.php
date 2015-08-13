@@ -35,23 +35,21 @@
 		if (!empty($Taming)) {
 		
 			//carefully merge the INI details over the defaults.
-			foreach ($Taming as $idx => $iniinfo) {
+			foreach ($Taming as $idx => $ClassName) {
 				//PreventDinoTameClassNames="Argent_Character_BP_C"
-						
-				$defaults							= $taming_defaults[ $iniinfo['ClassName'] ];
-				$iniinfo['TamingDisabled']			= isset($iniinfo['TamingDisabled'])		? $iniinfo['TamingDisabled']	: $defaults['TamingDisabled'];
+				$iniinfo						= array();
+			
+				$defaults						= $taming_defaults[ $ClassName ];
 				
-				
-				$iniinfo['name']			= $defaults['name'];
+				$iniinfo['TamingDisabled']		= 1; 
+				$iniinfo['name']				= $defaults['name'];
+				$iniinfo['ClassName']			= $ClassName;
 				
 				if (isset($defaults['thumbnail'])) {
 					$iniinfo['thumbnail']	= $defaults['thumbnail'];
 				}
-				if (isset($defaults['ClassName'])) {
-					$iniinfo['ClassName']	= $defaults['ClassName'];
-				}
-				
-				$taming_combined[ $iniinfo['ClassName'] ] = $iniinfo;
+
+				$taming_combined[ $ClassName ] = $iniinfo;
 			
 			}
 			
