@@ -57,7 +57,7 @@
 					var user_cmd	= $('#rcon-cmd-string').val();
 				
 					if (user_cmd != '') {
-						ajax_request('ark-updatelog', {'rcon-cmd-string':user_cmd});
+						ajax_request('rcon-cmd', {'rcon-cmd-string':user_cmd});
 					
 						$('#rcon-cmd-string').val('');	//clear the entry box
 					}
