@@ -3,7 +3,7 @@
 	include_once('../init.php');
 	
 	//do things.
-	
+	$rcon_response	= 'General Failure';
 	
 	//get config info
 	$gameuserini = @parse_ini_file($_INICONF['settingspath'] . "/GameUserSettings.ini", true);
@@ -43,19 +43,28 @@
 			
 		} else {
 			
-			//issue the command
-			require_once($_INICONF['webdocroot'] . '/includes/class.valve_rcon.php');
-			$rCon = new Valve_RCON($gameuserini['ServerSettings']['ServerAdminPassword'], '127.0.0.1', $gameuserini['ServerSettings']['RCONPort'], Valve_RCON::PROTO_SOURCE);
-			$rCon->connect();
-			$rCon->authenticate();
-			$rcon_response = trim($rCon->execute($user_cmd));
-			$rCon->disconnect();
+			try {
+				//issue the command
+				require_once($_INICONF['webdocroot'] . '/includes/class.valve_rcon.php');
+				$rCon = new Valve_RCON($gameuserini['ServerSettings']['ServerAdminPassword'], '127.0.0.1', $gameuserini['ServerSettings']['RCONPort'], Valve_RCON::PROTO_SOURCE);
+				$rCon->connect();
+				$rCon->authenticate();
+				$rcon_response = trim($rCon->execute($user_cmd));
+				$rCon->disconnect();
+				
+				if (empty($rcon_response) || $rcon_response == 'Server received, But no response!!') {
+					$rcon_response	= '{Empty Response}';
+				}
+				
+			} catch (\Exception $e) {
+				$rcon_response	= 'rCon Exception: ' . $e->getMessage()
+			}
 			
 		}
 	}
 	
-	$_VIEW->assign('rcon_response', $rcon_response);
+	//$_VIEW->assign('rcon_response', $rcon_response);
 	
 	//$_VIEW->assign('things', $stuff);
-	$_VIEW->assign('_MSGS', $_MSGS);
+	//$_VIEW->assign('_MSGS', $_MSGS);
 	//$_VIEW->display('rCon.tpl');

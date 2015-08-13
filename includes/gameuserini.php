@@ -196,7 +196,7 @@ $gameuserini = array(
 				'type'	=> 'string',
 				'vald'	=> '',
 				'valc'	=> '',
-				'group'	=> 'authentication',
+				'group'	=> 'Authentication',
 				'desc'	=> 'If specified, players must provide this password to join the server.',
 			),
 			'ServerAdminPassword'	=> array(
@@ -204,7 +204,7 @@ $gameuserini = array(
 				'type'	=> 'string',
 				'vald'	=> '',
 				'valc'	=> '',
-				'group'	=> 'authentication',
+				'group'	=> 'Authentication',
 				'desc'	=> 'If specified, players must provide this password (via the in-game console) to gain access to administrator commands on the server.',
 			),
 			'RCONEnabled'	=> array(
@@ -212,7 +212,7 @@ $gameuserini = array(
 				'type'	=> 'boolean',
 				'vald'	=> 'false',
 				'valc'	=> 'false',
-				'group'	=> 'authentication',
+				'group'	=> 'Authentication',
 				'desc'	=> 'If specified, players must provide this password (via the in-game console) to gain access to administrator commands on the server.',
 			),
 			'RCONPort'	=> array(
@@ -220,7 +220,7 @@ $gameuserini = array(
 				'type'	=> 'integer',
 				'vald'	=> '32330',
 				'valc'	=> '32330',
-				'group'	=> 'authentication',
+				'group'	=> 'Authentication',
 				'desc'	=> 'If specified, players must provide this password (via the in-game console) to gain access to administrator commands on the server.',
 			),
 			'SpectatorPassword'	=> array(
@@ -228,7 +228,7 @@ $gameuserini = array(
 				'type'	=> 'string',
 				'vald'	=> '',
 				'valc'	=> '',
-				'group'	=> 'authentication',
+				'group'	=> 'Authentication',
 				'desc'	=> 'If specified, players must provide this password to spectate the server.',
 			),
 			'DayCycleSpeedScale'	=> array(
@@ -236,7 +236,7 @@ $gameuserini = array(
 				'type'	=> 'float',
 				'vald'	=> 1.0,
 				'valc'	=> 1.0,
-				'group'	=> 'scale',
+				'group'	=> 'Environment',
 				'desc'	=> 'Specifies the scaling factor for the passage of time in the ARK, controlling how often day changes to night and night changes to day. The default value 1 provides the same cycle speed as the singleplayer experience (and the official public servers). Values lower than 1 slow down the cycle; higher values accelerate it.  Base time when value is 1 appears to be 1 minute real time equals approx. 28 minutes game time.  Thus, for an approximate 24 hour day/night cycle in game, use .035 for the value.',
 			),
 			'NightTimeSpeedScale'	=> array(
@@ -244,7 +244,7 @@ $gameuserini = array(
 				'type'	=> 'float',
 				'vald'	=> 1.0,
 				'valc'	=> 1.0,
-				'group'	=> 'scale',
+				'group'	=> 'Environment',
 				'desc'	=> 'Specifies the scaling factor for the passage of time in the ARK during night time. This value determines the length of each night, relative to the length of each day (as specified by DayTimeSpeedScale. Lowering this value increases the length of each night.',
 			),
 			'DayTimeSpeedScale'	=> array(
@@ -252,7 +252,7 @@ $gameuserini = array(
 				'type'	=> 'float',
 				'vald'	=> 1.0,
 				'valc'	=> 1.0,
-				'group'	=> 'scale',
+				'group'	=> 'Environment',
 				'desc'	=> 'Specifies the scaling factor for the passage of time in the ARK during the day. This value determines the length of each day, relative to the length of each night (as specified by NightTimeSpeedScale. Lowering this value increases the length of each day.',
 			),
 			'DinoDamageMultiplier'	=> array(
@@ -348,7 +348,7 @@ $gameuserini = array(
 				'type'	=> 'float',
 				'vald'	=> 1.0,
 				'valc'	=> 1.0,
-				'group'	=> 'scale',
+				'group'	=> 'Environment',
 				'desc'	=> 'Specifies the scaling factor for dinosaur taming speed. Higher values make taming faster.',
 			),
 			'HarvestAmountMultiplier'	=> array(
@@ -356,7 +356,7 @@ $gameuserini = array(
 				'type'	=> 'float',
 				'vald'	=> 1.0,
 				'valc'	=> 1.0,
-				'group'	=> 'scale',
+				'group'	=> 'Environment',
 				'desc'	=> 'Specifies the scaling factor for yields from all harvesting activities (chopping down trees, picking berries, carving carcasses, mining rocks, etc.). Higher values increase the amount of materials harvested with each strike.',
 			),
 			'HarvestHealthMultiplier'	=> array(
@@ -364,7 +364,7 @@ $gameuserini = array(
 				'type'	=> 'float',
 				'vald'	=> 1.0,
 				'valc'	=> 1.0,
-				'group'	=> 'scale',
+				'group'	=> 'Environment',
 				'desc'	=> 'Specifies the scaling factor for the "health" of items that can be harvested (trees, rocks, carcasses, etc.). Higher values increase the amount of damage (i.e. "number of strikes") such objects can withstand before being destroyed, which results in higher overall harvest yields.',
 			),
 			'ResourcesRespawnPeriodMultiplier'	=> array(
@@ -372,7 +372,7 @@ $gameuserini = array(
 				'type'	=> 'float',
 				'vald'	=> 1.0,
 				'valc'	=> 1.0,
-				'group'	=> 'scale',
+				'group'	=> 'Environment',
 				'desc'	=> 'Specifies the scaling factor for the respawn rate for resource nodes (trees, rocks, bushes, etc.). Higher values cause nodes to respawn more frequently.',
 			),
 			'PlayerCharacterWaterDrainMultiplier'	=> array(
@@ -528,8 +528,8 @@ $gameuserini = array(
 		),
 /*
 
+ -- this one will be fun to make. Needs a small default (just MegaRex and MegaRaptor for now) and then a list of target classnames, so it will be a little different from the other things we have done so far.
 * Added option to disable specific Alpha predators ("NPC Replacements") on custom servers. This can also be used to disable any specific NPC, or replace the spawns of a particular NPC with that of a different NPC.
-
 \Config\WindowsServer\Game.ini
 [/script/shootergame.shootergamemode]
 NPCReplacements=(FromClassName="MegaRaptor_Character_BP_C",ToClassName="Dodo_Character_BP_C")
@@ -570,19 +570,8 @@ Turtle_Character_BP.uasset
 
 
 
-PvP servers have an optional +1 minute additonal respawn that doubles each time if you are killed by a team within 5 minutes of your previous death to that team (timer indicated on Spawn UI). 
-Is enabled in pvp by default, and on all the official pvp servers. Helps prevent PvO ammo-wasting of auto turrets by repeatedly throwing sacrificial players at them.
-\Config\WindowsServer\Game.ini
-[/script/shootergame.shootergamemode]
-bIncreasePvPRespawnInterval = true;
-IncreasePvPRespawnIntervalCheckPeriod=300;
-IncreasePvPRespawnIntervalMultiplier=2;
-IncreasePvPRespawnIntervalBaseAmount=60;
-
-
-
+ -- these could just go in with the rest of the 1-off options from Game.ini, but, I kinda want this to be an interface of its own.
 Server INI's option to switch from PvE to PvP mode at pre-specified in-game times OR a pre-specified real-world (server-side) times!
-
 \Config\WindowsServer\Game.ini
 [/script/shootergame.shootergamemode]
 bAutoPvETimer=true
@@ -600,7 +589,15 @@ in the Player hud with H it'll say it next to the current time.
 
 
 
+ -- feels like these belong in the interface with the XP ramps
+* Custom servers INI can now override the Max XP cap of players & dino characters, respectively. Set these to larger than 0 values, in your server's Game.ini :
+[/script/shootergame.shootergamemode]
+OverrideMaxExperiencePointsPlayer=0
+OverrideMaxExperiencePointsDino=0
 
+
+
+ -- essentially not worth doing until we have FTP access resolved.
 Stackable Mod support! This allows multiple mods to be used together and combine their changes -- works with existing mods too! and you can use Mods on custom maps now. To Use Stackable Mods from the in-game menu, simply goto the "Host Game" menu and then select a map, and a list of mods to stack. The top mod will take priority (i.e. is most likely to fully work), and any secondary mods will attempt to add items and other overrides, they may or may not work depending on what those mods actually do (most mods that add items will work as secondary mods... whereas you'll likely want to use any major rebalancing mod as your "base" mod :). We'll continue to add more functionality for what Stacked Mods can do, so stay tuned!
 To specify stacked mods for dedicated server commandline, you first need to manually install the Mods by copying over the Mod files, then specify Steam Published File ID's in your Server's GameUserSettings.ini like so (and just load the map via commandline): 
 ActiveMods=487516323,485734065
@@ -610,13 +607,10 @@ ShooterGameServer.exe /Game/Mods/485317707/halo?listen?GameModIds=222SomeMod222,
 
 
 
-* Custom servers INI can now override the Max XP cap of players & dino characters, respectively. Set these to larger than 0 values, in your server's Game.ini :
-[/script/shootergame.shootergamemode]
-OverrideMaxExperiencePointsPlayer=0
-OverrideMaxExperiencePointsDino=0
-
-
-
+ -- clearly, this belongs in the engrams configurator, but, it will require a lot of work. 
+ -- Currently, we write the entire engram config to the INI, without respect for what matches the defaults. 
+ -- We could make sure this is always set to true, and then add a checkbox for 'enabled'. 
+ -- Then, we can skip adding that Engram to the INI file if the box is checked.
 [/script/shootergame.shootergamemode]
 bOnlyAllowSpecifiedEngrams=true/false
 Defaults false. If true, any Engram not explicitly specified in the EngramsOverride list will be Hidden. Useful for maintaining primitive servers even as we add new Engrams in Updates.

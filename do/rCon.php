@@ -34,21 +34,6 @@
 	
 	$_VIEW->assign('go_ahead', $go_ahead);
 	
-	
-/* 	if (!empty($go_ahead)) {
-		require_once($_INICONF['webdocroot'] . '/includes/class.valve_rcon.php');
-		$rCon = new Valve_RCON($gameuserini['ServerSettings']['ServerAdminPassword'], '127.0.0.1', 32330, Valve_RCON::PROTO_SOURCE);
-		$rCon->connect();
-		$rCon->authenticate();
-		$response = $rCon->execute('listplayers');
-		$rCon->disconnect();
-		
-		$_MSGS[]	= array('type'=>'info','msg'=>"<pre>{$response}</pre>");
-	} 
-*/
-	
-	
-	
 	//$_VIEW->assign('things', $stuff);
 	$_VIEW->assign('_MSGS', $_MSGS);
 	$_VIEW->display('rCon.tpl');
