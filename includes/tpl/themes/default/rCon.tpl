@@ -4,6 +4,8 @@
 
 <br /><br />
 
+<pre>{$rcon_help|print_r}</pre>
+
 {if !empty($go_ahead)}
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -12,7 +14,7 @@
 				<div class="panel-body">
 					
 					<div class="row">
-						<textarea name="rcon-std-out" id="rcon-std-out"></textarea>
+						<textarea name="rcon-std-out" id="rcon-std-out" style="height:66%;width:90%;"></textarea>
 					</div>
 					<div class="row">
 						<input type="text" name="rcon-cmd-string" id="rcon-cmd-string">
