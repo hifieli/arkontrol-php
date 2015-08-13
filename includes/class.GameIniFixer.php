@@ -55,6 +55,7 @@ class GameIniFixer {
 		'LevelExperienceRampOverrides',
 		'OverridePlayerLevelEngramPoints',
 		'HarvestResourceItemAmountClassMultipliers',
+		'PreventDinoTameClassNames',
 	);
 	
 	//This is the file with the incorrect ini syntax *shakes fist*

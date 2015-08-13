@@ -43,7 +43,7 @@ $gameuserini = array(
 				'type'	=> 'boolean',
 				'vald'	=> 'false',
 				'valc'	=> 'false',
-				'group'	=> 'player',
+				'group'	=> 'Player',
 				'desc'	=> 'Players will always get notified if someone joins the server',
 			),
 			'alwaysNotifyPlayerLeft'	=> array(
@@ -51,7 +51,7 @@ $gameuserini = array(
 				'type'	=> 'boolean',
 				'vald'	=> 'false',
 				'valc'	=> 'false',
-				'group'	=> 'player',
+				'group'	=> 'Player',
 				'desc'	=> 'Players will always get notified if someone leaves the server',
 			),
 			'allowThirdPersonPlayer'	=> array(
@@ -59,7 +59,7 @@ $gameuserini = array(
 				'type'	=> 'boolean',
 				'vald'	=> 'false',
 				'valc'	=> 'false',
-				'group'	=> 'player',
+				'group'	=> 'Player',
 				'desc'	=> 'Enables 3rd Person view',
 			),
 			'globalVoiceChat'	=> array(
@@ -115,7 +115,7 @@ $gameuserini = array(
 				'type'	=> 'boolean',
 				'vald'	=> 'false',
 				'valc'	=> 'false',
-				'group'	=> 'player',
+				'group'	=> 'Player',
 				'desc'	=> 'Only players near each other can see their chat messages',
 			),
 			'serverPVE'	=> array(
@@ -148,7 +148,7 @@ $gameuserini = array(
 				'type'	=> 'boolean',
 				'vald'	=> 'false',
 				'valc'	=> 'false',
-				'group'	=> 'environment',
+				'group'	=> 'Environment',
 				'desc'	=> 'Allows building structures within caves',
 			),
 			'bDisableStructureDecayPvE'	=> array(
@@ -156,7 +156,7 @@ $gameuserini = array(
 				'type'	=> 'boolean',
 				'vald'	=> 'false',
 				'valc'	=> 'false',
-				'group'	=> 'environment',
+				'group'	=> 'Environment',
 				'desc'	=> 'Disable the gradual (7 days) decay of player structures',
 			),
 			'bAllowFlyerCarryPvE'	=> array(
@@ -245,7 +245,7 @@ $gameuserini = array(
 				'type'	=> 'float',
 				'vald'	=> 1.0,
 				'valc'	=> 1.0,
-				'group'	=> 'dino',
+				'group'	=> 'Dino',
 				'desc'	=> 'Specifies the scaling factor for the damage dinosaurs deal with their attacks. The default value 1 provides normal damage. Higher values increase damage. Lower values decrease it.',
 			),
 			'PlayerDamageMultiplier'	=> array(
@@ -253,7 +253,7 @@ $gameuserini = array(
 				'type'	=> 'float',
 				'vald'	=> 1.0,
 				'valc'	=> 1.0,
-				'group'	=> 'player',
+				'group'	=> 'Player',
 				'desc'	=> 'Specifies the scaling factor for the damage players deal with their attacks. The default value 1 provides normal damage. Higher values increase damage. Lower values decrease it.',
 			),
 			'StructureDamageMultiplier'	=> array(
@@ -261,7 +261,7 @@ $gameuserini = array(
 				'type'	=> 'float',
 				'vald'	=> 1.0,
 				'valc'	=> 1.0,
-				'group'	=> 'environment',
+				'group'	=> 'Environment',
 				'desc'	=> 'Specifies the scaling factor for the damage structures deal with their attacks (i.e. spiked walls). The default value 1 provides normal damage. Higher values increase damage. Lower values decrease it.',
 			),
 			'PlayerResistanceMultiplier'	=> array(
@@ -269,7 +269,7 @@ $gameuserini = array(
 				'type'	=> 'float',
 				'vald'	=> 1.0,
 				'valc'	=> 1.0,
-				'group'	=> 'player',
+				'group'	=> 'Player',
 				'desc'	=> 'Specifies the scaling factor for the resistance to damage players receive when attacked. The default value 1 provides normal damage. Higher values decrease resistance, increasing damage per attack. Lower values increase it, reducing damage per attack. A value of 0.5 results in a player taking half damage while a value of 2.0 would result in taking double normal damage.',
 			),
 			'DinoResistanceMultiplier'	=> array(
@@ -277,7 +277,7 @@ $gameuserini = array(
 				'type'	=> 'float',
 				'vald'	=> 1.0,
 				'valc'	=> 1.0,
-				'group'	=> 'dino',
+				'group'	=> 'Dino',
 				'desc'	=> 'Specifies the scaling factor for the resistance to damage dinosaurs receive when attacked. The default value 1 provides normal damage. Higher values decrease resistance, increasing damage per attack. Lower values increase it, reducing damage per attack. A value of 0.5 results in a dino taking half damage while a value of 2.0 would result in a dino taking double normal damage.',
 			),
 			'StructureResistanceMultiplier'	=> array(
@@ -285,15 +285,31 @@ $gameuserini = array(
 				'type'	=> 'float',
 				'vald'	=> 1.0,
 				'valc'	=> 1.0,
-				'group'	=> 'environment',
+				'group'	=> 'Environment',
 				'desc'	=> 'Specifies the scaling factor for the resistance to damage structures receive when attacked. The default value 1 provides normal damage. Higher values decrease resistance, increasing damage per attack. Lower values increase it, reducing damage per attack. A value of 0.5 results in a structure taking half damage while a value of 2.0 would result in a structure taking double normal damage.',
+			),
+			'ResourceNoReplenishRadiusStructures'	=> array(
+				'name'	=> 'ResourceNoReplenishRadiusStructures',
+				'type'	=> 'float',
+				'vald'	=> 1.0,
+				'valc'	=> 1.0,
+				'group'	=> 'Environment',
+				'desc'	=> 'Allow resources to regrow closer or farther away from structures.',
+			),
+			'ResourceNoReplenishRadiusPlayers'	=> array(
+				'name'	=> 'ResourceNoReplenishRadiusPlayers',
+				'type'	=> 'float',
+				'vald'	=> 1.0,
+				'valc'	=> 1.0,
+				'group'	=> 'Environment',
+				'desc'	=> 'Allow resources to regrow closer or farther away from players.',
 			),
 			'XPMultiplier'	=> array(
 				'name'	=> 'XPMultiplier',
 				'type'	=> 'float',
 				'vald'	=> 1.0,
 				'valc'	=> 1.0,
-				'group'	=> 'player',
+				'group'	=> 'Player',
 				'desc'	=> 'Specifies the scaling factor for the experience received by players, tribes and dinosaurs for various actions. The default value 1 provides the same amounts of experience as in the singleplayer experience (and official public servers). Higher values increase XP amounts awarded for various actions; lower values decrease it.',
 			),
 			'PvEStructureDecayPeriodMultiplier'	=> array(
@@ -301,7 +317,7 @@ $gameuserini = array(
 				'type'	=> 'float',
 				'vald'	=> 1.0,
 				'valc'	=> 1.0,
-				'group'	=> 'environment',
+				'group'	=> 'Environment',
 				'desc'	=> 'Specifies the scaling factor for the decay rate of player structures in PvE mode. The specific effect(s) of this option and its range of valid values are unknown as of this writing.',
 			),
 			'PvEStructureDecayDestructionPeriod'	=> array(
@@ -309,7 +325,7 @@ $gameuserini = array(
 				'type'	=> 'Unknown',
 				'vald'	=> '0',
 				'valc'	=> '0',
-				'group'	=> 'environment',
+				'group'	=> 'Environment',
 				'desc'	=> 'Specifies the time required for player structures to decay in PvE mode. The specific effect(s) of this option and its range of valid values are unknown as of this writing.',
 			),
 			'TamingSpeedMultiplier'	=> array(
@@ -349,7 +365,7 @@ $gameuserini = array(
 				'type'	=> 'float',
 				'vald'	=> 1.0,
 				'valc'	=> 1.0,
-				'group'	=> 'player',
+				'group'	=> 'Player',
 				'desc'	=> 'Specifies the scaling factor for player characters\' water consumption. Higher values increase water consumption (player characters get thirsty faster).',
 			),
 			'PlayerCharacterFoodDrainMultiplier'	=> array(
@@ -357,7 +373,7 @@ $gameuserini = array(
 				'type'	=> 'float',
 				'vald'	=> 1.0,
 				'valc'	=> 1.0,
-				'group'	=> 'player',
+				'group'	=> 'Player',
 				'desc'	=> 'Specifies the scaling factor for player characters\' food consumption. Higher values increase food consumption (player characters get hungry faster).',
 			),
 			'PlayerCharacterStaminaDrainMultiplier'	=> array(
@@ -365,7 +381,7 @@ $gameuserini = array(
 				'type'	=> 'float',
 				'vald'	=> 1.0,
 				'valc'	=> 1.0,
-				'group'	=> 'player',
+				'group'	=> 'Player',
 				'desc'	=> 'Specifies the scaling factor for player characters\' stamina consumption. Higher values increase stamina consumption (player characters get tired faster).',
 			),
 			'PlayerCharacterHealthRecoveryMultiplier'	=> array(
@@ -373,7 +389,7 @@ $gameuserini = array(
 				'type'	=> 'float',
 				'vald'	=> 1.0,
 				'valc'	=> 1.0,
-				'group'	=> 'player',
+				'group'	=> 'Player',
 				'desc'	=> 'Specifies the scaling factor for player characters\' health recovery. Higher values increase the recovery rate (player characters heal faster).',
 			),
 			'DinoCharacterFoodDrainMultiplier'	=> array(
@@ -381,7 +397,7 @@ $gameuserini = array(
 				'type'	=> 'float',
 				'vald'	=> 1.0,
 				'valc'	=> 1.0,
-				'group'	=> 'dino',
+				'group'	=> 'Dino',
 				'desc'	=> 'Specifies the scaling factor for dinosaurs\' food consumption. Higher values increase food consumption (dinosaurs get hungry faster).',
 			),
 			'DinoCharacterStaminaDrainMultiplier'	=> array(
@@ -389,7 +405,7 @@ $gameuserini = array(
 				'type'	=> 'float',
 				'vald'	=> 1.0,
 				'valc'	=> 1.0,
-				'group'	=> 'dino',
+				'group'	=> 'Dino',
 				'desc'	=> 'Specifies the scaling factor for dinosaurs\' stamina consumption. Higher values increase stamina consumption (dinosaurs get tired faster).',
 			),
 			'DinoCharacterHealthRecoveryMultiplier'	=> array(
@@ -397,7 +413,7 @@ $gameuserini = array(
 				'type'	=> 'float',
 				'vald'	=> 1.0,
 				'valc'	=> 1.0,
-				'group'	=> 'dino',
+				'group'	=> 'Dino',
 				'desc'	=> 'Specifies the scaling factor for dinosaurs\' health recovery. Higher values increase the recovery rate (dinosaurs heal faster).',
 			),
 			'DinoCountMultiplier'	=> array(
@@ -405,7 +421,7 @@ $gameuserini = array(
 				'type'	=> 'float',
 				'vald'	=> 1.0,
 				'valc'	=> 1.0,
-				'group'	=> 'dino',
+				'group'	=> 'Dino',
 				'desc'	=> 'Specifies the scaling factor for dinosaur spawns. Higher values increase the number of dinosaurs spawned throughout the ARK.',
 			),
 		),
@@ -418,7 +434,7 @@ $gameuserini = array(
 				'type'	=> 'float',
 				'vald'	=> 6.0,
 				'valc'	=> 6.0,
-				'group'	=> 'environment',
+				'group'	=> 'Environment',
 				'desc'	=> 'In PvP, structures within caves/cave-entrances now take 6x damage',
 			),		
 			'OverrideMaxExperiencePointsPlayer'	=> array(
@@ -426,7 +442,7 @@ $gameuserini = array(
 				'type'	=> 'integer',
 				'vald'	=> 0,
 				'valc'	=> 0,
-				'group'	=> 'player',
+				'group'	=> 'Player',
 				'desc'	=> 'Set to larger than 0 to override the Max XP cap of players characters',
 			),	
 			'OverrideMaxExperiencePointsDino'	=> array(
@@ -434,7 +450,7 @@ $gameuserini = array(
 				'type'	=> 'float',
 				'vald'	=> 0,
 				'valc'	=> 0,
-				'group'	=> 'player',
+				'group'	=> 'Player',
 				'desc'	=> 'Set to larger than 0 to override the Max XP cap of dino characters',
 			),
 			'GlobalSpoilingTimeMultiplier'	=> array(
@@ -442,7 +458,7 @@ $gameuserini = array(
 				'type'	=> 'float',
 				'vald'	=> 0,
 				'valc'	=> 0,
-				'group'	=> 'environment',
+				'group'	=> 'Environment',
 				'desc'	=> 'Set to larger than 0 to override the spoiling time of perishables',
 			),
 			'GlobalItemDecompositionTimeMultiplier'	=> array(
@@ -450,7 +466,7 @@ $gameuserini = array(
 				'type'	=> 'float',
 				'vald'	=> 0,
 				'valc'	=> 0,
-				'group'	=> 'environment',
+				'group'	=> 'Environment',
 				'desc'	=> 'Set to larger than 0 to override the decomposition time for items on the ground',
 			),	
 			'GlobalCorpseDecompositionTimeMultiplier'	=> array(
@@ -458,7 +474,7 @@ $gameuserini = array(
 				'type'	=> 'float',
 				'vald'	=> 0,
 				'valc'	=> 0,
-				'group'	=> 'environment',
+				'group'	=> 'Environment',
 				'desc'	=> 'Set to larger than 0 to override the decomposition time for corpses on the ground',
 			),	
 		),

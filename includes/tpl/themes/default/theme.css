@@ -42,3 +42,7 @@ code {
     padding-top: 1px;
     padding-bottom: 1px;
 }
+
+.table tbody>tr>td.vert-align-mid {
+    vertical-align: middle;
+}

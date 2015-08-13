@@ -51,6 +51,7 @@
 			<div class="col-md-4">
 				<h4>In the works</h4>
 				<ul class="nav nav-stacked">
+					<li><a href="/do/serverConfigTaming.php">Tamable Dinos</a></li>
 					<li><a href="/do/dashboard.php">Changing Maps/Mods</a></li>
 					<li><a href="/do/dashboard.php">Dino/Player level ramps</a></li>
 					<li><a href="/do/dashboard.php">Dino/Player XP/level caps</a></li>
