@@ -2,7 +2,7 @@
 
 <h2>ARK Dedicated Server Configuration</h2>
 
-{*
+
 	taming_combined
 	<pre>{$taming_combined|print_r}</pre>
 
@@ -11,7 +11,10 @@
 
 	taming_defaults
 	<pre>{$taming_defaults|print_r}</pre>
-*}
+	
+	_POST
+	<pre>{$smarty.post|print_r}</pre>
+
 
 <div class="panel panel-default">
 	<div class="panel-heading">
