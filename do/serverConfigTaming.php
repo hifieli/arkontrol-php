@@ -70,7 +70,7 @@
 		$post_keys		= array_keys($_POST);
 		foreach ($taming_combined as $id => $info) {
 
-			$taming_combined[ $id ]['TamingDisabled']		= (in_array("TamingDisabled_{$id}", $post_keys))	? 1	: $taming_combined[ $id ]['TamingDisabled'];
+			$taming_combined[ $id ]['TamingDisabled']		= (in_array("TamingDisabled_{$id}", $post_keys))	? 1	: 0;
 			
 			if (!empty($taming_combined[ $id ]['TamingDisabled'])) {	//we just plain ol' don't include the ones that we want to be tameable. we need to list only the ones that are untamable
 				
