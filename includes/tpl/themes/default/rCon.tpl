@@ -32,19 +32,19 @@
 					
 					<table class="table">
 						<tr>
+						{*	<td class="col-xs-2">Group</td> *}
 							<td class="col-xs-2">Command</td>
 							<td class="col-xs-2">Arguments</td>
 							<td>Description</td>
 						</tr>
+						
 					{foreach $rcon_help as $cat => $info}
-						<tr><td colspan="99">{$cat}</td></tr>
-						{foreach $info as $stuff}
-							<tr>
-								<td class="col-xs-2">{$stuff.command}</td>
-								<td class="col-xs-2">{$stuff.arguments}</td>
-								<td>{$stuff.description}</td>
-							</tr>
-						{/foreach}
+						<tr>
+						{*	<td class="col-xs-2">{$info.group}</td> *}
+							<td class="col-xs-2">{$info.command}</td>
+							<td class="col-xs-2">{$info.arguments}</td>
+							<td>{$info.description}</td>
+						</tr>
 					{/foreach}
 					</table>
 					
