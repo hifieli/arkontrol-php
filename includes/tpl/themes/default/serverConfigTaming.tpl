@@ -20,7 +20,7 @@
 	<div class="panel-body">
 		
 		
-		<form method="POST" action="/do/serverConfigTamings.php" class="form">
+		<form method="POST" action="/do/serverConfigTaming.php" class="form">
 		<input type="submit" class="btn btn-xl btn-primary" value="Save Taming Config">
 		<input type="button" class="btn btn-xl btn-warning" value="Reset Defaults" onclick="resetAllDefaults();">
 		<table class="table">
