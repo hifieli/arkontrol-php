@@ -13,13 +13,12 @@
 				</div>
 				<div class="panel-body">
 					
-					<div class="row">
+					
 						<textarea name="rcon-std-out" id="rcon-std-out" style="height:66%;width:90%;"></textarea>
-					</div>
-					<div class="row">
+
 						<input type="text" name="rcon-cmd-string" id="rcon-cmd-string">
 						<input type="button" value="Issue Command" id="rcon-cmd-button">
-					</div>
+					
 					
 				</div>
 			</div>
