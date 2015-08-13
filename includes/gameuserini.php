@@ -207,7 +207,22 @@ $gameuserini = array(
 				'group'	=> 'authentication',
 				'desc'	=> 'If specified, players must provide this password (via the in-game console) to gain access to administrator commands on the server.',
 			),
-			
+			'RCONEnabled'	=> array(
+				'name'	=> 'RCONEnabled',
+				'type'	=> 'boolean',
+				'vald'	=> 'false',
+				'valc'	=> 'false',
+				'group'	=> 'authentication',
+				'desc'	=> 'If specified, players must provide this password (via the in-game console) to gain access to administrator commands on the server.',
+			),
+			'RCONPort'	=> array(
+				'name'	=> 'RCONPort',
+				'type'	=> 'integer',
+				'vald'	=> '32330',
+				'valc'	=> '32330',
+				'group'	=> 'authentication',
+				'desc'	=> 'If specified, players must provide this password (via the in-game console) to gain access to administrator commands on the server.',
+			),
 			'SpectatorPassword'	=> array(
 				'name'	=> 'SpectatorPassword',
 				'type'	=> 'string',
@@ -561,10 +576,12 @@ ShooterGameServer.exe /Game/Mods/485317707/halo?listen?GameModIds=222SomeMod222,
 (the left-most ID is the top mod)(where "halo", for example, is the map included with Mod
 
 
+
 * Custom servers INI can now override the Max XP cap of players & dino characters, respectively. Set these to larger than 0 values, in your server's Game.ini :
 [/script/shootergame.shootergamemode]
 OverrideMaxExperiencePointsPlayer=0
 OverrideMaxExperiencePointsDino=0
+
 
 
 [/script/shootergame.shootergamemode]

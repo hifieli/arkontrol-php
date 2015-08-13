@@ -18,6 +18,16 @@
 				
 				switch ($_GET['call']) {
 					
+					case 'rcon-cmd':
+						
+						require_once($_INICONF['webdocroot'] . '/includes/rCon-process.php');
+						
+						$result		= 'success';
+						$cb			= 'callback_rcon_cmd';
+						$data		= array('msg'=>'rCon command processed.', 'rcon_response'=>$rcon_response);
+						
+					break;
+					
 					case 'ark-updatelog':
 						$updatelog	= file_get_contents('/tmp/update.log');
 						$result		= 'success';

@@ -3,22 +3,42 @@
 	include_once('../init.php');
 	
 	//do things.
-	require_once($_INICONF['webdocroot'] . '/includes/valve_rcon.php');
 	
 	
-	
-	//include_once($_INICONF['webdocroot'] . '/includes/gameuserini.php');	//$gameuserini
-	//$rCon = new Valve_RCON($gameuserini['GameUserSettings.ini']['ServerSettings']['ServerAdminPassword'], '127.0.0.1', 32330, Valve_RCON::PROTO_CLASSIC);
+	//get config info
 	$gameuserini = @parse_ini_file($_INICONF['settingspath'] . "/GameUserSettings.ini", true);
-	$rCon = new Valve_RCON($gameuserini['ServerSettings']['ServerAdminPassword'], '127.0.0.1', 32330, Valve_RCON::PROTO_CLASSIC);
-
 	
-	$rCon->connect();
-	$rCon->authenticate();
-	$response = $rCon->execute('status');
-	$rCon->disconnect();
+	//verify config info.
 	
-	$_MSGS[]	= array('type'=>'info','msg'=>"<pre>{$response}</pre>");
+	$go_ahead	= false;
+	try {
+		if (empty($gameuserini['ServerSettings']['ServerAdminPassword'])) throw new \Exception("'ServerAdminPassword' is required.");
+		if (empty($gameuserini['ServerSettings']['RCONEnabled'])) throw new \Exception("'RCONEnabled' must be set to 'true'.");
+		if (empty($gameuserini['ServerSettings']['RCONPort'])) throw new \Exception("'RCONPort' not set.");
+		
+		if (empty($_REQUEST['rcon-cmd-string'])) throw new \Exception("No command issued."); //check for a command in $_POST
+		
+		if (!empty($_SESSION['need_to_restart'])) throw new \Exception("Server is pending a restart to apply updated configuration.");
+		
+		$go_ahead	= true;
+	} catch (\Exception $e) {
+		$go_ahead	= false;
+		$_MSGS[]	= array('type'=>'error', 'msg'=> 'rCon is currently unavailable: ' . $e->getMessage() . ' You can adjust your RCON settings in the <a href="/do/serverConfig.php#authentication">Server Configuration Interface</a>.');
+	}
+	
+	$_VIEW->assign('go_ahead', $go_ahead);
+	
+/* 	if (!empty($go_ahead)) {
+		require_once($_INICONF['webdocroot'] . '/includes/class.valve_rcon.php');
+		$rCon = new Valve_RCON($gameuserini['ServerSettings']['ServerAdminPassword'], '127.0.0.1', 32330, Valve_RCON::PROTO_SOURCE);
+		$rCon->connect();
+		$rCon->authenticate();
+		$response = $rCon->execute('listplayers');
+		$rCon->disconnect();
+		
+		$_MSGS[]	= array('type'=>'info','msg'=>"<pre>{$response}</pre>");
+	} 
+*/
 	
 	
 	
