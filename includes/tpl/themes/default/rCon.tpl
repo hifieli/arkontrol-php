@@ -36,11 +36,11 @@
 						</tr>
 					{foreach $rcon_help as $cat => $info}
 						<tr><td colspan="99">{$cat}</td></tr>
-						{foreach $info}
+						{foreach $info as $stuff}
 							<tr>
-								<td class="col-xs-2">{$info.command}</td>
-								<td class="col-xs-2">{$info.arguments}</td>
-								<td>{$info.description}</td>
+								<td class="col-xs-2">{$stuff.command}</td>
+								<td class="col-xs-2">{$stuff.arguments}</td>
+								<td>{$stuff.description}</td>
 							</tr>
 						{/foreach}
 					{/foreach}
