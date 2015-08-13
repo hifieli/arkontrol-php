@@ -39,10 +39,10 @@
 						
 					{foreach $rcon_help as $cat => $info}
 						<tr>
-						{*	<td class="col-xs-2">{$info.group}</td> *}
-							<td class="col-xs-2">{$info.command}</td>
-							<td class="col-xs-2">{$info.arguments}</td>
-							<td>{$info.description}</td>
+						{*	<td class="col-xs-2">{$info.group|escape}</td> *}
+							<td class="col-xs-2">{$info.command|escape}</td>
+							<td class="col-xs-2">{$info.arguments|escape}</td>
+							<td>{$info.description|escape}</td>
 						</tr>
 					{/foreach}
 					</table>
