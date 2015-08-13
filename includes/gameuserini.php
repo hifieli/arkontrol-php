@@ -480,12 +480,12 @@ $gameuserini = array(
 		),
 /*
 
-to prevent Taming of specific Dino's:
+* Added option to disable specific Alpha predators ("NPC Replacements") on custom servers. This can also be used to disable any specific NPC, or replace the spawns of a particular NPC with that of a different NPC.
+
+\Config\WindowsServer\Game.ini
 [/script/shootergame.shootergamemode]
-PreventDinoTameClassNames="Argent_Character_BP_C"
-PreventDinoTameClassNames="Ptero_Character_BP_C"
-//etc etc -- all dino classnames are in the ARK Dev Kit
-D:\SteamLibrary\steamapps\common\ARKDevKit\Projects\ShooterGame\Content\PrimalEarth\Dinos
+NPCReplacements=(FromClassName="MegaRaptor_Character_BP_C",ToClassName="Dodo_Character_BP_C")
+NPCReplacements=(FromClassName="MegaRex_Character_BP_C",ToClassName="")
 Ankylo_Character_BP.uasset
 Ant_Character_BP.uasset
 Argent_Character_BP.uasset
@@ -520,6 +520,51 @@ Stego_Character_BP.uasset
 Trike_Character_BP.uasset
 Turtle_Character_BP.uasset
 
+
+
+PvP servers have an optional +1 minute additonal respawn that doubles each time if you are killed by a team within 5 minutes of your previous death to that team (timer indicated on Spawn UI). 
+Is enabled in pvp by default, and on all the official pvp servers. Helps prevent PvO ammo-wasting of auto turrets by repeatedly throwing sacrificial players at them.
+\Config\WindowsServer\Game.ini
+[/script/shootergame.shootergamemode]
+bIncreasePvPRespawnInterval = true;
+IncreasePvPRespawnIntervalCheckPeriod=300;
+IncreasePvPRespawnIntervalMultiplier=2;
+IncreasePvPRespawnIntervalBaseAmount=60;
+
+
+
+Server INI's option to switch from PvE to PvP mode at pre-specified in-game times OR a pre-specified real-world (server-side) times!
+
+\Config\WindowsServer\Game.ini
+[/script/shootergame.shootergamemode]
+bAutoPvETimer=true
+bAutoPvEUseSystemTime=true or false
+AutoPvEStartTimeSeconds=0 to 86400
+AutoPvEStopTimeSeconds=0 to 86400
+if you don't usesystemtime, it'll use the in-game world time
+otherwise it'll use the computer's time.
+you can make start time > or < than stop time, dpeending n what you want to do
+for example, pve starttime of 2:00 and stoptime 23:00 (convereted into seconds of course)
+would have pve exist from 2am to 11pm
+whereas pve starttime of 23:00 and stoptime of 2:00 would have pve exist only from 11pm to 2am (and thusly, pvp from 2am to 11pm)
+also if you have bAutoPveTimer set to true, you can see the current 
+in the Player hud with H it'll say it next to the current time.
+
+
+
+
+Stackable Mod support! This allows multiple mods to be used together and combine their changes -- works with existing mods too! and you can use Mods on custom maps now. To Use Stackable Mods from the in-game menu, simply goto the "Host Game" menu and then select a map, and a list of mods to stack. The top mod will take priority (i.e. is most likely to fully work), and any secondary mods will attempt to add items and other overrides, they may or may not work depending on what those mods actually do (most mods that add items will work as secondary mods... whereas you'll likely want to use any major rebalancing mod as your "base" mod :). We'll continue to add more functionality for what Stacked Mods can do, so stay tuned!
+To specify stacked mods for dedicated server commandline, you first need to manually install the Mods by copying over the Mod files, then specify Steam Published File ID's in your Server's GameUserSettings.ini like so (and just load the map via commandline): 
+ActiveMods=487516323,485734065
+Or use a Commandline to launch it like this:
+ShooterGameServer.exe /Game/Mods/485317707/halo?listen?GameModIds=222SomeMod222,333Shield333
+(the left-most ID is the top mod)(where "halo", for example, is the map included with Mod
+
+
+* Custom servers INI can now override the Max XP cap of players & dino characters, respectively. Set these to larger than 0 values, in your server's Game.ini :
+[/script/shootergame.shootergamemode]
+OverrideMaxExperiencePointsPlayer=0
+OverrideMaxExperiencePointsDino=0
 
 
 [/script/shootergame.shootergamemode]
