@@ -50,6 +50,7 @@
 			</div>
 			
 			<script>
+{literal}
 			$(document).ready(function() {
 				$('#rcon-cmd-button').click(function() {
 					var user_cmd	= $('#rcon-cmd-string').val();
@@ -68,6 +69,7 @@
 				$('#rcon-std-out').val(old_output + '\n' + data.rcon_response);
 				
 			}
+{/literal}
 			</script>
 			
 {else}
