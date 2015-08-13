@@ -3,8 +3,22 @@
 <h2>rCon for ARK</h2>
 
 <br /><br />
+{*
+	rCon
+	
+	This page holds the rCon interface. The actual requests are handed to the server by way of ajax.php, which in turn calls /includes/rCon-process.php
 
-<pre>{$rcon_help|print_r}</pre>
+	These variables are being passed to this template
+*}{*
+
+	_INICONF
+	<pre>{$_INICONF|print_r}</pre>
+	
+	rcon_help
+	<pre>{$rcon_help|print_r}</pre>
+	
+	
+*}
 
 {if !empty($go_ahead)}
 			<div class="panel panel-default">
@@ -13,12 +27,12 @@
 				</div>
 				<div class="panel-body text-center">
 					
-					
+					<center>
 						<textarea name="rcon-std-out" id="rcon-std-out" style="height:66%;width:90%;"></textarea>
 
 						<input type="text" name="rcon-cmd-string" id="rcon-cmd-string">
 						<input type="button" value="Issue Command" id="rcon-cmd-button">
-					
+					</center>
 					
 				</div>
 			</div>
@@ -74,9 +88,6 @@
 			</script>
 			
 {else}
-
-{/if}
-
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">rCon Disabled</h3>
@@ -89,6 +100,9 @@
 					
 				</div>
 			</div>
+{/if}
+
+
 
 
 

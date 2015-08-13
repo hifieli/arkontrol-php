@@ -2,6 +2,7 @@
 
 <h2>SECTION TITLE</h2>
 
+<br /><br />
 {*
 	Template Title
 	
