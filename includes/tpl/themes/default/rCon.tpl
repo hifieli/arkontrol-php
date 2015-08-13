@@ -27,12 +27,10 @@
 				</div>
 				<div class="panel-body text-center">
 					
-					<center>
-						<textarea name="rcon-std-out" id="rcon-std-out" style="height:66%;width:90%;"></textarea>
+						<textarea name="rcon-std-out" id="rcon-std-out" style="height:66%;width:100%;"></textarea>
 
 						<input type="text" name="rcon-cmd-string" id="rcon-cmd-string">
 						<input type="button" value="Issue Command" id="rcon-cmd-button">
-					</center>
 					
 				</div>
 			</div>
@@ -81,7 +79,7 @@
 			function callback_rcon_cmd(data) {
 				
 				var old_output	= $('#rcon-std-out').val();
-				$('#rcon-std-out').val(old_output + '\n' + data.rcon_response);
+				$('#rcon-std-out').val(old_output + data.rcon_response);
 				
 			}
 {/literal}
