@@ -11,7 +11,7 @@
 				<div class="panel-heading">
 					<h3 class="panel-title">rCon</h3>
 				</div>
-				<div class="panel-body">
+				<div class="panel-body text-center">
 					
 					
 						<textarea name="rcon-std-out" id="rcon-std-out" style="height:66%;width:90%;"></textarea>
