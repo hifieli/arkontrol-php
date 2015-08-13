@@ -14,10 +14,11 @@
 					<ul class="nav nav-stacked">
 						<li><a href="/do/serverDetails.php">Server Control</a></li>
 						<li><a href="/do/serverProfiles.php">Configuration Profiles</a></li>
-						<li><a href="/do/serverConfigRaw.php">Raw Config</a></li>
 						<li><a href="/do/serverConfigEngrams.php">Engram Config</a></li>
 						<li><a href="/do/serverConfigSpawn.php">Spawn Config</a></li>
 						<li><a href="/do/serverConfigResource.php">Resource Config</a></li>
+						<li><a href="/do/serverConfigTaming.php">Taming Config</a></li>
+						<li><a href="/do/serverConfigRaw.php">Raw Config</a></li>
 						<li><a href="/do/browseLogs.php">Server Logs</a></li>
 					</ul>
 				</li>

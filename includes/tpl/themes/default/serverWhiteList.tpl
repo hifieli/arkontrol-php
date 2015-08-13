@@ -13,7 +13,7 @@
 		<p>Text about the whitelist and how it works. Use the STEAM64 id, one per line, for each player that should be automatically granted admin access upon joining the server.</p>
 			<form method="POST" action="/do/serverWhitelist.php">
 			
-			<textarea name="new_whitelist" style="width: 100%; height: 100%">{$whitelist_contents}</textarea>
+			<textarea name="new_whitelist" style="width: 90%; height: 90%">{$whitelist_contents}</textarea>
 						
 			<input type="submit" class="btn btn-md btn-primary" value="Save Whitelist">
 		</form>
