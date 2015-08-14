@@ -9,9 +9,7 @@ source: http://ark.gamepedia.com/Server_Configuration
 $gameuserini = array(
 
 	'GameUserSettings.ini'	=> array(
-	
-	
-	
+
 		'/script/engine.gamesession'	=> array(
 		
 			'MaxPlayers'	=> array(
@@ -19,8 +17,19 @@ $gameuserini = array(
 				'type'	=> 'integer',
 				'vald'	=> '70',
 				'valc'	=> '70',
-				'group'	=> 'General',
+				'group'	=> 'Basic',
 				'desc'	=> 'Specifies the maximum number of players that can play on the server simultaneously.',
+			),
+		),
+		
+		'MessageOfTheDay'	=> array(
+			'Message'	=> array(
+				'name'	=> 'Message',
+				'type'	=> 'string',
+				'vald'	=> '',
+				'valc'	=> 'Welcome players! This server is managed by ARKcontrol. See http://arkontrol.com for more information on managing your very own ARK dedicated server.',
+				'group'	=> 'Basic',
+				'desc'	=> 'Specifies the Message of The Day for your server.',
 			),
 		),
 		
@@ -31,7 +40,7 @@ $gameuserini = array(
 				'type'	=> 'string',
 				'vald'	=> '',
 				'valc'	=> 'ARK dedicated server powered by ARKontrol - arkontrol.com',
-				'group'	=> 'General',
+				'group'	=> 'Basic',
 				'desc'	=> 'The name of the server as it appears in the server list.',
 			),
 		),
@@ -207,22 +216,6 @@ $gameuserini = array(
 				'group'	=> 'Authentication',
 				'desc'	=> 'If specified, players must provide this password (via the in-game console) to gain access to administrator commands on the server.',
 			),
-			'RCONEnabled'	=> array(
-				'name'	=> 'RCONEnabled',
-				'type'	=> 'boolean',
-				'vald'	=> 'false',
-				'valc'	=> 'false',
-				'group'	=> 'Authentication',
-				'desc'	=> 'If specified, players must provide this password (via the in-game console) to gain access to administrator commands on the server.',
-			),
-			'RCONPort'	=> array(
-				'name'	=> 'RCONPort',
-				'type'	=> 'integer',
-				'vald'	=> '32330',
-				'valc'	=> '32330',
-				'group'	=> 'Authentication',
-				'desc'	=> 'If specified, players must provide this password (via the in-game console) to gain access to administrator commands on the server.',
-			),
 			'SpectatorPassword'	=> array(
 				'name'	=> 'SpectatorPassword',
 				'type'	=> 'string',
@@ -230,6 +223,22 @@ $gameuserini = array(
 				'valc'	=> '',
 				'group'	=> 'Authentication',
 				'desc'	=> 'If specified, players must provide this password to spectate the server.',
+			),
+			'RCONEnabled'	=> array(
+				'name'	=> 'RCONEnabled',
+				'type'	=> 'boolean',
+				'vald'	=> 'false',
+				'valc'	=> 'false',
+				'group'	=> 'Authentication',
+				'desc'	=> 'Enable the rCon functionality on your server. Leave this set to false if you do not need rCon.',
+			),
+			'RCONPort'	=> array(
+				'name'	=> 'RCONPort',
+				'type'	=> 'integer',
+				'vald'	=> '32330',
+				'valc'	=> '32330',
+				'group'	=> 'Authentication',
+				'desc'	=> 'Port number for rCon. NB: If you change this value, you may need adjust your firewall (iptables) rules manually.',
 			),
 			'DayCycleSpeedScale'	=> array(
 				'name'	=> 'DayCycleSpeedScale',
@@ -462,7 +471,7 @@ $gameuserini = array(
 			),	
 			'OverrideMaxExperiencePointsDino'	=> array(
 				'name'	=> 'OverrideMaxExperiencePointsDino',
-				'type'	=> 'float',
+				'type'	=> 'integer',
 				'vald'	=> 0,
 				'valc'	=> 0,
 				'group'	=> 'Player',
