@@ -94,6 +94,7 @@
 				$('.rcon-cmd-link').each(function() {
 					$(this).click(function(event) {
 						$('#rcon-cmd-string').val( $(this).attr('data-rcon-cmd') );
+						$(document).scrollTop(0);
 						event.preventDefault();
 						return false;
 					});
