@@ -52,7 +52,7 @@
 					{foreach $rcon_help as $cat => $info}
 						<tr>
 						{*	<td class="col-xs-2">{$info.group|escape}</td> *}
-							<td class="col-xs-2">{$info.command|escape}</td>
+							<td class="col-xs-2"><a href="#" class="rcon-cmd-link" data-rcon-cmd="{$info.command|escape}">{$info.command|escape}</a></td>
 							<td class="col-xs-2">{$info.arguments|escape}</td>
 							<td>{$info.description|escape}</td>
 						</tr>
@@ -87,12 +87,15 @@
 					}
 					
 					event.preventDefault();
+					return false;
 				});
 				
 				
 				$('.rcon-cmd-link').each(function() {
-					$(this).click(function() {
+					$(this).click(function(event) {
 						$('#rcon-cmd-string').val( $(this).attr('data-rcon-cmd') );
+						event.preventDefault();
+						return false;
 					});
 				});
 				
