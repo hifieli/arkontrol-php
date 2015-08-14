@@ -57,7 +57,7 @@
 				}
 				
 			} catch (\Exception $e) {
-				$rcon_response	= 'rCon Exception: ' . $e->getMessage()
+				$rcon_response	= 'rCon Exception: ' . $e->getMessage();
 			}
 			
 		}
