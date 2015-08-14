@@ -28,7 +28,7 @@
 				<div class="panel-body text-center">
 					
 						<textarea name="rcon-std-out" id="rcon-std-out" style="height:66%;width:100%;"></textarea>
-						<br />
+						<br /><br />
 						<input type="text" name="rcon-cmd-string" id="rcon-cmd-string" class="col-xs-9">
 						<input type="button" value="Issue Command" id="rcon-cmd-button" class="col-xs-3">
 					
