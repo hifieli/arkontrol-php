@@ -307,7 +307,7 @@ class Valve_RCON {
 			$packet_id = $this->source_write(self::SERVERDATA_AUTH, $this->password);
 
 			$result = $this->source_read(null, 2);
-			if ($result[1]['id'] == -1)
+			if (!empty($result[1]) && ($result[1]['id'] == -1))
 				throw new Exception('Authentication failure');
 		}
 	}
