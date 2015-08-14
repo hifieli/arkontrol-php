@@ -355,7 +355,7 @@ class Valve_RCON {
 			
  			$cmd_parts = explode(' ', trim($command));
 		//	$command = '"' . trim($cmd_parts[0]);
-			$command = trim($cmd_parts[0]);
+			$command = trim(array_shift($cmd_parts));
 			if (count($cmd_parts) > 1) {
 				
 				$command .= ' "';
