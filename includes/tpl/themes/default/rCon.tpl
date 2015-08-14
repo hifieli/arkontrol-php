@@ -14,13 +14,28 @@
 	_INICONF
 	<pre>{$_INICONF|print_r}</pre>
 	
-	rcon_help
+	go_ahead
+	<pre>{$go_ahead|print_r}</pre>
+	
+	rcon_help - iff !empty(go_ahead)
 	<pre>{$rcon_help|print_r}</pre>
-	
-	
+
 *}
 
-{if !empty($go_ahead)}
+{if empty($go_ahead)}
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">rCon Disabled</h3>
+				</div>
+				<div class="panel-body">
+					
+					<p>
+						rCon is currently disabled. Please see above for remedies.
+					</p>
+					
+				</div>
+			</div>	
+{else}
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">rCon</h3>
@@ -66,27 +81,13 @@
 {literal}
 			$(document).ready(function() {
 			
-				/*
-				$('#rcon-cmd-button').click(function() {
-					var user_cmd	= $('#rcon-cmd-string').val();
-				
-					if (user_cmd != '') {
-						ajax_request('rcon-cmd', {'rcon-cmd-string':user_cmd});
-					
-						$('#rcon-cmd-string').val('');	//clear the entry box
-					}
-				});
-				*/
 				$('#rcon-cmd-fakeform').on('submit', function(event) {
-					var user_cmd	= $('#rcon-cmd-string').val();
-				
+					var user_cmd	= $('#rcon-cmd-string').val();				//grab the current contents of the entry box
 					if (user_cmd != '') {
-						ajax_request('rcon-cmd', {'rcon-cmd-string':user_cmd});
-					
+						ajax_request('rcon-cmd', {'rcon-cmd-string':user_cmd});	//send the request to the ajax handler.
 						$('#rcon-cmd-string').val('');	//clear the entry box
-						$('#rcon-cmd-string').focus();
 					}
-					
+					$('#rcon-cmd-string').focus();		//focus the entry box
 					event.preventDefault();
 					return false;
 				});
@@ -94,9 +95,9 @@
 				
 				$('.rcon-cmd-link').each(function() {
 					$(this).click(function(event) {
-						$('#rcon-cmd-string').val( $(this).attr('data-rcon-cmd') );
-						$('#rcon-cmd-string').focus();
-						$(document).scrollTop(0);
+						$('#rcon-cmd-string').val( $(this).attr('data-rcon-cmd')+' ' );	//set the entry box text to this command
+						$('#rcon-cmd-string').focus();									//focus the entry box
+						$(document).scrollTop(0);										//scroll back to the top of the page
 						event.preventDefault();
 						return false;
 					});
@@ -105,29 +106,12 @@
 			});
 			
 			function callback_rcon_cmd(data) {
-				
 				var old_output	= $('#rcon-std-out').val();
-				$('#rcon-std-out').val(old_output + "> " + data.rcon_request + "\n" + data.rcon_response + "\n");
-				$('#rcon-std-out').scrollTop(999999999);
+				$('#rcon-std-out').val(old_output + "> " + data.rcon_request + "\n" + data.rcon_response + "\n");	//push the request and response text to the output box
+				$('#rcon-std-out').scrollTop(999999999);	//scroll the output box to the bottom
 			}
-			
-		
 {/literal}
 			</script>
-			
-{else}
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h3 class="panel-title">rCon Disabled</h3>
-				</div>
-				<div class="panel-body">
-					
-					<p>
-						rCon is currently disabled. Please see above for remedies.
-					</p>
-					
-				</div>
-			</div>
 {/if}
 
 

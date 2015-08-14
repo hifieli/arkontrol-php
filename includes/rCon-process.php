@@ -2,6 +2,8 @@
 	chdir(dirname(__FILE__));
 	include_once('../init.php');
 	
+	//provides $rcon_request and $rcon_response
+	
 	//do things.
 	$rcon_response	= 'General Failure';
 	$rcon_request	= '';
@@ -12,13 +14,17 @@
 	//verify config info.
 	$go_ahead	= false;
 	try {
+		if (empty($_REQUEST['rcon-cmd-string']))							throw new \Exception("No command issued."); //check for a command in $_POST
+		$rcon_request	= trim($_REQUEST['rcon-cmd-string']);
+		
 		if (empty($gameuserini['ServerSettings']['ServerAdminPassword']))	throw new \Exception("'ServerAdminPassword' is required.");
 		if (empty($gameuserini['ServerSettings']['RCONEnabled']))			throw new \Exception("'RCONEnabled' must be set to 'true'.");
 		if (empty($gameuserini['ServerSettings']['RCONPort']))				throw new \Exception("'RCONPort' not set.");
 		
-		if (empty($_REQUEST['rcon-cmd-string']))							throw new \Exception("No command issued."); //check for a command in $_POST
-		
 		if (!empty($_SESSION['need_to_restart']))							throw new \Exception("Server is pending a restart to apply updated configuration.");
+		
+		$server_status_raw	= exec("service {$_INICONF['servicename']} status");
+		if ( strstr($server_status_raw, 'running') === false )				throw new \Exception("Server is not running.");
 		
 		$go_ahead	= true;
 		
@@ -32,9 +38,9 @@
 	//verify command
 	if (!empty($go_ahead)) {
 		
-		$user_cmd	= trim($_REQUEST['rcon-cmd-string']);	//the command as the user typed it
-		$cmd_check	= explode(' ', trim($user_cmd));		//split it on the space character to isolate the command itself
-		$cmd_only	= trim($cmd_check[0]);					//woomp. there it is.
+		$user_cmd	= trim($rcon_request);				//the command as the user typed it
+		$cmd_check	= explode(' ', trim($user_cmd));	//split it on the space character to isolate the command itself
+		$cmd_only	= trim($cmd_check[0]);				//woomp. there it is.
 		
 		require_once($_INICONF['webdocroot'] . '/includes/rconhelp.php');	//provides $rcon_help
 		
@@ -66,8 +72,4 @@
 		}
 	}
 	
-	//$_VIEW->assign('rcon_response', $rcon_response);
-	
-	//$_VIEW->assign('things', $stuff);
-	//$_VIEW->assign('_MSGS', $_MSGS);
-	//$_VIEW->display('rCon.tpl');
+	//Several of those trim()s are redundant. But you can never trim too much. That's a lesson that will serve anyone until the end of their days.

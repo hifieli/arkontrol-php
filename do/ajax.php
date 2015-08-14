@@ -20,13 +20,11 @@
 					
 					case 'rcon-cmd':
 						
-						require_once($_INICONF['webdocroot'] . '/includes/rCon-process.php');
-						
+						require_once($_INICONF['webdocroot'] . '/includes/rCon-process.php');	//provides $rcon_request and $rcon_response
 						$result		= 'success';
 						$cb			= 'callback_rcon_cmd';
 					//	$data		= array('msg'=>'rCon command processed.', 'rcon_response'=>htmlentities($rcon_response), 'rcon_request'=>htmlentities($rcon_request));
 						$data		= array('msg'=>'rCon command processed.', 'rcon_response'=>$rcon_response, 'rcon_request'=>$rcon_request);
-						
 					break;
 					
 					case 'ark-updatelog':
@@ -39,29 +37,20 @@
 					case 'ark-status' :
 						$cmd				= "service {$_INICONF['servicename']} status";
 						$server_status_raw	= exec($cmd);
-						$words				= explode(' ', $server_status_raw);
 						$server_status 		= 'Unknown';
-						//$server_status		= rtrim(',', (!empty($words[1]))? $words[1]: 'unknown');
-						
 
-							if ( strstr($server_status_raw, 'running') ) {
-								$server_status = 'Running';
-							}
-							
-							else if ( strstr($server_status_raw, 'starting') ) {
-								$server_status = 'Starting';
-							}
-							
-							else if ( strstr($server_status_raw, 'stopping') ) {
-								$server_status = 'Stopping';
-							}
-							
-							else if ( strstr($server_status_raw, 'waiting') ) {
-								$server_status = 'Stopped';
-							}
-							else {
-								$server_status = 'Unknown';
-							}
+						if ( strstr($server_status_raw, 'running') ) {
+							$server_status = 'Running';
+						}
+						else if ( strstr($server_status_raw, 'starting') ) {
+							$server_status = 'Starting';
+						}
+						else if ( strstr($server_status_raw, 'stopping') ) {
+							$server_status = 'Stopping';
+						}
+						else if ( strstr($server_status_raw, 'waiting') ) {
+							$server_status = 'Stopped';
+						}
 						
 						$result	= 'success';
 						$cb		= 'callback_ark_status';
@@ -80,13 +69,14 @@
 					break;
 					
 					default:
-						$data	= array('msg'=>'Invalid call specified.');
+						throw new \Exception('Invalid call specified.', 408);
 				}
 				
 			}
 		}
 	} catch (\Exception $e) {
-		$data	= array('msg'=>$e->getMessage());
+		$data	= array('msg'=>$e->getMessage(), 'code'=>$e->getCode());
+		$result	= 'error';
 	}
 	
 	
