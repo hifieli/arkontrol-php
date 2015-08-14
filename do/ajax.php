@@ -24,7 +24,8 @@
 						
 						$result		= 'success';
 						$cb			= 'callback_rcon_cmd';
-						$data		= array('msg'=>'rCon command processed.', 'rcon_response'=>htmlentities($rcon_response), 'rcon_request'=>htmlentities($rcon_request));
+					//	$data		= array('msg'=>'rCon command processed.', 'rcon_response'=>htmlentities($rcon_response), 'rcon_request'=>htmlentities($rcon_request));
+						$data		= array('msg'=>'rCon command processed.', 'rcon_response'=>$rcon_response, 'rcon_request'=>$rcon_request);
 						
 					break;
 					
