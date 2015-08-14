@@ -474,7 +474,7 @@ $gameuserini = array(
 				'type'	=> 'integer',
 				'vald'	=> 0,
 				'valc'	=> 0,
-				'group'	=> 'Player',
+				'group'	=> 'Dino',
 				'desc'	=> 'Set to larger than 0 to override the Max XP cap of dino characters',
 			),
 			'GlobalSpoilingTimeMultiplier'	=> array(

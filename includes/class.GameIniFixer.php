@@ -168,7 +168,13 @@ class GameIniFixer {
 				foreach ($KVp as $pair) {
 					
 					$parts					= explode('=', $pair);
-					$final [ $parts[0] ]	= $parts[1];
+					if (!isset($parts[1])) {
+						$val = '';
+					} else {
+						$val = str_replace('"', '', $parts[1]);
+					}
+					
+					$final [ $parts[0] ] = $val;
 					
 				}
 				//array('EngramIndex'=>1,'EngramHidden'=>false)
