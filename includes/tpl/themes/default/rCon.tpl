@@ -26,12 +26,12 @@
 					<h3 class="panel-title">rCon</h3>
 				</div>
 				<div class="panel-body text-center">
-					
-						<textarea name="rcon-std-out" id="rcon-std-out" style="height:66%;width:100%;"></textarea>
-						<br /><br />
-						<input type="text" name="rcon-cmd-string" id="rcon-cmd-string" class="col-xs-9">
-						<input type="button" value="Issue Command" id="rcon-cmd-button" class="col-xs-3">
-					
+						<form method="none" id="rcon-cmd-fakeform">
+							<textarea name="rcon-std-out" id="rcon-std-out" style="height:66%;width:100%;"></textarea>
+							<br /><br />
+							<input type="text" name="rcon-cmd-string" id="rcon-cmd-string" class="col-xs-9">
+							<input type="submit" value="Issue Command" id="rcon-cmd-button" class="col-xs-3">
+						</form>
 				</div>
 			</div>
 			
@@ -65,6 +65,8 @@
 			<script>
 {literal}
 			$(document).ready(function() {
+			
+				/*
 				$('#rcon-cmd-button').click(function() {
 					var user_cmd	= $('#rcon-cmd-string').val();
 				
@@ -74,14 +76,36 @@
 						$('#rcon-cmd-string').val('');	//clear the entry box
 					}
 				});
+				*/
+				$('#rcon-cmd-fakeform').on('submit', function(event) {
+					var user_cmd	= $('#rcon-cmd-string').val();
+				
+					if (user_cmd != '') {
+						ajax_request('rcon-cmd', {'rcon-cmd-string':user_cmd});
+					
+						$('#rcon-cmd-string').val('');	//clear the entry box
+					}
+					
+					event.preventDefault();
+				});
+				
+				
+				$('.rcon-cmd-link').each(function() {
+					$(this).click(function() {
+						$('#rcon-cmd-string').val( $(this).attr('data-rcon-cmd') );
+					});
+				});
+				
 			});
 			
 			function callback_rcon_cmd(data) {
 				
 				var old_output	= $('#rcon-std-out').val();
-				$('#rcon-std-out').val(old_output + "\n> " + data.rcon_request + "\n" + data.rcon_response);
+				$('#rcon-std-out').val(old_output + "> " + data.rcon_request + "\n" + data.rcon_response + "\n");
 				$('#rcon-std-out').scrollTop(999999999);
 			}
+			
+		
 {/literal}
 			</script>
 			
