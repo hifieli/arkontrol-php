@@ -1,6 +1,19 @@
 <?php
 
 $engram_defaults	= array (
+
+	'EngramEntry_MiracleGro_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_MiracleGro_C',
+			'EngramLevelRequirement'	=> 999,
+			'EngramPointsCost'			=> 999,
+			'name'						=> 'Re-Fertilizer',
+			'thumbnail'					=> '50px-MiracleGro.png',
+			'prereq1'					=> 'Compost Bin',
+			'skip'						=> true,	//New Engram. We need to find more data about this (and a thumbnail)
+	),
+
+
 	'EngramEntry_AdvancedBullet_C' =>
 	array (
 			'EngramClassName'			=> 'EngramEntry_AdvancedBullet_C',
@@ -334,7 +347,7 @@ $engram_defaults	= array (
 			'EngramPointsCost'			=> 999,
 			'name'						=> 'Fence Foundation',
 			'thumbnail'					=> '50px-FenceFoundation.png',
-			'skip'						=> true,
+			'skip'						=> true,			//not sure what this Engram is
 	),
 	'EngramEntry_Flag_C' =>
 	array (
@@ -1040,7 +1053,7 @@ $engram_defaults	= array (
 			'EngramPointsCost'			=> 999,
 			'name'						=> 'Radio',
 			'thumbnail'					=> '50px-Radio.png',
-			'skip'						=> true,
+			'skip'						=> true,		//not sure what this Engram is
 	),
 	'EngramEntry_RocketAmmo_C' =>
 	array (
@@ -1402,7 +1415,7 @@ $engram_defaults	= array (
 			'EngramPointsCost'			=> 999,
 			'name'						=> 'Stone Behemoth Gate',
 			'thumbnail'					=> '',
-			'skip'						=> true,
+			'skip'						=> true,			//this is newish, added with bear trap. Not sure what it really is called yet
 	),
 	'EngramEntry_StoneGateway_C' =>
 	array (
@@ -1421,7 +1434,7 @@ $engram_defaults	= array (
 			'EngramPointsCost'			=> 999,
 			'name'						=> 'Stone Behemoth Gateway',
 			'thumbnail'					=> '',
-			'skip'						=> true,
+			'skip'						=> true,			//this is newish, added with bear trap. Not sure what it really is called yet
 	),
 	'EngramEntry_StoneHatchet_C' =>
 	array (
@@ -1438,6 +1451,7 @@ $engram_defaults	= array (
 			'EngramPointsCost'			=> 0,
 			'name'						=> 'Stone Pick',
 			'thumbnail'					=> '50px-Stone_Pick.png',
+			'skip'						=> true,			//You just get this for nothing, and I am not sure what impact setting the cost to 0 will have until we test it better.
 	),
 	'EngramEntry_StonePillar_C' =>
 	array (
@@ -1620,6 +1634,7 @@ $engram_defaults	= array (
 			'EngramPointsCost'			=> 0,
 			'name'						=> 'Torch',
 			'thumbnail'					=> '50px-Torch.png',
+			'skip'						=> true,			//You just get this for nothing, and I am not sure what impact setting the cost to 0 will have until we test it better.
 	),
 	'EngramEntry_Torch2_C' =>
 	array (
@@ -1628,7 +1643,7 @@ $engram_defaults	= array (
 			'EngramPointsCost'			=> 999,
 			'name'						=> 'Torch2',
 			'thumbnail'					=> '50px-Torch2.png',
-			'skip'						=> true,
+			'skip'						=> true,			//not sure what this is.
 	),
 	'EngramEntry_TransGPS_C' =>
 	array (

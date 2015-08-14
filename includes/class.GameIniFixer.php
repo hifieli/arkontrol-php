@@ -146,6 +146,9 @@ class GameIniFixer {
 				//"(EngramIndex=1,EngramHidden=false)"
 				
 				//remove parens
+				$fromini = str_replace('"(', '', $fromini);
+				$fromini = str_replace(')"', '', $fromini);
+				
 				$fromini = str_replace('(', '', $fromini);
 				$fromini = str_replace(')', '', $fromini);
 				//"EngramIndex=1,EngramHidden=false"
@@ -193,7 +196,7 @@ class GameIniFixer {
 				}
 				$final	= rtrim($final, ',');
 				
-				$final	= "({$final})";
+				$final	= '"(' . $final . ')"';
 				
 				//(EngramIndex=1,EngramHidden=false,EngramPointsCost=3,EngramLevelRequirement=3,RemoveEngramPreReq=true)
 			} else {
