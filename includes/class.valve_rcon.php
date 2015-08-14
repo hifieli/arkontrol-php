@@ -342,7 +342,27 @@ class Valve_RCON {
 			$result = $this->classic_read();
 		} else {
 			// Use the newer source commands, sorry about the mess, it's more flexable this way
-			$command = '"' . trim(str_replace(' ', '" "', $command)) . '"';
+		//	$command = '"' . trim(str_replace(' ', '" "', $command)) . '"';
+		//	$command = '"' . trim(str_replace(' ', '" "', $command)) . '"';
+		/*
+			doing it that way put a lot of extra quotes in stuff. 
+			setting the MOTD ended up like this:
+				Message=""You" "should" "not" "be" "here.""
+			
+			This way may not work for all games, but it seems to be what ARK needs.
+		*/
+			
+			$cmd_parts = explode(' ', trim($command));
+			$command = '"' . trim($cmd_parts[0]);
+			if (count($cmd_parts) > 1) {
+				
+				$command .= ' "';
+				$command .= implode(' ',$cmd_parts);
+				$command .= '"';
+				
+			}
+			$command .= '"';
+			
 			$id = $this->source_write(self::SERVERDATA_EXECCOMMAND, $command);
 	
 			// Read the packets and re-assemble them
