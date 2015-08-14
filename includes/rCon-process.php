@@ -61,7 +61,7 @@
 				$rcon_response = trim($rCon->execute($user_cmd));
 				$rCon->disconnect();
 				
-				if (empty($rcon_response) || $rcon_response == 'Server received, But no response!!') {
+				if (empty($rcon_response) || $rcon_response == 'Server received, But no response!!') { //'Server received, But no response!!' seems to be a hardcoded response from the server. Since it is full of grammar errors, so we hide it in favor of our own message.
 					$rcon_response	= '{Empty Response}';
 				}
 				

@@ -59,6 +59,15 @@ class GameIniFixer {
 		'NPCReplacements',
 	);
 	
+	//these keys need their values to be quoted like this one: OverrideNamedEngramEntries=(EngramClassName="EngramEntry_AlarmTrap_C",EngramHidden=true,EngramPointsCost=3,EngramLevelRequirement=2,RemoveEngramPreReq=false)
+	public $stringkeys	= array(
+		'EngramClassName',
+		'ClassName',
+		'DinoNameTag',
+		'FromClassName',
+		'ToClassName',
+	);
+	
 	//This is the file with the incorrect ini syntax *shakes fist*
 	public $inifile 		= 'Game.ini';
 	
@@ -146,11 +155,9 @@ class GameIniFixer {
 				//"(EngramIndex=1,EngramHidden=false)"
 				
 				//remove parens
-				$fromini = str_replace('("', '', $fromini);
-				$fromini = str_replace(')"', '', $fromini);
-				
 				$fromini = str_replace('(', '', $fromini);
 				$fromini = str_replace(')', '', $fromini);
+				
 				//"EngramIndex=1,EngramHidden=false"
 				
 				//split kvp's on the comma
@@ -190,13 +197,18 @@ class GameIniFixer {
 					} elseif ($val === true) {
 						$final	.= "{$key}=true,";
 					} else {
+						
+						if (is_string($key) && in_array($key, $this->stringkeys)) {	//quote the value if it needs to be quoted. See $this->stringkeys up above.
+							$val = '"' . $val . '"';
+						}
+						
 						$final	.= "{$key}={$val},";
 					}
 					
 				}
 				$final	= rtrim($final, ',');
 				
-				$final	= '"(' . $final . ')"';
+				$final	= '(' . $final . ')';
 				
 				//(EngramIndex=1,EngramHidden=false,EngramPointsCost=3,EngramLevelRequirement=3,RemoveEngramPreReq=true)
 			} else {
