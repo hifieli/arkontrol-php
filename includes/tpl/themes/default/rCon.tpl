@@ -79,7 +79,7 @@
 			function callback_rcon_cmd(data) {
 				
 				var old_output	= $('#rcon-std-out').val();
-				$('#rcon-std-out').val(old_output + "\n" + data.rcon_response);
+				$('#rcon-std-out').val(old_output + "\n> " + data.rcon_request + "\n" + data.rcon_response);
 				$('#rcon-std-out').scrollTop(999999999);
 			}
 {/literal}

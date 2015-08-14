@@ -4,6 +4,7 @@
 	
 	//do things.
 	$rcon_response	= 'General Failure';
+	$rcon_request	= '';
 	
 	//get config info
 	$gameuserini = @parse_ini_file($_INICONF['settingspath'] . "/GameUserSettings.ini", true);
@@ -32,7 +33,7 @@
 	if (!empty($go_ahead)) {
 		
 		$user_cmd	= trim($_REQUEST['rcon-cmd-string']);	//the command as the user typed it
-		$cmd_check	= explode(' ', trim($user_cmd));		//split it on the space character to isolate the command iteself
+		$cmd_check	= explode(' ', trim($user_cmd));		//split it on the space character to isolate the command itself
 		$cmd_only	= trim($cmd_check[0]);					//woomp. there it is.
 		
 		require_once($_INICONF['webdocroot'] . '/includes/rconhelp.php');	//provides $rcon_help
@@ -44,6 +45,8 @@
 		} else {
 			
 			try {
+				$rcon_request	= $user_cmd;
+				
 				//issue the command
 				require_once($_INICONF['webdocroot'] . '/includes/class.valve_rcon.php');
 				$rCon = new Valve_RCON($gameuserini['ServerSettings']['ServerAdminPassword'], '127.0.0.1', $gameuserini['ServerSettings']['RCONPort'], Valve_RCON::PROTO_SOURCE);
