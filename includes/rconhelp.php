@@ -31,12 +31,7 @@ $rcon_base	= array(
 		array('serverchatto', '"[Steam64ID]" [message]', 'Msg user by steamID(steamID in quotes)'),
 		array('serverchattoplayer', '"[PlayerName]" [message]', 'Msg user by playername(playername in quotes)'),
 	),
-	'program' => array(
-		array('man', '[cmd]', 'Get help with a rCon command. Use cmd>>help for list of commands.'),
-		array('help', '', 'List of commands. Useful in conjunction with man'),
-		array('history', '(cmd)|chat', 'Show chat/cmd history, use getchat to save chat history'),
-		array('clear', '(cmd)|chat', 'Clear chat/cmd history, no argument will clear cmd history'),
-	),
+
 );
 
 foreach ($rcon_base as $cat => $cmds) {
