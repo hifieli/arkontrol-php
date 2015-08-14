@@ -84,6 +84,7 @@
 						ajax_request('rcon-cmd', {'rcon-cmd-string':user_cmd});
 					
 						$('#rcon-cmd-string').val('');	//clear the entry box
+						$('#rcon-cmd-string').focus();
 					}
 					
 					event.preventDefault();
@@ -94,6 +95,7 @@
 				$('.rcon-cmd-link').each(function() {
 					$(this).click(function(event) {
 						$('#rcon-cmd-string').val( $(this).attr('data-rcon-cmd') );
+						$('#rcon-cmd-string').focus();
 						$(document).scrollTop(0);
 						event.preventDefault();
 						return false;
