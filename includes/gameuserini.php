@@ -598,13 +598,6 @@ in the Player hud with H it'll say it next to the current time.
 
 
 
- -- feels like these belong in the interface with the XP ramps
-* Custom servers INI can now override the Max XP cap of players & dino characters, respectively. Set these to larger than 0 values, in your server's Game.ini :
-[/script/shootergame.shootergamemode]
-OverrideMaxExperiencePointsPlayer=0
-OverrideMaxExperiencePointsDino=0
-
-
 
  -- essentially not worth doing until we have FTP access resolved.
 Stackable Mod support! This allows multiple mods to be used together and combine their changes -- works with existing mods too! and you can use Mods on custom maps now. To Use Stackable Mods from the in-game menu, simply goto the "Host Game" menu and then select a map, and a list of mods to stack. The top mod will take priority (i.e. is most likely to fully work), and any secondary mods will attempt to add items and other overrides, they may or may not work depending on what those mods actually do (most mods that add items will work as secondary mods... whereas you'll likely want to use any major rebalancing mod as your "base" mod :). We'll continue to add more functionality for what Stacked Mods can do, so stay tuned!
