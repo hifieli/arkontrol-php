@@ -351,10 +351,11 @@ class Valve_RCON {
 			
 			This way may not work for all games, but it seems to be what ARK needs.
 		*/
-		$command = '"' . trim($command) . '"';
+		//	$command = '"' . trim($command) . '"';
 			
-/* 			$cmd_parts = explode(' ', trim($command));
-			$command = '"' . trim($cmd_parts[0]);
+ 			$cmd_parts = explode(' ', trim($command));
+		//	$command = '"' . trim($cmd_parts[0]);
+			$command = trim($cmd_parts[0]);
 			if (count($cmd_parts) > 1) {
 				
 				$command .= ' "';
@@ -362,7 +363,8 @@ class Valve_RCON {
 				$command .= '"';
 				
 			}
-			$command .= '"'; */
+		//	$command .= '"';
+
 			
 			$id = $this->source_write(self::SERVERDATA_EXECCOMMAND, $command);
 	
