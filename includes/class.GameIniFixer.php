@@ -157,7 +157,6 @@ class GameIniFixer {
 				//remove parens
 				$fromini = str_replace('(', '', $fromini);
 				$fromini = str_replace(')', '', $fromini);
-				
 				//"EngramIndex=1,EngramHidden=false"
 				
 				//split kvp's on the comma
@@ -166,15 +165,17 @@ class GameIniFixer {
 				
 				//split each key/value pair out and put into an array
 				foreach ($KVp as $pair) {
-					
 					$parts					= explode('=', $pair);
-					if (!isset($parts[1])) {
-						$val = '';
-					} else {
-						$val = str_replace('"', '', $parts[1]);
-					}
+					$key					= $parts[0];
 					
-					$final [ $parts[0] ] = $val;
+					if (!isset($parts[1])) {
+						$val = '';		//use empty if empty
+					} else {
+						if (is_string($key) && in_array($key, $this->stringkeys)) {
+							$val = str_replace('"', '', $parts[1]); //replace the " marks if it is the list of $this->stringkeys
+						}
+					}
+					$final [ $key ] = $val;
 					
 				}
 				//array('EngramIndex'=>1,'EngramHidden'=>false)

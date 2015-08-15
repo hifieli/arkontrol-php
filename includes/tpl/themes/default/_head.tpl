@@ -4,7 +4,8 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 		<link rel="stylesheet" href="/css/scheme.{$_INICONF['webscheme']}.css">
-		<link rel="stylesheet" href="/includes/tpl/themes/{$_INICONF['webtheme']}/theme.css">
+		<link rel="stylesheet" href="/css/theme.{$_INICONF['webtheme']|escape}.css">
+	{*	<link rel="stylesheet" href="/includes/tpl/themes/{$_INICONF['webtheme']}/theme.css"> *}
 		
 		<script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 	<!-- <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> -->

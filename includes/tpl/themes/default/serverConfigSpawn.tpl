@@ -8,13 +8,6 @@
 		<h3 class="panel-title">Dino Spawn Rate Configuration</h3>
 	</div>
 	<div class="panel-body">
-		{*
-		<form method="POST" action="/do/serverConfigDinos.php" class="form">
-			<input type="hidden" name="reset_emgrams" value="1">
-			<input type="submit" class="btn btn-xl btn-warning" value="Reset Defaults">
-		</form>
-		*}
-		
 		
 		<form method="POST" action="/do/serverConfigSpawn.php" class="form">
 		<input type="submit" class="btn btn-xl btn-primary" value="Save Spawn Config">
@@ -36,7 +29,7 @@
 						<table>
 							<tr>
 								<td>
-									<img class="hidden-xs hidden-sm" src="/img/dinos/186px-Dossier_{$info.name|ucwords|replace:' ':'_'|replace:'-':'_'}.png" alt="{$info.name}">
+									<img class="hidden-xs hidden-sm" src="/img/dinos/{$info.thumbnail}" alt="{$info.name}">
 								</td>
 								<td>
 									<b>&nbsp;&nbsp;&nbsp;<a href="http://ark.gamepedia.com/{urlencode($info.name|replace:' ':'_')}" target="_new">{$info.name}</a></b>

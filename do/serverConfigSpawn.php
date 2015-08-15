@@ -3,7 +3,9 @@
 	include_once('../init.php');	//init for authenticated areas!
 	
 	//fetch the defaults for Engrams
-	include_once($_INICONF['webdocroot'] . '/includes/dinospawndefaults.php'); //$dino_defaults
+//	include_once($_INICONF['webdocroot'] . '/includes/dinospawndefaults.php'); //$dino_defaults
+	include_once($_INICONF['webdocroot'] . '/includes/data/creaturespawndefaults.php'); // Provides $creature_defaults, $spawn_defaults
+	$dino_defaults	= $spawn_defaults;	//for now, this is safer than refactoring.
 	$_VIEW->assign('dino_defaults', $dino_defaults);
 	
 	//grab our Game.ini modeller
@@ -45,6 +47,10 @@
 				
 				$iniinfo['name']							= $defaults['name'];
 				
+				if (isset($defaults['thumbnail'])) {
+					$iniinfo['thumbnail']					= $defaults['thumbnail'];
+				}
+				
 				$dino_combined[ $iniinfo['DinoNameTag'] ]	= $iniinfo;
 			
 			}
@@ -71,6 +77,7 @@
 			
 			$dinos_towrite[ $id ] = $dino_combined[ $id ];
 			unset($dinos_towrite[ $id ]['name']);
+			unset($dinos_towrite[ $id ]['thumbnail']);
 		}
 
 		

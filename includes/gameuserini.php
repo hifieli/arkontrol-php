@@ -543,6 +543,13 @@ $gameuserini = array(
 [/script/shootergame.shootergamemode]
 NPCReplacements=(FromClassName="MegaRaptor_Character_BP_C",ToClassName="Dodo_Character_BP_C")
 NPCReplacements=(FromClassName="MegaRex_Character_BP_C",ToClassName="")
+
+ -- found these in the primatives server INI from the 187 patch notes. probably been around for a while, seems pretty straightforward. There are global settings for these, nice to see a granular option.
+TamedDinoClassDamageMultipliers=(ClassName="Argent_Character_BP_C",Multiplier=0.5)
+TamedDinoClassDamageMultipliers=(ClassName="Ptero_Character_BP_C",Multiplier=0.5)
+TamedDinoClassResistanceMultipliers=(ClassName="Argent_Character_BP_C",Multiplier=0.25)
+TamedDinoClassResistanceMultipliers=(ClassName="Ptero_Character_BP_C",Multiplier=0.25)
+
 Ankylo_Character_BP.uasset
 Ant_Character_BP.uasset
 Argent_Character_BP.uasset
