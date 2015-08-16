@@ -22,14 +22,17 @@
 			//remove db file
 			$issue_cmd	= "sudo -u www-data sudo rm -f {$ftp_users_db}";
 			$response	= exec($issue_cmd);
+			$_MSGS[]	= array('type'=>'info','msg'=>"response: {$response}");
 			
 			//rehash db file
 			$issue_cmd	= "sudo -u www-data sudo db5.3_load -T -t hash -f {$ftp_users_file} {$ftp_users_db}";
-			$response	= exec($issue_cmd);			
+			$response	= exec($issue_cmd);
+			$_MSGS[]	= array('type'=>'info','msg'=>"response: {$response}");			
 			
 			//restart ftp
 			$issue_cmd	= "sudo -u www-data sudo rm -f service vsftpd restart";
 			$response	= exec($issue_cmd);
+			$_MSGS[]	= array('type'=>'info','msg'=>"response: {$response}");
 			
 			$_MSGS[]	= array('type'=>'info','msg'=>"arkontrol has issued the `restart` command to the FTP server.");
 			
@@ -39,3 +42,6 @@
 	$_VIEW->assign('ftp_users', $ftp_users);
 	$_VIEW->assign('_MSGS', $_MSGS);
 	$_VIEW->display('ftpConfig.tpl');
+	
+//$response = exec($issue_cmd);
+//$_MSGS[]	= array('type'=>'info','msg'=>"response: {$response}");
