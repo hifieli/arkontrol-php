@@ -62,6 +62,34 @@
 						);
 					break;
 					
+					case 'ark-ftp-status' :
+						$cmd				= "service vsftpd status";
+						$server_status_raw	= exec($cmd);
+						$server_status 		= 'Unknown';
+
+						if ( strstr($server_status_raw, 'running') ) {
+							$server_status = 'Running';
+						}
+						else if ( strstr($server_status_raw, 'starting') ) {
+							$server_status = 'Starting';
+						}
+						else if ( strstr($server_status_raw, 'stopping') ) {
+							$server_status = 'Stopping';
+						}
+						else if ( strstr($server_status_raw, 'waiting') ) {
+							$server_status = 'Stopped';
+						}
+						
+						$result	= 'success';
+						$cb		= 'callback_ark_ftp_status';
+						$data	= array(
+							'msg'				=> 'Status fetched.',
+							'ftp_server_status_raw'	=> $server_status_raw,
+							'ftp_server_status'		=> $server_status,
+							'uptime'			=> $uptime
+						);
+					break;
+					
 					case 'uptime':
 						$result		= 'success';
 						$cb			= 'callback_uptime';

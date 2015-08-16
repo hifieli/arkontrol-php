@@ -10,7 +10,7 @@ $gameuserini = array(
 
 	'GameUserSettings.ini'	=> array(
 
-		'/script/engine.gamesession'	=> array(
+		'/script/engine.GameSession'	=> array(
 		
 			'MaxPlayers'	=> array(
 				'name'	=> 'MaxPlayers',
@@ -543,6 +543,7 @@ $gameuserini = array(
 [/script/shootergame.shootergamemode]
 NPCReplacements=(FromClassName="MegaRaptor_Character_BP_C",ToClassName="Dodo_Character_BP_C")
 NPCReplacements=(FromClassName="MegaRex_Character_BP_C",ToClassName="")
+
 
  -- found these in the primatives server INI from the 187 patch notes. probably been around for a while, seems pretty straightforward. There are global settings for these, nice to see a granular option.
 TamedDinoClassDamageMultipliers=(ClassName="Argent_Character_BP_C",Multiplier=0.5)
