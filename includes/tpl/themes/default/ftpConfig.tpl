@@ -40,7 +40,7 @@
 			</p>
 			
 			<form method="post">
-				<textarea id="ftp_users" name="ftp_users" style="width: 66%; height: 100%">{$ftp_users}</textarea><br /><br />
+				<textarea id="ftp_users" name="ftp_users" style="width: 100%; height: 66%">{$ftp_users}</textarea><br /><br />
 				<input class="btn btn-md" type="submit" value="Save and Restart FTP">
 			</form>
 
