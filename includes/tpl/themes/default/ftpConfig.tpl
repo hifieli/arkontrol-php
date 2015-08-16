@@ -29,10 +29,12 @@
 		
 			<p>
 			Format: Alternating lines are username and password for each user: <br />
-			arkftp <br />
-			l33tP@sssw0rd <br />
-			beverly <br />
-			beverly-password <br />
+<pre>
+arkftp
+l33tP@sssw0rd
+beverly
+beverly-password
+</pre>
 			</p>
 			
 			<p>

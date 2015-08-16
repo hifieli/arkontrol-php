@@ -14,9 +14,6 @@
 	_MSGS
 	<pre>{$_MSGS|print_r}</pre>
 	
-	pretty_cmd
-	<pre>{$pretty_cmd|print_r}</pre>
-	
 *}
 			{include file="ftpStatus.tpl"}
 

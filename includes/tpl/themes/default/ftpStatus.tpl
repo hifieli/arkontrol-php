@@ -10,12 +10,8 @@
 	_INICONF
 	<pre>{$_INICONF|print_r}</pre>
 	
-	_MSGS
-	<pre>{$_MSGS|print_r}</pre>
-	
 	pretty_cmd
 	<pre>{$pretty_cmd|print_r}</pre>
-	
 
 *}
 			<div class="panel panel-default">
