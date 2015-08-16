@@ -47,6 +47,7 @@
 		
 	}
 	
+	$_MSGS[]	= array('type'=>'info','msg'=>'ARKontrol highly recommends using <a href="https://filezilla-project.org" target="_new">FileZilla</a> as your FTP client.');
 
 	$_VIEW->assign('pretty_cmd', $pretty_cmd);
 	$_VIEW->assign('_MSGS', $_MSGS);

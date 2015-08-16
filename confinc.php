@@ -54,7 +54,13 @@ $_VIEW->assign('_INICONF', $_INICONF);
 //create the messages array
 $_MSGS	= array();
 
-
+//"encourage" users to connect via SSL
+if (empty($_SERVER['HTTPS'])) {
+	$_MSGS[]	= array(
+		'type'=>'warning',
+		'msg'=>"You are accessing ARKontrol over an insecure connection. Please switch to <a href=\"https://{$_SERVER['SERVER_ADDR']}\">https://{$_SERVER['SERVER_ADDR']}</a> and don't be afraid to continue through the browser warnings."
+	);
+}
 
 //everyone gets a session
 session_start();

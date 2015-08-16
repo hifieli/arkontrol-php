@@ -47,6 +47,15 @@ $gameuserini = array(
 		
 		'ServerSettings'	=> array(
 		
+			'ActiveMods'	=> array(
+				'name'	=> 'ActiveMods',
+				'type'	=> 'string',
+				'vald'	=> '',
+				'valc'	=> '',
+				'group'	=> 'Basic',
+				'desc'	=> 'Comma-separated list of game mods to load. Use FTP to upload the files to the location specified by instructions for the mod.',
+			),
+		
 			'alwaysNotifyPlayerJoined'	=> array(
 				'name'	=> 'alwaysNotifyPlayerJoined',
 				'type'	=> 'boolean',
