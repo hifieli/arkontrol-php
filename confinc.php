@@ -58,7 +58,7 @@ $_MSGS	= array();
 if (empty($_SERVER['HTTPS'])) {
 	$_MSGS[]	= array(
 		'type'=>'warning',
-		'msg'=>"You are accessing ARKontrol over an insecure connection. Please switch to <a href=\"https://{$_SERVER['SERVER_ADDR']}\">https://{$_SERVER['SERVER_ADDR']}</a> and don't be afraid to continue through the browser warnings."
+		'msg'=>"You are accessing ARKontrol over an insecure connection. Please switch to <a href=\"https://{$_SERVER['SERVER_ADDR']}/{$_SERVER['REQUEST_URI']}\">https://{$_SERVER['SERVER_ADDR']}/{$_SERVER['REQUEST_URI']}</a> and don't be afraid to continue through the browser warnings."
 	);
 }
 
