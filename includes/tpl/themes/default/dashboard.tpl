@@ -57,10 +57,10 @@
 					
 					<li><a href="/do/dashboard.php">Changing Maps/Mods</a></li>
 					<li><a href="/do/dashboard.php">Dino/Player level ramps</a></li>
-					<li><a href="/do/dashboard.php">Dino/Player XP/level caps</a></li>
-					<li><a href="/do/dashboard.php">Item/Corpse Decomposition Scale</a></li>
-					<li><a href="/do/dashboard.php">(s)FTP access to game files</a></li>
-
+					<li><a href="/do/dashboard.php">Dino Replacements</a></li>
+					<li><a href="/do/dashboard.php">PvP/PvE auto-switching</a></li>
+					<li><a href="/do/dashboard.php">Icons for resources :)</a></li>
+					
 				</ul>
 			</div>
 			<div class="col-md-4">
