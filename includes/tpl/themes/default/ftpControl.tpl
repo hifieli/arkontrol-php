@@ -91,9 +91,9 @@
 								<div class="container">
 								<div class="row"><br></div>
 								
-								<form method="get" action="/do/serverConfig.php">
+								<form method="get" action="/do/ftpConfig.php">
 								<div class="row">
-									<input type="submit" class="btn btn-lg btn-warning col-xs-3" value="configuration">
+									<input type="submit" class="btn btn-lg btn-warning col-xs-3" value="ftp users">
 								</div>
 								</form>
 								

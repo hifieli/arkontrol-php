@@ -19,6 +19,7 @@
 					<li><a href="/do/rCon.php">rCon Commands</a></li>
 					<li><a href="/do/serverWhitelist.php">Admin Whitelist</a></li>
 					<li><a href="/do/serverProfiles.php">Manage Config Profiles</a></li>
+					<li><a href="/do/ftpControl.php">FTP Server Control</a></li>
 					<li><a href="/do/browseLogs.php">Server Logs</a></li>
 				</ul>
 			</div>
