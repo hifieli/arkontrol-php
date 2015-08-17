@@ -135,4 +135,6 @@ $(document).ready(function() {
 
 </script>
 
+{include file="ftpInfo.tpl"}
+
 {include file="_foot.tpl"}

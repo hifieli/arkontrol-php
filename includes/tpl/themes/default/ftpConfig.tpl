@@ -49,6 +49,6 @@ beverly-password
 		</div>
 	</div>
 
-
+{include file="ftpInfo.tpl"}
 
 {include file="_foot.tpl"}

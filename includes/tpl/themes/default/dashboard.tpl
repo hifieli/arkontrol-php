@@ -19,7 +19,7 @@
 					<li><a href="/do/rCon.php">rCon Commands</a></li>
 					<li><a href="/do/serverWhitelist.php">Admin Whitelist</a></li>
 					<li><a href="/do/serverProfiles.php">Manage Config Profiles</a></li>
-					<li><a href="/do/ftpControl.php">FTP Server Control</a></li>
+					
 					<li><a href="/do/steamLogBrowse.php">Steam Logs</a></li>
 					<li><a href="/do/serverLogBrowse.php">ARK Server Logs</a></li>
 				</ul>
@@ -39,10 +39,11 @@
 			<div class="col-md-4">
 				<h4>ARKontrol Tools</h4>
 				<ul class="nav nav-stacked">			
-					<li><a href="/do/webAuth.php">Change ARKontrol Password</a></li>
 					<li><a href="/do/panelUpgrade.php">Update ARKontrol</a></li>
+					<li><a href="/do/ftpControl.php">FTP Server Control</a></li>
+					<li><a href="/do/webAuth.php">Change ARKontrol Password</a></li>
 					<li><a href="/do/systemDetails.php">System Details</a></li>
-					<li><a href="/do/webDebug.php">Debug</a></li>
+					<li><a href="/do/webDebug.php">Environment Details</a></li>
 				</ul>
 			</div>
 		</div>
