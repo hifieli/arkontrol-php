@@ -20,8 +20,9 @@
 	$ini_current	= array();
 	if (!empty($all_ini)) {
 		foreach ($all_ini as $this_ini) {
+			if ($this_ini == 'Game.ini') { continue; }
 			if (($this_ini != '.')  && ($this_ini != '..') ) {
-				$this_arr		= @parse_ini_file($_INICONF['settingspath'] . "/{$this_ini}", true);
+				$this_arr		= @parse_ini_file($_INICONF['settingspath'] . "/{$this_ini}", true, INI_SCANNER_RAW);
 				$this_arr		= (!empty($this_arr)) ? $this_arr : array();
 				
 				$ini_current	= array_merge($ini_current, array($this_ini=>$this_arr));
