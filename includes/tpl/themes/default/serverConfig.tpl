@@ -93,9 +93,9 @@
 									<tr><td class="col-sm-2"><b>{$info.name}</b></td><td>
 					
 									{if $info.type == 'boolean'}
-										<select class="col-sm-3" name="{$info.name}" id="{$info.name}" value="{$info.valc}" data-toggle="tooltip" data-placement="right" title="type: {$info.type} &nbsp;&nbsp; default: {$info.vald}">
-											<option value="true"  {if $info.vald == 'true'}selected{/if} >true</option>
-											<option value="false" {if $info.vald == 'false'}selected{/if}>false</option>
+										<select class="col-sm-3" name="{$info.name}" id="{$info.name}" {* value="{$info.valc}" *} data-toggle="tooltip" data-placement="right" title="type: {$info.type} &nbsp;&nbsp; default: {$info.vald}">
+											<option value="true"  {if $info.valc == 'true'}selected{/if} >True</option>
+											<option value="false" {if $info.valc == 'false'}selected{/if}>False</option>
 										</select>
 									{else}
 										<input class="col-sm-3"type="text" name="{$info.name}" id="{$info.name}" value="{$info.valc}" data-toggle="tooltip" data-placement="right" title="type: {$info.type} &nbsp;&nbsp; default: {$info.vald}"></td></tr>

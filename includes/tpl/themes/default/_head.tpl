@@ -42,10 +42,6 @@
 						{/if}
 						
 						<li><a href="http://steamcommunity.com/groups/arkontrol/">Help</a></li>
-					
-					{*	<li><a href="/do/help.php">Help</a></li>
-						<li><a href="/do/premium.php">Premium</a></li> *}
-						<li><a href="/do/about.php">About</a></li>
 						
 						{if empty($valid_login)}
 						<li class=""><a class="" href="/do/dashboard.php">Admin</a></li>
@@ -55,11 +51,10 @@
 							<ul class="dropdown-menu" role="menu">
 								
 								<li class="dropdown-header">ARKserver</li>
-								<li><a href="/do/serverDetails.php">Details</a></li>
+								<li><a href="/do/serverDetails.php">Server Control</a></li>
 								<li><a href="/do/serverConfig.php">Configuration</a></li>
-								<li><a href="/do/serverAdmins.php">Admin List</a></li>
 								<li><a href="/do/rCon.php">Server rCon</a></li>
-								<li><a href="/do/browseLogs.php">Server Logs</a></li>
+								<li><a href="/do/serverLogBrowse.php">Server Logs</a></li>
 
 								
 								<li class="dropdown-header">ARKontrol</li>

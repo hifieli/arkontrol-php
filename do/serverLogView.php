@@ -18,7 +18,7 @@
 	}
 	
 	if (!empty($logfile) && file_exists($logfile)) {
-		$cmd	= "tail -n 300 {$logfile}";
+		$cmd	= "sudo tail -n 300 {$logfile}";
 		$logs	= `$cmd`;
 		$logs	= strip_tags($logs);
 	}
