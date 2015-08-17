@@ -15,7 +15,7 @@
 
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<h3 class="panel-title">Resource Configuration</h3>
+		<h3 class="panel-title">Resource Harvest Configuration</h3>
 	</div>
 	<div class="panel-body">
 	
@@ -28,7 +28,7 @@
 				<tr>
 					<th><br></th>
 					<th class="text-center">
-						<span data-toggle="tooltip" data-placement="right" title="Minimum Level Required to learn this Resource.">Multiplier</span>
+						<span data-toggle="tooltip" data-placement="right" title="Minimum Level Required to learn this Resource.">Harvest Multiplier</span>
 						<br><input type="button" class="btn btn-xs mass-ctrl" data-ctrl-group="mass-multiplier" value="1" data-toggle="tooltip" data-placement="right" title="Set harvest multiplier to 1 for all Resources."> <input type="button" class="btn btn-xs mass-ctrl" data-ctrl-group="mass-multiplier" value="99" data-toggle="tooltip" data-placement="right" title="Set harvest multiplier to 99 for all Resources.">
 					</th>
 				</tr>

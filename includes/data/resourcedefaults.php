@@ -15,7 +15,7 @@ $resource_defaults	= array (
 	'PrimalItemResource_ChitinPaste'	=> array (
 		'ClassName'		=> 'PrimalItemResource_ChitinPaste',
 		'name'			=> 'Chitin Paste',
-		'thumbnail'		=> '50px-ChitinPaste.png',
+		'thumbnail'		=> '50px-Cementing_Paste.png',
 	),
 
 	'PrimalItemResource_Crystal'	=> array (
@@ -30,8 +30,8 @@ $resource_defaults	= array (
 	),
 	'PrimalItemResource_Fibers'	=> array (
 		'ClassName'		=> 'PrimalItemResource_Fibers',
-		'name'			=> 'Fibers',
-		'thumbnail'		=> '50px-Fibers.png',
+		'name'			=> 'Fiber',
+		'thumbnail'		=> '50px-Fiber.png',
 	),
 	'PrimalItemResource_Flint'	=> array (
 		'ClassName'		=> 'PrimalItemResource_Flint',
@@ -66,7 +66,7 @@ $resource_defaults	= array (
 	'PrimalItemResource_MetalIngot'	=> array (
 		'ClassName'		=> 'PrimalItemResource_MetalIngot',
 		'name'			=> 'Metal Ingot',
-		'thumbnail'		=> '50px-MetalIngot.png',
+		'thumbnail'		=> '50px-Metal_Ingot.png',
 	),
 	'PrimalItemResource_Obsidian'	=> array (
 		'ClassName'		=> 'PrimalItemResource_Obsidian',
@@ -86,18 +86,14 @@ $resource_defaults	= array (
 	'PrimalItemResource_RareFlower'	=> array (
 		'ClassName'		=> 'PrimalItemResource_RareFlower',
 		'name'			=> 'Rare Flower',
-		'thumbnail'		=> '50px-RareFlower.png',
+		'thumbnail'		=> '50px-Rare_Flower.png',
 	),
 	'PrimalItemResource_RareMushroom'	=> array (
 		'ClassName'		=> 'PrimalItemResource_RareMushroom',
 		'name'			=> 'Rare Mushroom',
-		'thumbnail'		=> '50px-RareMushroom.png',
+		'thumbnail'		=> '50px-Rare_Mushroom.png',
 	),
-	'PrimalItemResource_Silicon'	=> array (
-		'ClassName'		=> 'PrimalItemResource_Silicon',
-		'name'			=> 'Silicon',
-		'thumbnail'		=> '50px-Silicon.png',
-	),
+
 	'PrimalItemResource_Sparkpowder'	=> array (
 		'ClassName'		=> 'PrimalItemResource_Sparkpowder',
 		'name'			=> 'Sparkpowder',
@@ -125,6 +121,12 @@ $resource_defaults	= array (
 	**		SKIP!
 	*/
 	
+	'PrimalItemResource_Silicon'	=> array (
+		'ClassName'		=> 'PrimalItemResource_Silicon',
+		'name'			=> 'Silicon',
+		'thumbnail'		=> '50px-Silicon.png',
+		'skip'			=> true,
+	),
 	'PrimalItemResource_Craftable'	=> array (
 		'ClassName'		=> 'PrimalItemResource_Craftable',
 		'name'			=> 'Craftable',

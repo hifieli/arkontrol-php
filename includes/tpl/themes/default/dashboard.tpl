@@ -15,12 +15,13 @@
 			<div class="col-md-4">
 				<h4>ARK Admin Tools</h4>
 				<ul class="nav nav-stacked">
-					<li><a href="/do/serverDetails.php">Server Control</a></li>
+					<li><a href="/do/serverDetails.php">ARK Server Control</a></li>
 					<li><a href="/do/rCon.php">rCon Commands</a></li>
 					<li><a href="/do/serverWhitelist.php">Admin Whitelist</a></li>
 					<li><a href="/do/serverProfiles.php">Manage Config Profiles</a></li>
 					<li><a href="/do/ftpControl.php">FTP Server Control</a></li>
-					<li><a href="/do/browseLogs.php">Server Logs</a></li>
+					<li><a href="/do/steamLogBrowse.php">Steam Logs</a></li>
+					<li><a href="/do/serverLogBrowse.php">ARK Server Logs</a></li>
 				</ul>
 			</div>
 

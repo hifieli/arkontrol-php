@@ -1,10 +1,10 @@
 {include file="_head.tpl"}
 
-<h2>View Log - {$log_name}</h2>
+<h2>View Steam Log - {$log_name}</h2>
 
 <br>
 
-<p><a href="/do/browseLogs.php" class="btn btn-xl btn-primary">Back to list</a> <a href="javascript: history.go(0);" class="btn btn-xl btn-info">Refresh</a></p>
+<p><a href="/do/steamLogBrowse.php" class="btn btn-xl btn-primary">Back to list</a> <a href="javascript: history.go(0);" class="btn btn-xl btn-info">Refresh</a></p>
 
 <br><br>
 

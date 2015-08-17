@@ -1,6 +1,6 @@
 {include file="_head.tpl"}
 
-<h2>Browse Logs</h2>
+<h2>Browse ARK Server Logs</h2>
 
 <br /><br />
 
