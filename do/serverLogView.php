@@ -26,4 +26,4 @@
 	$_VIEW->assign('logs', $logs);
 	$_VIEW->assign('log_name', $log_name);
 	$_VIEW->assign('_MSGS', $_MSGS);
-	$_VIEW->display('viewLog.tpl');
+	$_VIEW->display('serverLogView.tpl');

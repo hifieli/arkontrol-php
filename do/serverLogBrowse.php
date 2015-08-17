@@ -8,4 +8,4 @@
 	
 	$_VIEW->assign('logfiles', $logfiles);
 	$_VIEW->assign('_MSGS', $_MSGS);
-	$_VIEW->display('browseLogs.tpl');
+	$_VIEW->display('serverLogBrowse.tpl');
