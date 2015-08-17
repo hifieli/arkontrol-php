@@ -61,6 +61,25 @@
 								</div>								
 								</form>
 
+
+								<div class="row"><br></div>
+
+
+								</div>
+
+							</div>
+							<div class="col-md-6">
+								
+								<div class="container">
+								<div class="row"><br></div>
+								
+								<form method="post" action="/do/ftpConfig.php">
+								<div class="row">
+									<input type="submit" class="btn btn-lg btn-warning col-xs-3" value="ftp users">
+								</div>
+								</form>
+								
+								
 								<div class="row"><br></div>
 
 								<form method="post">
@@ -75,25 +94,7 @@
 									<input type="button" class="btn btn-xs col-xs-4 btn-danger  action-no" value="No">
 									<br><br>
 								</div>								
-								</form>
-
-								<div class="row"><br></div>
-
-
-								</div>
-
-							</div>
-							<div class="col-md-6">
-								
-								<div class="container">
-								<div class="row"><br></div>
-								
-								<form method="get" action="/do/ftpConfig.php">
-								<div class="row">
-									<input type="submit" class="btn btn-lg btn-warning col-xs-3" value="ftp users">
-								</div>
-								</form>
-								
+								</form>								
 								<div class="row"><br></div>
 								
 								
