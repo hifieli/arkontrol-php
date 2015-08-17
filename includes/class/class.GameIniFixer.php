@@ -171,8 +171,10 @@ class GameIniFixer {
 					if (!isset($parts[1])) {
 						$val = '';		//use empty if empty
 					} else {
+						$val = $parts[1];
+						
 						if (is_string($key) && in_array($key, $this->stringkeys)) {
-							$val = str_replace('"', '', $parts[1]); //replace the " marks if it is the list of $this->stringkeys
+							$val = str_replace('"', '', $val); //replace the " marks if it is the list of $this->stringkeys
 						}
 					}
 					$final [ $key ] = $val;

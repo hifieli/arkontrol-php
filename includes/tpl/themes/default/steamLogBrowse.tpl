@@ -14,7 +14,7 @@
 			<table class="table">
 			{foreach $logfiles as $thislog}
 				{if ($thislog != '.') && ($thislog != '..')}
-				<tr><td><a href="/do/viewLog.php?logfile={$thislog}">{$thislog}</a></td></tr>
+				<tr><td><a href="/do/steamLogView.php?logfile={$thislog}">{$thislog}</a></td></tr>
 				{/if}
 			{/foreach}
 			</table>
