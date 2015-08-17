@@ -3,7 +3,7 @@
 	include_once('../init.php');
 	
 	//do things.
-	require_once($_INICONF['webdocroot'] . '/includes/class.snapshot.php');
+	require_once($_INICONF['webdocroot'] . '/includes/class/class.snapshot.php');
 	$snapshot		= new snapshot($_INICONF);
 	
 	if (!empty($_POST)) {

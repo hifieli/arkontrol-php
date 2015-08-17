@@ -19,7 +19,7 @@
 	if (!empty($_POST)) {
 		
 		//Make a snapshot, just in case. We make it before we change anything.
-		require_once($_INICONF['webdocroot'] . '/includes/class.snapshot.php');
+		require_once($_INICONF['webdocroot'] . '/includes/class/class.snapshot.php');
 		$snapshot	= new snapshot($_INICONF);
 		$saved		= $snapshot->create(null, 'snapshot');
 		

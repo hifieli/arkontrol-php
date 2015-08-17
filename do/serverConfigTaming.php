@@ -3,11 +3,11 @@
 	include_once('../init.php');	//init for authenticated areas!
 	
 	//fetch the defaults for Taming
-	include_once($_INICONF['webdocroot'] . '/includes/tamingdefaults.php'); //$taming_defaults
+	include_once($_INICONF['webdocroot'] . '/includes/data/tamingdefaults.php'); //$taming_defaults
 	$_VIEW->assign('taming_defaults', $taming_defaults);
 	
 	//grab our Game.ini modeller
-	require_once($_INICONF['webdocroot'] . '/includes/class.GameIniFixer.php');
+	require_once($_INICONF['webdocroot'] . '/includes/class/class.GameIniFixer.php');
 	$iniGame	= new GameIniFixer($_INICONF);
 	
 	//set the combined to the defaults as a base.
@@ -62,7 +62,7 @@
 		//So, we should just be able to foreach through the combined list, look for changes in the postdata, and then write() the ini file.
 		
 		//Make a snapshot, just in case. We make it before we change anything.
-		require_once($_INICONF['webdocroot'] . '/includes/class.snapshot.php');
+		require_once($_INICONF['webdocroot'] . '/includes/class/class.snapshot.php');
 		$snapshot			= new snapshot($_INICONF);
 		$saved				= $snapshot->create(null, 'snapshot');
 

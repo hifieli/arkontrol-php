@@ -4,7 +4,7 @@
 	
 	//do things.
 	
-	include_once($_INICONF['webdocroot'] . '/includes/gameuserini.php');	//$gameuserini
+	include_once($_INICONF['webdocroot'] . '/includes/data/gameuserini.php');	//$gameuserini
 	
 	//get the GameUserSettings template. file->section->key = value
 	$ini_spec		= $gameuserini;
@@ -31,7 +31,7 @@
 	}
 	
 	//grab our Game.ini modeller (remember, nonstandard ini syntax and all that)
-	require_once($_INICONF['webdocroot'] . '/includes/class.GameIniFixer.php');
+	require_once($_INICONF['webdocroot'] . '/includes/class/class.GameIniFixer.php');
 	$iniGame					= new GameIniFixer($_INICONF);
 	$ini_current['Game.ini']	= $iniGame->gameini;
 	
@@ -95,7 +95,7 @@
 		if (!empty($files_diffed)) {
 			
 			//make a snapshot for restoration. We want the old data, in case there is a problem and we need to restore.
-			require_once($_INICONF['webdocroot'] . '/includes/class.snapshot.php');
+			require_once($_INICONF['webdocroot'] . '/includes/class/class.snapshot.php');
 			$snapshot		= new snapshot($_INICONF);
 			$saved			= $snapshot->create(null, 'snapshot');
 			

@@ -3,11 +3,11 @@
 	include_once('../init.php');	//init for authenticated areas!
 	
 	//fetch the defaults for Resources
-	include_once($_INICONF['webdocroot'] . '/includes/resourcedefaults.php'); //$resource_defaults
+	include_once($_INICONF['webdocroot'] . '/includes/data/resourcedefaults.php'); //$resource_defaults
 	$_VIEW->assign('resource_defaults', $resource_defaults);
 	
 	//grab our Game.ini modeller
-	require_once($_INICONF['webdocroot'] . '/includes/class.GameIniFixer.php');
+	require_once($_INICONF['webdocroot'] . '/includes/class/class.GameIniFixer.php');
 	$iniGame	= new GameIniFixer($_INICONF);
 	
 	//set the combined to the defaults as a base.
@@ -61,7 +61,7 @@
 		//So, we should just be able to foreach through the combined list, look for changes in the postdata, and then write() the ini file.
 		
 		//Make a snapshot, just in case. We make it before we change anything.
-		require_once($_INICONF['webdocroot'] . '/includes/class.snapshot.php');
+		require_once($_INICONF['webdocroot'] . '/includes/class/class.snapshot.php');
 		$snapshot			= new snapshot($_INICONF);
 		$saved				= $snapshot->create(null, 'snapshot');
 

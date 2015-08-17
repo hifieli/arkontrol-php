@@ -6,7 +6,7 @@
 	
 	
 	//get config info
-	$gameuserini = @parse_ini_file($_INICONF['settingspath'] . "/GameUserSettings.ini", true);
+	$gameuserini = @parse_ini_file($_INICONF['settingspath'] . "/GameUserSettings.ini", true, INI_SCANNER_RAW);
 	
 	//verify config info.
 	$go_ahead	= false;
@@ -23,7 +23,7 @@
 		$server_status_raw	= exec("service {$_INICONF['servicename']} status");
 		if ( strstr($server_status_raw, 'running') === false )				throw new \Exception("Server is not running.");
 				
-		require_once($_INICONF['webdocroot'] . '/includes/rconhelp.php');
+		require_once($_INICONF['webdocroot'] . '/includes/data/rconhelp.php');
 		
 		$_VIEW->assign('rcon_help', $rcon_help);
 		

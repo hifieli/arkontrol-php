@@ -24,14 +24,6 @@
 			//replace txt file
 			file_put_contents($ftp_users_file, $ftp_users);
 			
-			// $ftp_users_cleaned	= escapeshellarg($_POST['ftp_users']);
-			
-			// $issue_cmd	= "sudo -u www-data sudo echo \"{$ftp_users_cleaned}\" > {$ftp_users_file}";
-			// $response	= exec($issue_cmd);
-			// $_MSGS[]	= array('type'=>'info','msg'=>"response: {$response}");
-			
-
-			
 			//remove db file
 			$issue_cmd	= "sudo -u www-data sudo rm -f {$ftp_users_db}";
 			$response	= exec($issue_cmd);

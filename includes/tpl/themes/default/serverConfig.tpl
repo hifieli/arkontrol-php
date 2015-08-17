@@ -1,8 +1,32 @@
 {include file="_head.tpl"}
 
 <h2>ARK Dedicated Server Configuration</h2>
+{*
+	Server Configuration
+	
+	This is the 'main' guided configuration interface.
 
+	These variables are being passed to this template
 
+*}{*
+	<p>current values from INI files</p>
+	<pre>{$ini_current|print_r}</pre>
+	
+	<p>Our defaults</p>
+	<pre>{$ini_spec|print_r}</pre>
+	
+	<p>Defaults, but with values replaced from real values from INI files</p>
+	<pre>{$gameuserini|print_r}</pre>
+	
+	<p>everything. defaults, from the INI files, and POST data together</p>
+	<pre>{$ini_comb|print_r}</pre>	
+
+	_INICONF
+	<pre>{$_INICONF|print_r}</pre>
+	
+	_MSGS
+	<pre>{$_MSGS|print_r}</pre>
+*}
 <div class="row">
 
 	<nav class="col-xs-3 conf-menu">
@@ -94,16 +118,7 @@
 
 		</form>
 
-		{*
-		<p>from the files</p>
-		<pre>{$ini_current|print_r}</pre>
-		<p>just our template</p>
-		<pre>{$ini_spec|print_r}</pre>
-		<p>template, values replaced from files</p>
-		<pre>{$gameuserini|print_r}</pre>
-		<p>everything. template and from the files together</p>
-		<pre>{$ini_comb|print_r}</pre>		
-		*}
+
 		
 	</div>
 	

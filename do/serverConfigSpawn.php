@@ -9,7 +9,7 @@
 	$_VIEW->assign('dino_defaults', $dino_defaults);
 	
 	//grab our Game.ini modeller
-	require_once($_INICONF['webdocroot'] . '/includes/class.GameIniFixer.php');
+	require_once($_INICONF['webdocroot'] . '/includes/class/class.GameIniFixer.php');
 	$iniGame	= new GameIniFixer($_INICONF);
 	
 	//set the combined to the defaults as a base.
@@ -64,7 +64,7 @@
 		//So, we should just be able to foreach through the combined list, look for changes in the postdata, and then write() the ini file.
 		
 		//Make a snapshot, just in case. We make it before we change anything.
-		require_once($_INICONF['webdocroot'] . '/includes/class.snapshot.php');
+		require_once($_INICONF['webdocroot'] . '/includes/class/class.snapshot.php');
 		$snapshot		= new snapshot($_INICONF);
 		$saved			= $snapshot->create(null, 'snapshot');
 		
