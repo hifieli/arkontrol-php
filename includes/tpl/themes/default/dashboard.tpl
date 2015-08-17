@@ -57,11 +57,12 @@
 				<h4>In the works</h4>
 				<ul class="nav nav-stacked">
 					
-					<li><a href="/do/dashboard.php">Changing Maps/Mods</a></li>
+					<li><a href="/do/dashboard.php">Changing Maps</a></li>
+					<li><a href="/do/dashboard.php">Mods Browser</a></li>
 					<li><a href="/do/dashboard.php">Dino/Player level ramps</a></li>
 					<li><a href="/do/dashboard.php">Dino Replacements</a></li>
 					<li><a href="/do/dashboard.php">PvP/PvE auto-switching</a></li>
-					<li><a href="/do/dashboard.php">Icons for resources :)</a></li>
+					<li><a href="/do/dashboard.php">Maintenance Mode & AutoUpdate</a></li>
 					
 				</ul>
 			</div>

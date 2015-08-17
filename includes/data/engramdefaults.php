@@ -1411,10 +1411,10 @@ $engram_defaults	= array (
 	'EngramEntry_StoneGateLarge_C' =>
 	array (
 			'EngramClassName'			=> 'EngramEntry_StoneGateLarge_C',
-			'EngramLevelRequirement'	=> 999,
-			'EngramPointsCost'			=> 999,
-			'name'						=> 'Stone Behemoth Gate',
-			'thumbnail'					=> '',
+			'EngramLevelRequirement'	=> 30,
+			'EngramPointsCost'			=> 16,
+			'name'						=> 'Behemoth Reinforced Dinosaur Gate',
+			'thumbnail'					=> '50px-Behemoth_Reinforced_Dinosaur_Gate.png',
 			'skip'						=> true,			//this is newish, added with bear trap. Not sure what it really is called yet
 	),
 	'EngramEntry_StoneGateway_C' =>
@@ -1430,10 +1430,10 @@ $engram_defaults	= array (
 	'EngramEntry_StoneGateway_Large_C' =>
 	array (
 			'EngramClassName'			=> 'EngramEntry_StoneGateway_Large_C',
-			'EngramLevelRequirement'	=> 999,
-			'EngramPointsCost'			=> 999,
-			'name'						=> 'Stone Behemoth Gateway',
-			'thumbnail'					=> '',
+			'EngramLevelRequirement'	=> 30,
+			'EngramPointsCost'			=> 12,
+			'name'						=> 'Behemoth Stone Dinosaur Gateway.png',
+			'thumbnail'					=> '50px-Behemoth_Stone_Dinosaur_Gateway.png',
 			'skip'						=> true,			//this is newish, added with bear trap. Not sure what it really is called yet
 	),
 	'EngramEntry_StoneHatchet_C' =>
