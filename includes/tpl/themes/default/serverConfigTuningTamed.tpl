@@ -24,12 +24,12 @@
 
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<h3 class="panel-title">Resource Harvest Configuration</h3>
+		<h3 class="panel-title">Tamed Creature Tuning</h3>
 	</div>
 	<div class="panel-body">
 	
 		
-		<form method="POST" action="/do/serverConfigResource.php" class="form">
+		<form method="POST" action="/do/serverConfigTuningTamed.php" class="form">
 		<input type="submit" class="btn btn-xl btn-primary" value="Save Resource Config">
 		<input type="button" class="btn btn-xl btn-warning" value="Reset Defaults" onclick="resetAllDefaults();">
 		<table class="table">
