@@ -12,6 +12,11 @@ $creature_defaults	= array (
 			'name'				=> 'Argentavis',
 			'thumbnail'			=> '186px-Dossier_Argentavis.png',
 	),
+	'Bigfoot_Character_BP_C' => array(
+			'ClassName'			=> 'Bigfoot_Character_BP_C',
+			'name'				=> 'Gigantopithecus',
+			'thumbnail'			=> '186px-Gigantopithecus.jpg',
+	),
 	'Carno_Character_BP_C' => array (
 			'ClassName'			=> 'Carno_Character_BP_C',
 			'name'				=> 'Carnotaurus',
@@ -125,8 +130,8 @@ $creature_defaults	= array (
 	
 	'SpiderL_Character_BP_C' => array (
 			'ClassName'			=> 'SpiderL_Character_BP_C',
-			'name'				=> 'Spider Boss',
-			'thumbnail'			=> '186px-Dossier_Spider.png',
+			'name'				=> 'Broodmother',
+			'thumbnail'			=> '190px-Dossier_Broodmother.png',
 	),
 	'SpiderS_Character_BP_C' => array (
 			'ClassName'			=> 'SpiderS_Character_BP_C',
@@ -142,7 +147,17 @@ $creature_defaults	= array (
 			'ClassName'			=> 'MegaRex_Character_BP_C',
 			'name'				=> 'Mega Rex',
 			'thumbnail'			=> '186px-Dossier_Tyrannosaurus.png',
-	),	
+	),
+	'MegaCarno_Character_BP_C' => array (
+			'ClassName'			=> 'MegaCarno_Character_BP_C',
+			'name'				=> 'Mega Carno',
+			'thumbnail'			=> '186px-Dossier_Tyrannosaurus.png',
+	),
+	'MegaRaptor_Character_BP_C' => array (
+			'ClassName'			=> 'MegaRaptor_Character_BP_C',
+			'name'				=> 'Mega Raptor',
+			'thumbnail'			=> '186px-Dossier_Raptor.png',
+	),
 	'Dragonfly_Character_BP_C' => array (
 			'ClassName'			=> 'Dragonfly_Character_BP_C',
 			'name'				=> 'Meganeura',
@@ -172,10 +187,32 @@ $creature_defaults	= array (
 			'ClassName'			=> 'Ant_Character_BP_C',
 			'name'				=> 'Titanomyrma',
 			'thumbnail'			=> '186px-Dossier_Titanomyrma.png',
-	),	
+	),
+	'Trilobite_Character_C' => array(
+			'ClassName'			=> 'Trilobite_Character_C',
+			'name'				=> 'Trilobite',
+			'thumbnail'			=> '186px-Dossier_Trilobite.png',
+	),
 );
 
 
 ksort($creature_defaults);
 
-// Caller now has $creature_defaults
+
+$untamables	= array(
+	'SpiderL_Character_BP_C',
+	'SpiderS_Character_BP_C',
+	'Piranha_Character_BP_C',
+	'MegaRaptor_Character_BP_C',
+	'MegaRex_Character_BP_C',
+	'MegaCarno_Character_BP_C',
+	'Dragonfly_Character_BP_C',
+	'FlyingAnt_Character_BP_C',
+	'Coel_Character_BP_C',
+	'Bat_Character_BP_C',
+	'BoaFrill_Character_BP_C',
+	'Ant_Character_BP_C',
+);
+
+
+// Caller now has $creature_defaults, $untamables 

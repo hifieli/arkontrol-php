@@ -80,6 +80,14 @@ $gameuserini = array(
 				'group'	=> 'Player',
 				'desc'	=> 'Enables 3rd Person view',
 			),
+			'BanListURL'	=> array(
+				'name'	=> 'BanListURL',
+				'type'	=> 'string',
+				'vald'	=> '',
+				'valc'	=> '',
+				'group'	=> 'Authentication',
+				'desc'	=> 'Link to a banlist that will be used to keep unwanted users from joining your ARK. The official ARK server maintainers publish their banlist and recommend using it. The URL for the official banlist is ""http://playark.com/banlist.txt"',
+			),
 			'globalVoiceChat'	=> array(
 				'name'	=> 'globalVoiceChat',
 				'type'	=> 'boolean',
@@ -559,44 +567,16 @@ TamedDinoClassDamageMultipliers=(ClassName="Argent_Character_BP_C",Multiplier=0.
 TamedDinoClassDamageMultipliers=(ClassName="Ptero_Character_BP_C",Multiplier=0.5)
 TamedDinoClassResistanceMultipliers=(ClassName="Argent_Character_BP_C",Multiplier=0.25)
 TamedDinoClassResistanceMultipliers=(ClassName="Ptero_Character_BP_C",Multiplier=0.25)
-
-Ankylo_Character_BP.uasset
-Ant_Character_BP.uasset
-Argent_Character_BP.uasset
-Bat_Character_BP.uasset
-BoaFrill_Character_BP.uasset
-Carno_Character_BP.uasset
-Coel_Character_BP.uasset
-Dilo_Character_BP.uasset
-Dimorph_Character_BP.uasset
-Dodo_Character_BP.uasset
-Dolphin_Character_BP.uasset
-Dragonfly_Character_BP.uasset
-FlyingAnt_Character_BP.uasset
-Mammoth_Character_BP.uasset
-Megalodon_Character_BP.uasset
-MegaRex_Character_BP.uasset
-Para_Character_BP.uasset
-Phiomia_Character_BP.uasset
-Piranha_Character_BP.uasset
-Plesiosaur_Character_BP.uasset
-Ptero_Character_BP.uasset
-Raptor_Character_BP.uasset
-Rex_Character_BP.uasset
-Saber_Character_BP.uasset
-Sarco_Character_BP.uasset
-Sauropod_Character_BP.uasset
-Scorpion_Character_BP.uasset
-SpiderL_Character_BP.uasset
-SpiderS_Character_BP.uasset
-Spino_Character_BP.uasset
-Stego_Character_BP.uasset
-Trike_Character_BP.uasset
-Turtle_Character_BP.uasset
+ -- just found these at http://steamcommunity.com/app/346110/discussions/10/530646715633129364/
+ -- not sure how I missed that :(
+ -- appears to pertain to wild dinos, rather than tamed ones.
+ -- the plus side is, we should be able to re-use a lot of code since they are so similar
+DinoClassDamageMultipliers=(ClassName="MegaRaptor_Character_BP_C",Multiplier=0.1)
+DinoClassResistanceMultipliers=(ClassName="MegaRaptor_Character_BP_C",Multiplier=0.1)
 
 
 
- -- these could just go in with the rest of the 1-off options from Game.ini, but, I kinda want this to be an interface of its own.
+ -- these could just go in with the rest of the 1-off options from Game.ini, but, I kinda want this to be an interface of its own. The correct options is probably 'both'
 Server INI's option to switch from PvE to PvP mode at pre-specified in-game times OR a pre-specified real-world (server-side) times!
 \Config\WindowsServer\Game.ini
 [/script/shootergame.shootergamemode]
@@ -623,7 +603,7 @@ ActiveMods=487516323,485734065
 Or use a Commandline to launch it like this:
 ShooterGameServer.exe /Game/Mods/485317707/halo?listen?GameModIds=222SomeMod222,333Shield333
 (the left-most ID is the top mod)(where "halo", for example, is the map included with Mod
-
+ -- the last part is the part we are afraid of. we will be modifying a upstart cfg with PHP, which should make anyone's flesh crawl as it means we have to be extra super careful with input
 
 
  -- clearly, this belongs in the engrams configurator, but, it will require a lot of work. 

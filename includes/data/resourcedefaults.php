@@ -121,12 +121,15 @@ $resource_defaults	= array (
 	**		SKIP!
 	*/
 	
+	//I hadn't heard of this, and I searched and searched and found no info about it. Perhaps it goes by a different name.
 	'PrimalItemResource_Silicon'	=> array (
 		'ClassName'		=> 'PrimalItemResource_Silicon',
 		'name'			=> 'Silicon',
 		'thumbnail'		=> '50px-Silicon.png',
 		'skip'			=> true,
 	),
+	
+	//kinda vague, not sure what these would be in the context of harvesting.
 	'PrimalItemResource_Craftable'	=> array (
 		'ClassName'		=> 'PrimalItemResource_Craftable',
 		'name'			=> 'Craftable',
@@ -138,7 +141,9 @@ $resource_defaults	= array (
 		'name'			=> 'Temp',
 		'thumbnail'		=> '50px-Temp.png',
 		'skip'			=> true,
-	),	
+	),
+	
+	//what are these things? Artefacts?
 	'PrimalItemResource_ApexDrop_Argentavis'	=> array (
 		'ClassName'		=> 'PrimalItemResource_ApexDrop_Argentavis',
 		'name'			=> 'ApexDrop_Argentavis',
@@ -163,6 +168,8 @@ $resource_defaults	= array (
 		'thumbnail'		=> '50px-ApexDrop_Sauro.png',
 		'skip'			=> true,
 	),
+	
+	//this is something you use, not something you harvest. So it doesn't make sense that we present it as an item for harvesting, am I right?
 	'PrimalItemResource_ChitinOrKeratin'	=> array (
 		'ClassName'		=> 'PrimalItemResource_ChitinOrKeratin',
 		'name'			=> 'Chitin Or Keratin',

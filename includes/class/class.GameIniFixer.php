@@ -51,6 +51,8 @@ class GameIniFixer {
 	public $inikeys	= array(
 		'OverrideEngramEntries',
 		'OverrideNamedEngramEntries',
+		'DinoClassDamageMultipliers',
+		'DinoClassResistanceMultipliers',
 		'DinoSpawnWeightMultipliers',
 		'LevelExperienceRampOverrides',
 		'OverridePlayerLevelEngramPoints',

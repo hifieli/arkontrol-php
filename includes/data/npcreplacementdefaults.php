@@ -1,6 +1,6 @@
 <?php
 
-require_once($_INICONF['webdocroot'] . '/includes/data/creatures.php');	//provides $creature_defaults
+require_once($_INICONF['webdocroot'] . '/includes/data/creatures.php');	//provides $creature_defaults, $untamables,
 
 //NPCReplacements=(FromClassName="MegaRaptor_Character_BP_C",ToClassName="Dodo_Character_BP_C")
 //NPCReplacements=(FromClassName="MegaRex_Character_BP_C",ToClassName="")
@@ -37,6 +37,12 @@ $alpha_replace_defaults = array (
 		'name'			=> 'Alpha Rex',
 		'thumbnail'		=> '186px-Dossier_Tyrannosaurus.png',
 	),
+	'MegaCarno_Character_BP_C'	=> array (
+		'FromClassName'	=> 'MegaCarno_Character_BP_C',
+		'ToClassName'	=> 'Carno_Character_BP_C',
+		'name'			=> 'Alpha Carno',
+		'thumbnail'		=> '186px-Dossier_Carno.png',
+	),
 	
 );
 
@@ -44,4 +50,4 @@ $replace_defaults	= array_merge($replace_defaults, $alpha_replace_defaults);
 
 ksort($replace_defaults);
 
-// Caller now has $creature_defaults, $replace_defaults
+// Caller now has $creature_defaults, $untamables, $replace_defaults

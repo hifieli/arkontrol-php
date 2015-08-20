@@ -56,7 +56,9 @@
 			<div class="col-md-4">
 				<h4>In the works</h4>
 				<ul class="nav nav-stacked">
-					
+				
+					<li><a href="/do/serverConfigTuningTamed.php">Per Dino Resistance/Dmg (Tamed)</a></li>
+					<li><a href="/do/serverConfigTuningWild.php">Per Dino Resistance/Dmg (Wild)</a></li>
 					<li><a href="/do/dashboard.php">Changing Maps</a></li>
 					<li><a href="/do/dashboard.php">Mods Browser</a></li>
 					<li><a href="/do/dashboard.php">Dino/Player level ramps</a></li>
