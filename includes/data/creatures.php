@@ -191,7 +191,7 @@ $creature_defaults	= array (
 	'Trilobite_Character_C' => array(
 			'ClassName'			=> 'Trilobite_Character_C',
 			'name'				=> 'Trilobite',
-			'thumbnail'			=> '186px-Dossier_Trilobite.png',
+			'thumbnail'			=> '186px-Dossier_Trilobite.jpg',
 	),
 );
 
