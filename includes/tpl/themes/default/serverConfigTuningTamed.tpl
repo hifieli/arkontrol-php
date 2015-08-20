@@ -54,7 +54,7 @@
 						<table>
 							<tr>
 								<td>
-									<img src="/img/resources/{$info.thumbnail}" alt="{$info.name}">
+									<img src="/img/dinos/{$info.thumbnail}" alt="{$info.name}">
 								</td>
 								<td>
 									<b><a href="http://ark.gamepedia.com/{urlencode($info.name|replace:' ':'_')}" target="_new">{$info.name}</a></b>
