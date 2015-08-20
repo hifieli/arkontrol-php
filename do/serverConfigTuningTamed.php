@@ -2,8 +2,6 @@
 
 //damage and resistance for tamed creatures.
 
-
-<?php
 	chdir(dirname(__FILE__));
 	include_once('../init.php');	//init for authenticated areas!
 	
