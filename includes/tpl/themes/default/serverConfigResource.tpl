@@ -48,7 +48,7 @@
 							</tr>
 						</table>
 						</td>
-					<td class="col-xs-2  col-md-1"><input class="col-xs-12 form-control mass-multiplier" type="text" name="Multiplier_{$info.ClassName}" id="Multiplier_{$info.ClassName}" value="{$info.Multiplier}" data-defval="{$resource_defaults[$key].Multiplier}" data-toggle="tooltip" data-placement="right" title="Harvest Multiplier for this Resource ({$info.name}). Default: {$resource_defaults[$key].Multiplier}"></td>
+					<td class="col-xs-2 col-md-1 vert-align-mid"><input class="col-xs-12 form-control mass-multiplier" type="text" name="Multiplier_{$info.ClassName}" id="Multiplier_{$info.ClassName}" value="{$info.Multiplier}" data-defval="{$resource_defaults[$key].Multiplier}" data-toggle="tooltip" data-placement="right" title="Harvest Multiplier for this Resource ({$info.name}). Default: {$resource_defaults[$key].Multiplier}"></td>
 				</tr>
 				{/foreach}
 			</tbody>

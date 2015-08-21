@@ -62,9 +62,8 @@
 							</tr>
 						</table>
 						</td>
-					<td class="col-xs-2  col-md-1"><input class="col-xs-12 form-control mass-multiplier-dmg" type="text" name="Multiplier_dmg_{$info.ClassName}" id="Multiplier_dmg_{$info.ClassName}" value="{$info.Multiplier}" data-defval="{$taming_dmg_defaults[$key].Multiplier}" data-toggle="tooltip" data-placement="right" title="Damage Multiplier for this creature ({$info.name}). Default: {$taming_dmg_defaults[$key].Multiplier}"></td>
-					<td class="col-xs-2  col-md-1">
-						<input class="col-xs-12 form-control mass-multiplier-res" type="text" name="Multiplier_res_{$taming_res_combined[$key].ClassName}" id="Multiplier_res_{$taming_res_combined[$key].ClassName}" value="{$taming_res_combined[$key].Multiplier}" data-defval="{$taming_res_defaults[$key].Multiplier}" data-toggle="tooltip" data-placement="right" title="Resistance Multiplier for this creature ({$taming_res_combined[$key].name}). Default: {$taming_res_defaults[$key].Multiplier}"></td>
+					<td class="col-xs-2  col-md-1 vert-align-mid"><input class="col-xs-12 form-control mass-multiplier-dmg" type="text" name="Multiplier_dmg_{$info.ClassName}" id="Multiplier_dmg_{$info.ClassName}" value="{$info.Multiplier}" data-defval="{$taming_dmg_defaults[$key].Multiplier}" data-toggle="tooltip" data-placement="right" title="Damage Multiplier for this creature ({$info.name}). Default: {$taming_dmg_defaults[$key].Multiplier}"></td>
+					<td class="col-xs-2  col-md-1 vert-align-mid"><input class="col-xs-12 form-control mass-multiplier-res" type="text" name="Multiplier_res_{$taming_res_combined[$key].ClassName}" id="Multiplier_res_{$taming_res_combined[$key].ClassName}" value="{$taming_res_combined[$key].Multiplier}" data-defval="{$taming_res_defaults[$key].Multiplier}" data-toggle="tooltip" data-placement="right" title="Resistance Multiplier for this creature ({$taming_res_combined[$key].name}). Default: {$taming_res_defaults[$key].Multiplier}"></td>
 				</tr>
 				{/foreach}
 			</tbody>
