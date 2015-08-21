@@ -28,7 +28,7 @@
 				<tr>
 					<th><br></th>
 					<th class="text-center">
-						<span data-toggle="tooltip" data-placement="right" title="Minimum Level Required to learn this Resource.">Harvest Multiplier</span>
+						<span data-toggle="tooltip" data-placement="right" title="Harvest multiplier for this Resource.">Harvest Multiplier</span>
 						<br><input type="button" class="btn btn-xs mass-ctrl" data-ctrl-group="mass-multiplier" value="1" data-toggle="tooltip" data-placement="right" title="Set harvest multiplier to 1 for all Resources."> <input type="button" class="btn btn-xs mass-ctrl" data-ctrl-group="mass-multiplier" value="99" data-toggle="tooltip" data-placement="right" title="Set harvest multiplier to 99 for all Resources.">
 					</th>
 				</tr>
@@ -71,7 +71,7 @@ $(document).ready(function() {
 			var group	= $(this).attr('data-ctrl-group');
 			var setval	= $(this).val();
 			
-			var  askBeforeWeDoAnything = confirm('Warning. This will set the '+group+' to '+setval+' for all Resources. Would you like to proceed?');
+			var askBeforeWeDoAnything = confirm('Warning. This will set the '+group+' to '+setval+' for all Resources. Would you like to proceed?');
 			if (askBeforeWeDoAnything) {
 			
 				$('.'+group).each(function () {

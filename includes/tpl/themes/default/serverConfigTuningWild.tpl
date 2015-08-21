@@ -3,11 +3,11 @@
 <h2>ARK Dedicated Server Configuration</h2>
 
 {*
-	taming_dmg_combined
-	<pre>{$taming_dmg_combined|print_r}</pre>
+	dinodamres_dmg_combined
+	<pre>{$dinodamres_dmg_combined|print_r}</pre>
 	
-	taming_res_combined
-	<pre>{$taming_res_combined|print_r}</pre>
+	dinodamres_res_combined
+	<pre>{$dinodamres_res_combined|print_r}</pre>
 
 	damages_alreadyini
 	<pre>{$damages_alreadyini|print_r}</pre>
@@ -15,21 +15,21 @@
 	resistances_alreadyini
 	<pre>{$resistances_alreadyini|print_r}</pre>
 
-	taming_dmg_defaults
-	<pre>{$taming_dmg_defaults|print_r}</pre>
+	dinodamres_dmg_defaults
+	<pre>{$dinodamres_dmg_defaults|print_r}</pre>
 	
-	taming_res_defaults
-	<pre>{$taming_res_defaults|print_r}</pre>
+	dinodamres_res_defaults
+	<pre>{$dinodamres_res_defaults|print_r}</pre>
 *}
 
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<h3 class="panel-title">Tamed Creature Tuning</h3>
+		<h3 class="panel-title">Wild Creature Tuning</h3>
 	</div>
 	<div class="panel-body">
 	
 		
-		<form method="POST" action="/do/serverConfigTuningTamed.php" class="form">
+		<form method="POST" action="/do/serverConfigTuningWild.php" class="form">
 		<input type="submit" class="btn btn-xl btn-primary" value="Save Resource Config">
 		<input type="button" class="btn btn-xl btn-warning" value="Reset Defaults" onclick="resetAllDefaults();">
 		<table class="table">
@@ -48,7 +48,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				{foreach $taming_dmg_combined as $key => $info}
+				{foreach $dinodamres_dmg_combined as $key => $info}
 				<tr>
 					<td class="col-xs-2" id="{$info.name|replace:' ':'_'}">
 						<table>
@@ -62,9 +62,9 @@
 							</tr>
 						</table>
 						</td>
-					<td class="col-xs-2  col-md-1"><input class="col-xs-12 form-control mass-multiplier-dmg" type="text" name="Multiplier_dmg_{$info.ClassName}" id="Multiplier_dmg_{$info.ClassName}" value="{$info.Multiplier}" data-defval="{$taming_dmg_defaults[$key].Multiplier}" data-toggle="tooltip" data-placement="right" title="Damage Multiplier for this creature ({$info.name}). Default: {$taming_dmg_defaults[$key].Multiplier}"></td>
+					<td class="col-xs-2  col-md-1"><input class="col-xs-12 form-control mass-multiplier-dmg" type="text" name="Multiplier_dmg_{$info.ClassName}" id="Multiplier_dmg_{$info.ClassName}" value="{$info.Multiplier}" data-defval="{$dinodamres_dmg_defaults[$key].Multiplier}" data-toggle="tooltip" data-placement="right" title="Damage Multiplier for this creature ({$info.name}). Default: {$dinodamres_dmg_defaults[$key].Multiplier}"></td>
 					<td class="col-xs-2  col-md-1">
-						<input class="col-xs-12 form-control mass-multiplier-res" type="text" name="Multiplier_res_{$taming_res_combined[$key].ClassName}" id="Multiplier_res_{$taming_res_combined[$key].ClassName}" value="{$taming_res_combined[$key].Multiplier}" data-defval="{$taming_res_defaults[$key].Multiplier}" data-toggle="tooltip" data-placement="right" title="Resistance Multiplier for this creature ({$taming_res_combined[$key].name}). Default: {$taming_res_defaults[$key].Multiplier}"></td>
+						<input class="col-xs-12 form-control mass-multiplier-res" type="text" name="Multiplier_res_{$dinodamres_res_combined[$key].ClassName}" id="Multiplier_res_{$dinodamres_res_combined[$key].ClassName}" value="{$dinodamres_res_combined[$key].Multiplier}" data-defval="{$dinodamres_res_defaults[$key].Multiplier}" data-toggle="tooltip" data-placement="right" title="Resistance Multiplier for this creature ({$dinodamres_res_combined[$key].name}). Default: {$dinodamres_res_defaults[$key].Multiplier}"></td>
 				</tr>
 				{/foreach}
 			</tbody>
