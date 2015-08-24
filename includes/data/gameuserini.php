@@ -550,7 +550,46 @@ $gameuserini = array(
 				'valc'	=> 60,
 				'group'	=> 'PvP',
 				'desc'	=> 'See "bIncreasePvPRespawnInterval". This is the base amount by which we will add time to the respawn counter',
-			),				
+			),
+			'bAutoPvETimer'	=> array(
+				'name'	=> 'bAutoPvETimer',
+				'type'	=> 'boolean',
+				'vald'	=> 'false',
+				'valc'	=> 'false',
+				'group'	=> 'PvP',
+				'desc'	=> 'Switch from PvE to PvP mode at pre-specified in-game times OR a pre-specified real-world (server-side) times.<br /><br />
+If you have bAutoPvETimer set to false, the other related options are ignored entirely<br />
+If bAutoPvETimer is true, you can see the current in the Player hud with H it will say it next to the current time.<br />
+If bAutoPvEUseSystemTime is false, it will use the in-game world time<br />
+Otherwise it will use the local time on the server.<br />
+You can make start time less-than or grater-than than stop time, depending on what you want to do<br />
+For example, StartTime of 7200 and StopTime of 82800 would have PvE exist from 2am to 11pm,<br />
+Whereas StartTime of 82800 and StopTime of 7200 would have PvE exist only from 11pm to 2am (and thusly, pvp from 2am to 11pm)<br />',
+			),
+			'bAutoPvEUseSystemTime'	=> array(
+				'name'	=> 'bAutoPvEUseSystemTime',
+				'type'	=> 'boolean',
+				'vald'	=> 'false',
+				'valc'	=> 'false',
+				'group'	=> 'PvP',
+				'desc'	=> 'See "bAutoPvETimer". If that is set to false, this options is ingored. If this option is true, AutoPvEStartTimeSeconds and AutoPvEStopTimeSeconds are taken as real-world times. If false, they are taken as server times.',
+			),
+			'AutoPvEStartTimeSeconds'	=> array(
+				'name'	=> 'AutoPvEStartTimeSeconds',
+				'type'	=> 'integer',
+				'vald'	=> 0,
+				'valc'	=> 0,
+				'group'	=> 'PvP',
+				'desc'	=> 'See "bAutoPvETimer". If that is set to false, this options is ingored. Time at which to begin PvE mode each day. Valid values are 0 - 86400, the latter being the number of seconds in a day.',
+			),
+			'AutoPvEStopTimeSeconds'	=> array(
+				'name'	=> 'AutoPvEStopTimeSeconds',
+				'type'	=> 'integer',
+				'vald'	=> 86400,
+				'valc'	=> 86400,
+				'group'	=> 'PvP',
+				'desc'	=> 'See "bAutoPvETimer". If that is set to false, this options is ingored. Time at which to end PvE mode each day. Valid values are 0 - 86400, the latter being the number of seconds in a day.',
+			),			
 		),
 /*
 
@@ -561,18 +600,6 @@ $gameuserini = array(
 NPCReplacements=(FromClassName="MegaRaptor_Character_BP_C",ToClassName="Dodo_Character_BP_C")
 NPCReplacements=(FromClassName="MegaRex_Character_BP_C",ToClassName="")
 
-
- -- found these in the primatives server INI from the 187 patch notes. probably been around for a while, seems pretty straightforward. There are global settings for these, nice to see a granular option.
-TamedDinoClassDamageMultipliers=(ClassName="Argent_Character_BP_C",Multiplier=0.5)
-TamedDinoClassDamageMultipliers=(ClassName="Ptero_Character_BP_C",Multiplier=0.5)
-TamedDinoClassResistanceMultipliers=(ClassName="Argent_Character_BP_C",Multiplier=0.25)
-TamedDinoClassResistanceMultipliers=(ClassName="Ptero_Character_BP_C",Multiplier=0.25)
- -- just found these at http://steamcommunity.com/app/346110/discussions/10/530646715633129364/
- -- not sure how I missed that :(
- -- appears to pertain to wild dinos, rather than tamed ones.
- -- the plus side is, we should be able to re-use a lot of code since they are so similar
-DinoClassDamageMultipliers=(ClassName="MegaRaptor_Character_BP_C",Multiplier=0.1)
-DinoClassResistanceMultipliers=(ClassName="MegaRaptor_Character_BP_C",Multiplier=0.1)
 
 
 

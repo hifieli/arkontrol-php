@@ -130,7 +130,7 @@ $creature_defaults	= array (
 	
 	'SpiderL_Character_BP_C' => array (
 			'ClassName'			=> 'SpiderL_Character_BP_C',
-			'name'				=> 'Broodmother',
+			'name'				=> 'Broodmother Lysrix',
 			'thumbnail'			=> '190px-Dossier_Broodmother.png',
 	),
 	'SpiderS_Character_BP_C' => array (

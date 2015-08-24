@@ -33,6 +33,8 @@
 					<li><a href="/do/serverConfigTaming.php">Taming Config</a></li>
 					<li><a href="/do/serverConfigSpawn.php">Dino Spawn Weights</a></li>
 					<li><a href="/do/serverConfigResource.php">Resource Harvest Config</a></li>
+					<li><a href="/do/serverConfigTuningTamed.php">Tamed Creature Tuning</a></li>
+					<li><a href="/do/serverConfigTuningWild.php">Wild Creature Tuning</a></li>
 					<li><a href="/do/serverConfigRaw.php">Raw Config Files</a></li>
 				</ul>
 			</div>
@@ -57,14 +59,11 @@
 				<h4>In the works</h4>
 				<ul class="nav nav-stacked">
 				
-					<li><a href="/do/serverConfigTuningTamed.php">Per Dino Resistance/Dmg (Tamed)</a></li>
-					<li><a href="/do/serverConfigTuningWild.php">Per Dino Resistance/Dmg (Wild)</a></li>
 					<li><a href="/do/dashboard.php">Changing Maps</a></li>
 					<li><a href="/do/dashboard.php">Mods Browser</a></li>
 					<li><a href="/do/dashboard.php">Dino/Player level ramps</a></li>
 					<li><a href="/do/dashboard.php">Dino Replacements</a></li>
 					<li><a href="/do/dashboard.php">PvP/PvE auto-switching</a></li>
-					<li><a href="/do/dashboard.php">Maintenance Mode & AutoUpdate</a></li>
 					
 				</ul>
 			</div>
@@ -75,6 +74,7 @@
 					<li><a href="/do/dashboard.php">Backups of the world state</a></li>
 					<li><a href="/do/dashboard.php">Possibly to an external site</a></li>
 					<li><a href="/do/dashboard.php">Additional Security Recommendations</a></li>
+					<li><a href="/do/dashboard.php">Maintenance Mode & AutoUpdate</a></li>
 
 				</ul>
 			</div>

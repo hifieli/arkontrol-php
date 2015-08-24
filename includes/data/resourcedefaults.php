@@ -116,19 +116,49 @@ $resource_defaults	= array (
 		'thumbnail'		=> '50px-Wood.png',
 	),
 	
+	//assuming this is for the harvesting of silicon from the pearls, not the pearls themselves:  http://ark.gamepedia.com/Silica_Pearls
+	'PrimalItemResource_Silicon'	=> array (
+		'ClassName'		=> 'PrimalItemResource_Silicon',
+		'name'			=> 'Silicon',
+		'thumbnail'		=> '50px-Silica_Pearls.png',
+	),
+	
+	
+	/*
+	**		ARTEFACTS!
+	**
+	**			These are the tribute requirements that drop from big dinos: See http://ark.gamepedia.com/Broodmother_Lysrix#Tribute_Requirements
+	*/ 
+	'PrimalItemResource_ApexDrop_Argentavis'	=> array (
+		'ClassName'		=> 'PrimalItemResource_ApexDrop_Argentavis',
+		'name'			=> 'Argentavis Talon',
+		'thumbnail'		=> '50px-Argentavis_Talon.png',
+
+	),
+	'PrimalItemResource_ApexDrop_Megalodon'	=> array (
+		'ClassName'		=> 'PrimalItemResource_ApexDrop_Megalodon',
+		'name'			=> 'Megalodon Tooth',
+		'thumbnail'		=> '50px-Megalodon_Tooth.png',
+
+	),
+	'PrimalItemResource_ApexDrop_Rex'	=> array (
+		'ClassName'		=> 'PrimalItemResource_ApexDrop_Rex',
+		'name'			=> 'Tyrannosaurus Arm',
+		'thumbnail'		=> '50px-Tyrannosaurus_Arm.png',
+
+	),
+	'PrimalItemResource_ApexDrop_Sauro'	=> array (
+		'ClassName'		=> 'PrimalItemResource_ApexDrop_Sauro',
+		'name'			=> 'Sauropod Vertebra',
+		'thumbnail'		=> '50px-Sauropod_Vertebra.png',
+
+	),
+	
 	
 	/*
 	**		SKIP!
 	*/
-	
-	//I hadn't heard of this, and I searched and searched and found no info about it. Perhaps it goes by a different name.
-	'PrimalItemResource_Silicon'	=> array (
-		'ClassName'		=> 'PrimalItemResource_Silicon',
-		'name'			=> 'Silicon',
-		'thumbnail'		=> '50px-Silicon.png',
-		'skip'			=> true,
-	),
-	
+
 	//kinda vague, not sure what these would be in the context of harvesting.
 	'PrimalItemResource_Craftable'	=> array (
 		'ClassName'		=> 'PrimalItemResource_Craftable',
@@ -143,32 +173,6 @@ $resource_defaults	= array (
 		'skip'			=> true,
 	),
 	
-	//what are these things? Artefacts?
-	'PrimalItemResource_ApexDrop_Argentavis'	=> array (
-		'ClassName'		=> 'PrimalItemResource_ApexDrop_Argentavis',
-		'name'			=> 'ApexDrop_Argentavis',
-		'thumbnail'		=> '50px-ApexDrop_Argentavis.png',
-		'skip'			=> true,
-	),
-	'PrimalItemResource_ApexDrop_Megalodon'	=> array (
-		'ClassName'		=> 'PrimalItemResource_ApexDrop_Megalodon',
-		'name'			=> 'ApexDrop_Megalodon',
-		'thumbnail'		=> '50px-ApexDrop_Megalodon.png',
-		'skip'			=> true,
-	),
-	'PrimalItemResource_ApexDrop_Rex'	=> array (
-		'ClassName'		=> 'PrimalItemResource_ApexDrop_Rex',
-		'name'			=> 'ApexDrop_Rex',
-		'thumbnail'		=> '50px-ApexDrop_Rex.png',
-		'skip'			=> true,
-	),
-	'PrimalItemResource_ApexDrop_Sauro'	=> array (
-		'ClassName'		=> 'PrimalItemResource_ApexDrop_Sauro',
-		'name'			=> 'ApexDrop_Sauro',
-		'thumbnail'		=> '50px-ApexDrop_Sauro.png',
-		'skip'			=> true,
-	),
-	
 	//this is something you use, not something you harvest. So it doesn't make sense that we present it as an item for harvesting, am I right?
 	'PrimalItemResource_ChitinOrKeratin'	=> array (
 		'ClassName'		=> 'PrimalItemResource_ChitinOrKeratin',
@@ -176,6 +180,15 @@ $resource_defaults	= array (
 		'thumbnail'		=> '50px-ChitinOrKeratin.png',
 		'skip'			=> true,
 	),
+	
+	/*
+	**		BERRIES??
+	**
+	**			I didn't come across anything that looked like it was specifically for dealing with gathering berries. 
+	**			Wasn't sure if there is one PrimalItemResource for each type, or just one for all, but found nothing. 
+	**			Perhaps one of the unkowns is indeed berries, but, seems unlikely.
+	*/	
+	
 
 );
 	

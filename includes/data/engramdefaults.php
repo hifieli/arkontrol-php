@@ -1411,11 +1411,10 @@ $engram_defaults	= array (
 	'EngramEntry_StoneGateLarge_C' =>
 	array (
 			'EngramClassName'			=> 'EngramEntry_StoneGateLarge_C',
-			'EngramLevelRequirement'	=> 30,
+			'EngramLevelRequirement'	=> 25,
 			'EngramPointsCost'			=> 16,
 			'name'						=> 'Behemoth Reinforced Dinosaur Gate',
 			'thumbnail'					=> '50px-Behemoth_Reinforced_Dinosaur_Gate.png',
-			'skip'						=> true,			//this is newish, added with bear trap. Not sure what it really is called yet
 	),
 	'EngramEntry_StoneGateway_C' =>
 	array (
@@ -1430,11 +1429,10 @@ $engram_defaults	= array (
 	'EngramEntry_StoneGateway_Large_C' =>
 	array (
 			'EngramClassName'			=> 'EngramEntry_StoneGateway_Large_C',
-			'EngramLevelRequirement'	=> 30,
+			'EngramLevelRequirement'	=> 25,
 			'EngramPointsCost'			=> 12,
 			'name'						=> 'Behemoth Stone Dinosaur Gateway.png',
 			'thumbnail'					=> '50px-Behemoth_Stone_Dinosaur_Gateway.png',
-			'skip'						=> true,			//this is newish, added with bear trap. Not sure what it really is called yet
 	),
 	'EngramEntry_StoneHatchet_C' =>
 	array (
@@ -1898,8 +1896,42 @@ $engram_defaults	= array (
 			'name'						=> 'Wooden Window',
 			'thumbnail'					=> '50px-Wooden_Window.png',
 			'prereq1'					=> 'Wooden Windowframe',
-			
 	),
+
+ 	
+	'EngramEntry_ScubaTank_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_ScubaTank_C',
+			'EngramLevelRequirement'	=> 75,
+			'EngramPointsCost'			=> 35,
+			'name'						=> 'SCUBA Tank',
+			'thumbnail'					=> '50px-Wooden_Window.png',
+			'prereq1'					=> 'Wooden Windowframe',
+			'skip'						=> true							//not sure on the EngramClassName until we can get our DevKit updated.
+	),
+	'EngramEntry_ScubaMask_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_ScubaMask_C',
+			'EngramLevelRequirement'	=> 75,
+			'EngramPointsCost'			=> 25,
+			'name'						=> 'SCUBA Mask',
+			'thumbnail'					=> '50px-Wooden_Window.png',
+			'prereq1'					=> 'Wooden Windowframe',
+			'skip'						=> true							//not sure on the EngramClassName until we can get our DevKit updated.
+	),
+	'EngramEntry_ScubaFlippers_C' =>
+	array (
+			'EngramClassName'			=> 'EngramEntry_ScubaFlippers_C',
+			'EngramLevelRequirement'	=> 75,
+			'EngramPointsCost'			=> 20,
+			'name'						=> 'SCUBA Flippers',
+			'thumbnail'					=> '50px-Wooden_Window.png',
+			'prereq1'					=> 'Wooden Windowframe',
+			'skip'						=> true							//not sure on the EngramClassName until we can get our DevKit updated.
+	),
+
+	
+	
 );
 
 foreach ($engram_defaults as $id => $info) {
